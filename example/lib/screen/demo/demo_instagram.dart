@@ -1,13 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class Screen3 extends StatefulWidget {
-  static const routeName = "screen/3";
+class InstagramDemo extends StatefulWidget {
+  static const routeName = "demo/instagram";
   @override
-  State<StatefulWidget> createState() => _Screen3();
+  State<StatefulWidget> createState() => _InstagramDemo();
 }
 
-class _Screen3 extends State<Screen3> {
+class _InstagramDemo extends State<InstagramDemo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

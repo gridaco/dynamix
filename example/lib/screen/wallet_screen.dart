@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_remote_ui_example/screen/screen2.dart';
-import 'package:flutter_remote_ui_example/screen/screen3.dart';
+import 'package:flutter_remote_ui_example/screen/demo/youtube/youtube.dart';
+import 'package:flutter_remote_ui_example/screen/demo/demo_instagram.dart';
 
 WalletData dummy1 = WalletData(
     "신한 5051 (기본)",
@@ -9,16 +9,16 @@ WalletData dummy1 = WalletData(
     Colors.lightBlueAccent,
     "http://cdn.shopify.com/s/files/1/0396/0985/products/giftcardblack_1024x.png",
     "Next",
-    Screen3.routeName);
+    InstagramDemo.routeName);
 WalletData dummy2 = WalletData("신한 5052 (기본)", "해당카드로 모든 결제가 이루어집니다.",
     Colors.yellow.shade50, "", "Next", Screen1.routeName);
 WalletData dummy3 = WalletData("신한 5053 (기본)", "해당카드로 모든 결제가 이루어집니다.",
-    Colors.greenAccent.shade50, "", "Next", Screen2.routeName);
+    Colors.greenAccent.shade50, "", "Next", YoutubeDemo.routeName);
 WalletData dummy4 = WalletData("신한 5054 (기본)", "해당카드로 모든 결제가 이루어집니다.",
-    Colors.amber.shade50, "", "Next", Screen3.routeName);
+    Colors.amber.shade50, "", "Next", InstagramDemo.routeName);
 
 class Screen1 extends StatefulWidget {
-  static const routeName = "screen/1";
+  static const routeName = "demo/wallet";
 
   @override
   State<StatefulWidget> createState() => _Screen1();

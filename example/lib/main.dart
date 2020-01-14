@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_remote_ui_example/screen/demo/youtube/video_detail.dart';
 import 'package:flutter_remote_ui_example/screen/wallet_screen.dart';
-import 'package:flutter_remote_ui_example/screen/screen2.dart';
-import 'package:flutter_remote_ui_example/screen/screen3.dart';
+import 'package:flutter_remote_ui_example/screen/demo/youtube/youtube.dart';
+import 'package:flutter_remote_ui_example/screen/demo/demo_instagram.dart';
 
 void main() => runApp(MyApp());
 
@@ -18,8 +19,9 @@ class MyApp extends StatelessWidget {
       routes: {
         MyHomePage.routeName: (context) => MyHomePage(),
         Screen1.routeName: (context) => Screen1(),
-        Screen2.routeName: (context) => Screen2(),
-        Screen3.routeName: (context) => Screen3(),
+        YoutubeDemo.routeName: (context) => YoutubeDemo(),
+        VideoDetail.routeName: (context) => VideoDetail(),
+        InstagramDemo.routeName: (context) => InstagramDemo(),
       },
     );
   }
@@ -51,15 +53,15 @@ class _MyHomePageState extends State<MyHomePage> {
                 onPressed: _moveToWalletScreen,
               ),
               RaisedButton(
-                child: Text("screen 2"),
+                child: Text("youtube demo"),
                 onPressed: (){
-                  Navigator.of(context).pushNamed(Screen2.routeName);
+                  Navigator.of(context).pushNamed(YoutubeDemo.routeName);
                 },
               ),
               RaisedButton(
-                child: Text("screen 3"),
+                child: Text("instagram demo"),
                 onPressed: (){
-                  Navigator.of(context).pushNamed(Screen3.routeName);
+                  Navigator.of(context).pushNamed(InstagramDemo.routeName);
                 },
               ),
             ],
