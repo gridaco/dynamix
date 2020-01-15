@@ -12,7 +12,7 @@ class _InstagramDemo extends State<InstagramDemo> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("333333333"),
+        title: Text("instagram"),
       ),
     );
   }

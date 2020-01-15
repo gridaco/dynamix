@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_remote_ui_example/screen/demo/youtube/youtube.dart';
-import 'package:flutter_remote_ui_example/screen/demo/demo_instagram.dart';
+import 'package:flutter_remote_ui_example/screen/demo/instagram/instagram.dart';
 
 WalletData dummy1 = WalletData(
     "신한 5051 (기본)",

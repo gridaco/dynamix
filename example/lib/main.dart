@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_remote_ui_example/screen/demo/youtube/video_detail.dart';
 import 'package:flutter_remote_ui_example/screen/wallet_screen.dart';
 import 'package:flutter_remote_ui_example/screen/demo/youtube/youtube.dart';
-import 'package:flutter_remote_ui_example/screen/demo/demo_instagram.dart';
+import 'package:flutter_remote_ui_example/screen/demo/instagram/instagram.dart';
 
 void main() => runApp(MyApp());
 
