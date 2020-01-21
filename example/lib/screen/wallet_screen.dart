@@ -11,20 +11,20 @@ WalletData dummy1 = WalletData(
     "Next",
     InstagramDemo.routeName);
 WalletData dummy2 = WalletData("신한 5052 (기본)", "해당카드로 모든 결제가 이루어집니다.",
-    Colors.yellow.shade50, "", "Next", Screen1.routeName);
+    Colors.yellow.shade50, "", "Next", WalletDemo.routeName);
 WalletData dummy3 = WalletData("신한 5053 (기본)", "해당카드로 모든 결제가 이루어집니다.",
     Colors.greenAccent.shade50, "", "Next", YoutubeDemo.routeName);
 WalletData dummy4 = WalletData("신한 5054 (기본)", "해당카드로 모든 결제가 이루어집니다.",
     Colors.amber.shade50, "", "Next", InstagramDemo.routeName);
 
-class Screen1 extends StatefulWidget {
+class WalletDemo extends StatefulWidget {
   static const routeName = "demo/wallet";
 
   @override
-  State<StatefulWidget> createState() => _Screen1();
+  State<StatefulWidget> createState() => _WalletDemoState();
 }
 
-class _Screen1 extends State<Screen1> {
+class _WalletDemoState extends State<WalletDemo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
