@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_remote_ui_example/screen/demo/foodle/foodle.dart';
 import 'package:flutter_remote_ui_example/screen/demo/youtube/video_detail.dart';
 import 'package:flutter_remote_ui_example/screen/wallet_screen.dart';
 import 'package:flutter_remote_ui_example/screen/demo/youtube/youtube.dart';
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
         YoutubeDemo.routeName: (context) => YoutubeDemo(),
         VideoDetail.routeName: (context) => VideoDetail(),
         InstagramDemo.routeName: (context) => InstagramDemo(),
+        Foodle.routeName: (context) => Foodle(),
       },
     );
   }
@@ -62,6 +64,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Text("instagram demo"),
                 onPressed: (){
                   Navigator.of(context).pushNamed(InstagramDemo.routeName);
+                },
+              ),
+              RaisedButton(
+                child: Text("foodle demo"),
+                onPressed: (){
+                  Navigator.of(context).pushNamed(Foodle.routeName);
                 },
               ),
             ],
