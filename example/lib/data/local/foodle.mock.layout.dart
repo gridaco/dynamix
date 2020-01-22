@@ -3,18 +3,18 @@ import 'package:flutter_remote_ui/models.dart' as RU;
 
 var truckItem1 = TruckItemLayout(
     body: TruckItemBody(
-        title: RU.Text(content: null),
-        description: RU.Text(content: null),
-        image: RU.Image(src: null),
-        onTap: RU.Action()
+        title: RU.Text(null),
+        description: RU.Text(null),
+        image: RU.Image(null),
+        onTap: RU.Action(null)
     )
 );
 
 var truckItem2 = TruckItemLayout(
     body: TruckItemBody(
-        title: RU.Text(content: null),
-        description: RU.Text(content: null),
-        image: RU.Image(src: null),
-        onTap: RU.Action()
+        title: RU.Text(null),
+        description: RU.Text(null),
+        image: RU.Image(null),
+        onTap: RU.Action(null)
     )
 );

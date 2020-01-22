@@ -3,7 +3,7 @@ import 'package:flutter_remote_ui/src/data/model/Widget.dart';
 
 class Image extends Widget
 {
-  Image({@required this.src});
+  Image(this.src, {this.resourceType});
   String src;
   ImageResourceType resourceType;
 }
