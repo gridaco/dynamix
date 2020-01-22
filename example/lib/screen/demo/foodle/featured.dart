@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter_remote_ui_example/data/local/foodle.mock.data.dart';
 import 'package:flutter_remote_ui_example/screen/demo/foodle/models.dart';
 import 'package:flutter_remote_ui_example/screen/demo/foodle/truck.dart';
 
@@ -43,6 +44,7 @@ class _FeaturedTabState extends State<FeaturedTab> {
         _buildTruckListRow(),
         _buildTruckListRow(),
         _buildMenuListRow(),
+        _buildTruckStoryListRow(),
       ],
     );
   }
@@ -78,6 +80,25 @@ class _FeaturedTabState extends State<FeaturedTab> {
               children: list
             )));
   }
+
+
+  Widget _buildTruckStoryListRow() {
+    List<Widget> list = [];
+    truckStoryList.forEach((d){
+      list.add(TruckStoryItem(d));
+    });
+
+    return Section(
+        title: "푸드트럭 이야기",
+        description: "두남자의 성공스토리",
+        child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+                children: list
+            )));
+  }
+
+
 }
 
 class Section extends StatelessWidget {
@@ -180,6 +201,47 @@ class MenuItem extends StatelessWidget {
                   data.image,
                   height: 170.0,
                   width: 122.0,
+                  fit: BoxFit.cover,
+                ),
+              ),
+              Text(
+                data.name,
+                style: Theme.of(context).textTheme.body2,
+              ),
+              Text("150m", style: Theme.of(context).textTheme.overline),
+            ],
+          ),
+        ));
+  }
+}
+
+
+class TruckStoryItem extends StatelessWidget{
+  BuildContext _context;
+  TruckStoryData data;
+  TruckStoryItem(this.data);
+
+  _moveToDetail() {
+    Navigator.of(_context).pushNamed(Truck.routeName);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    _context = context;
+    return GestureDetector(
+        onTap: _moveToDetail,
+        child: Container(
+          width: 260,
+          padding: EdgeInsets.only(left: 8, right: 8, top: 16, bottom: 16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              new ClipRRect(
+                borderRadius: new BorderRadius.circular(2.0),
+                child: Image.network(
+                  data.image,
+                  height: 152.0,
+                  width: 260,
                   fit: BoxFit.cover,
                 ),
               ),
