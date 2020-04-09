@@ -80,7 +80,7 @@ var truckItemLayout = (TruckData data) => TruckItemLayout(
 
 **View**
 
-```// region view segments
+```dart
 var titleText = (BuildContext context, RU.Text text) => Text(
   text.content,
   style: Theme.of(context).textTheme.body2,
