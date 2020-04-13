@@ -1,0 +1,14 @@
+{
+  "name": "@bridged.io/remote-ui-server",
+  "version": "0.0.1",
+  "private": false,
+  "repository": "https://github.com/softmarshmallow/remote-ui",
+  "devDependencies": {
+    "typescript": "^3.8.3"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "lib/"
+  ]
+}
