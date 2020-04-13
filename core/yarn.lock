@@ -2,9 +2,6 @@
 # yarn lockfile v1
 
 
-"remote-ui-core@file:../core/lib":
-  version "0.0.0"
-
 typescript@^3.8.3:
   version "3.8.3"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.8.3.tgz#409eb8544ea0335711205869ec458ab109ee1061"

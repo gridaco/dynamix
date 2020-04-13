@@ -36,12 +36,12 @@ interface IRouteActionData extends IBaseActionData{
     route: string
 }
 
-class PushRoute extends BaseAction<IRouteActionData>{
+export class PushRoute extends BaseAction<IRouteActionData>{
     namespace = ActionNamespace.GENERAL;
     type = "PUSH_ROUTE";
 }
 
-class PopRoute extends BaseAction<IRouteActionData>{
+export class PopRoute extends BaseAction<IRouteActionData>{
     namespace = ActionNamespace.GENERAL;
     type = "POP_ROUTE";
 }
