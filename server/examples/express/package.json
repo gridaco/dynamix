@@ -1,0 +1,16 @@
+{
+  "name": "examples-express",
+  "version": "1.0.0",
+  "description": "express remote-ui-server example",
+  "main": "src/server.ts",
+  "author": "softmarshmallow",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "express": "^4.17.1",
+    "@types/express": "^4.17.4",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "remote-ui": "file:../../lib"
+  }
+}
