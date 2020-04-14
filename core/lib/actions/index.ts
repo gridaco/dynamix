@@ -9,7 +9,7 @@ export interface  IAction<T>{
 }
 
 
-export abstract class BaseAction<T> implements IAction<T>{
+export abstract class BaseAction<T extends IBaseActionData> implements IAction<T>{
     data: T;
     message: string;
     namespace: ActionNamespace;
@@ -18,6 +18,16 @@ export abstract class BaseAction<T> implements IAction<T>{
 
 }
 
+export class TableAction<T> extends BaseAction<T>{
+    dumpAction: DumpActionType
+}
+
+export enum DumpActionType{
+    SINGLE= "SINGLE",
+    MULTIPLE = "MULTIPLE",
+    NONE = "NONE",
+    CUSTOM = "CUSTOM"
+}
 
 interface IRoute{
 

@@ -1,6 +1,6 @@
 {
   "name": "@bridged.io/remote-ui-core",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "private": false,
   "repository": "https://github.com/softmarshmallow/remote-ui",
   "devDependencies": {
@@ -9,6 +9,7 @@
   "files": [
     "LICENSE",
     "README.md",
+    "tsconfig.json",
     "lib/"
   ]
 }
