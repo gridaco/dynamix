@@ -1,8 +1,13 @@
 {
   "name": "@bridged.io/remote-ui-core",
-  "version": "0.0.3",
+  "version": "0.0.11",
   "private": false,
+  "main": "dist/index.js",
+  "types": "index.d.ts",
   "repository": "https://github.com/softmarshmallow/remote-ui",
+  "scripts": {
+    "prepublish": "tsc"
+  },
   "devDependencies": {
     "typescript": "^3.8.3"
   },
@@ -10,6 +15,8 @@
     "LICENSE",
     "README.md",
     "tsconfig.json",
-    "lib/"
+    "index.ts",
+    "lib/",
+    "dist/"
   ]
 }

@@ -1,9 +1,10 @@
-import {PopRoute, PushRoute} from "./actions";
-
-export const VERSION = 0;
+import { SearchLayouts } from "./layouts/search.layout";
+import { Actions } from "./actions";
+import {UI} from "./layouts"
 
 
 export {
-    PushRoute
-    PopRoute
+    Actions,
+    UI,
+    SearchLayouts
 }

@@ -1,10 +1,16 @@
 {
   "compilerOptions": {
-    "outDir": "./dist",
-    "rootDir": "./src",
-    "sourceMap": true,
+    "target": "es5",
     "module": "commonjs",
-    "target": "es6",
+    "lib": ["es2017", "es7", "es6", "dom"],
+    "declaration": true,
+    "outDir": "dist",
+    "esModuleInterop": true,
+    "sourceMap": true,
     "experimentalDecorators": true
-  }
+  },
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }
