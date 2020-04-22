@@ -21,9 +21,11 @@ class _FeaturedTabState extends State<FeaturedTab> {
 
   _buildSlider() {
     return CarouselSlider(
-      aspectRatio: 16 / 9,
-      autoPlay: true,
-      autoPlayInterval: Duration(seconds: 3),
+      options: CarouselOptions(
+        aspectRatio: 16 / 9,
+        autoPlay: true,
+        autoPlayInterval: Duration(seconds: 3),
+      ),
       items: [1, 2, 3, 4, 5].map((i) {
         return Builder(
           builder: (BuildContext context) {
