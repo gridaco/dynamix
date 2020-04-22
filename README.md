@@ -42,6 +42,9 @@ App
 
 
 
+## TODO
+* remote ui dashboard -> customize & configure your app through web interface remotely, realtime.
+
 
 
 
