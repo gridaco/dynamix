@@ -24,7 +24,10 @@ dependencies:
     path: ../
 
   # image slider
-  carousel_slider: ^2.0.0
+  carousel_slider: ^2.1.0
+
+  # https://github.com/sarbagyastha/flutter_rating_bar
+  flutter_rating_bar: ^3.0.1+1
 
 dev_dependencies:
   flutter_test:
