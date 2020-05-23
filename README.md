@@ -47,6 +47,9 @@ App
 
 
 
+## related projects
+- bridged.io
+- inapp-bridge
 
 
 ### Sponsors
