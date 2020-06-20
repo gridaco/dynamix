@@ -49,7 +49,8 @@ App
 
 ## related projects
 - bridged.io
-- inapp-bridge
+- [bridged's inapp-bridge](https://github.com/softmarshmallow/inapp-bridge)
+- [bridged's schema-studio](https://github.com/softmarshmallow/schema-studio)
 
 
 ### Sponsors
