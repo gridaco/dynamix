@@ -11,6 +11,9 @@ dependencies:
   flutter:
     sdk: flutter
 
+  # https://github.com/dnfield/flutter_svg
+  flutter_svg: ^0.18.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
