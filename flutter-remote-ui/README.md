@@ -6,7 +6,13 @@ remote ui client for flutter
 
 What is "remote-ui". why and when to use?
 
+## Installation
 
+```shell script
+# https://pub.dev/packages/flutter_remote_ui
+dependencies:
+  flutter_remote_ui: ^0.0.2
+```
 
 Remote-ui is a cross platform ui structure standard, so you can develop with more consistency, integrity, maintainability.
 
