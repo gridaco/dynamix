@@ -8,9 +8,12 @@ import 'package:flutter_remote_ui_example/screen/demo/instagram/instagram.dart';
 import 'package:flutter_remote_ui_example/screen/demo/youtube/youtube.dart';
 import 'package:flutter_remote_ui_example/screen/wallet_screen.dart';
 
+import '../screen/icons_demo/icons_demo_screen.dart';
+
 buildRoute(BuildContext context) {
   return {
     MyHomePage.routeName: (context) => MyHomePage(),
+    IconsDemoScreen.routeName: (context) => IconsDemoScreen(),
     WalletDemo.routeName: (context) => WalletDemo(),
     YoutubeDemo.routeName: (context) => YoutubeDemo(),
     VideoDetail.routeName: (context) => VideoDetail(),

@@ -5,6 +5,8 @@ import 'package:flutter_remote_ui_example/screen/wallet_screen.dart';
 import 'package:flutter_remote_ui_example/screen/demo/youtube/youtube.dart';
 import 'package:flutter_remote_ui_example/utils/routes.dart';
 
+import 'screen/icons_demo/icons_demo_screen.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -12,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'remote-ui',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -40,6 +42,11 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+              DemoItem(
+                title: "remote icons",
+                route: IconsDemoScreen.routeName,
+                cover: null,
+              ),
               DemoItem(
                 title: "Foodle",
                 route: Foodle.routeName,
