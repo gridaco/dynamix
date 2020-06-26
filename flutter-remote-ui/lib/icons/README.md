@@ -17,3 +17,8 @@ Widget buildRemoteIcon(){
   return RemoteIcon(icon: remoteIconData, color: Colors.black);
 }
 ```
+
+1. "local://assets/~"
+2.  "http://~"
+3.  "https://~"
+4.  "material://icons.name"
