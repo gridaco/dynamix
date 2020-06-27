@@ -3,8 +3,7 @@ import * as bodyParser from 'body-parser'
 import {resolve} from "path"
 const app = express();
 import * as cors from 'cors';
-import * as remote from 'remote-ui';
-
+import * as remote from "remote-ui-core";
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());

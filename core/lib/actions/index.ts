@@ -64,6 +64,5 @@ export namespace Actions{
         GENERAL,
         MATERIAL,
         CUSTOM
-
     }
 }
