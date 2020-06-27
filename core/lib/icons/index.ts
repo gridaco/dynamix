@@ -1,4 +1,3 @@
-import {MaterialIcons} from "./material-icons"
 
 export enum RemoteIconType {
     MATERIAL_NATIVE = "MATERIAL_NATIVE",
@@ -34,7 +33,7 @@ export class RemoteIconData {
     /// official material icon name. e.g. person, person_add
     static fromMaterial(iconName: string): RemoteIconData {
         return new RemoteIconData({
-            uri: "material://Icons.$name", type: RemoteIconType.MATERIAL_NATIVE
+            uri: `material://Icons.${iconName}`, type: RemoteIconType.MATERIAL_NATIVE
         })
     }
 
@@ -55,7 +54,7 @@ export class RemoteIconData {
     /// builds RemoteIconData with clients' local asset
     static fromAssets(asset: string): RemoteIconData {
         return new RemoteIconData({
-                uri: "asset://$asset", type: RemoteIconType.LOCAL_ASSET, asset: asset
+                uri: `asset://${asset}`, type: RemoteIconType.LOCAL_ASSET, asset: asset
             }
         )
     }
@@ -73,6 +72,4 @@ export class RemoteIconData {
 }
 
 
-export {
-    MaterialIcons
-}
+export * as MaterialIcons from "./material-icons"

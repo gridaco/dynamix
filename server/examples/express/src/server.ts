@@ -4,7 +4,6 @@ import {resolve} from "path"
 const app = express();
 import * as cors from 'cors';
 import * as remote from "remote-ui-core";
-
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
@@ -13,7 +12,7 @@ interface SearchResult{
     title: string
     description: string
     avatar: string
-    action: remote.PushRoute
+    action: remote.Actions.PushRoute
 }
 
 app.get('search/', (req, res)=>{
@@ -22,8 +21,8 @@ app.get('search/', (req, res)=>{
         {
             title: "instagram",
             description: "aint it awesome?",
-            action: new remote.PopRoute(),
-            avatar: ""
+            action: new remote.Actions.PopRoute(),
+            avatar: remote.Icons.MaterialIcons.note.uri
         }
     ];
 

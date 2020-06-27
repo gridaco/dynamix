@@ -805,8 +805,8 @@ redent@^1.0.0:
     indent-string "^2.1.0"
     strip-indent "^1.0.1"
 
-"remote-ui-core@file:../../lib":
-  version "0.0.0"
+"remote-ui-core@file:../../../core":
+  version "0.0.16"
 
 repeating@^2.0.0:
   version "2.0.1"

@@ -1,2 +1,1 @@
-import * as core from "./lib"
-export default core;
+export * from "./lib"
