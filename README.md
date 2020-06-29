@@ -30,7 +30,7 @@ router.get("ui", (req, res)=>{
 
 app side (flutter)
 ```
-import "package:flutter-remote-ui/flutter-remote-ui.dart"
+import "package:flutter_remote_ui/flutter_remote_ui.dart"
 
 Widget buildRui(BuildContext context){
  final ruiData = fetchRuiDataFromServer();
