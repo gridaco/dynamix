@@ -13,7 +13,7 @@ client - dynamically load content from server & with dynamic layout / component 
 
 ## How to use
 server side (express/ts)
-```
+```typescripit
 import * as rui from "@bridged.io/remote-ui-core"
 
 router.get("ui", (req, res)=>{
@@ -26,7 +26,7 @@ router.get("ui", (req, res)=>{
  );
  res.json(ui).send()
 })
-```
+```dart
 
 app side (flutter)
 ```
