@@ -24,7 +24,7 @@ router.get("ui", (req, res)=>{
    title: new rui.Text("hello world!")
   }
  );
- res.json().send()
+ res.json(ui).send()
 })
 ```
 
