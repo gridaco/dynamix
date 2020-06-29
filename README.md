@@ -26,10 +26,12 @@ router.get("ui", (req, res)=>{
  );
  res.json(ui).send()
 })
-```dart
+```
+
+
 
 app side (flutter)
-```
+```dart
 import "package:flutter_remote_ui/flutter_remote_ui.dart"
 
 Widget buildRui(BuildContext context){
