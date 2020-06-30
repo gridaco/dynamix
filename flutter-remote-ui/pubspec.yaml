@@ -1,6 +1,6 @@
 name: flutter_remote_ui
 description: remote ui client for flutter
-version: 0.0.3+4
+version: 0.0.3+8
 homepage: https://github.com/softmarshmallow/remote-ui
 
 environment:
