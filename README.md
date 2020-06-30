@@ -11,8 +11,34 @@ server - dynamically change client specs from server
 client - dynamically load content from server & with dynamic layout / component / action specs
 
 
+## How to use
+server side (express/ts)
+```ts
+import * as rui from "@bridged.io/remote-ui-core"
+
+router.get("ui", (req, res)=>{
+
+ const ui = new rui.Layout(
+  {
+   icon: rui.Icon.MaterialIcns.note.uri,
+   title: new rui.Text("hello world!")
+  }
+ );
+ res.json(ui).send()
+})
+```
 
 
+
+app side (flutter)
+```dart
+import "package:flutter_remote_ui/flutter_remote_ui.dart"
+
+Widget buildRui(BuildContext context){
+ final ruiData = fetchRuiDataFromServer();
+ return RemoteUI.of(context).build(ruiiData);
+}
+```
 
 
 
@@ -22,28 +48,27 @@ Concepts & onthology will be documented under notion document, which will be add
 
 ## Platform support
 
-Web
+**Web**
 
 * server
-  * language: ts/js
-  * examples: express
+  * language: ts/js [@bridged.io/remote-ui-core](https://github.com/softmarshmallow/remote-ui/tree/master/core)
+  * examples: [express](https://github.com/softmarshmallow/remote-ui/tree/master/server/examples/express), [plain](https://github.com/softmarshmallow/remote-ui/tree/master/server/examples/plain)
 * client
   * Language: ts/js
   * Examples: vue
 
 
+**App**
 
-App
-
-* flutter
-  * examples: flutter remote ui example
+* [flutter-remote-ui](https://github.com/softmarshmallow/remote-ui/tree/master/flutter-remote-ui)
+  * examples: [flutter remote ui example](https://github.com/softmarshmallow/remote-ui/tree/master/flutter-remote-ui/example)
 * android
 * ios
 
 
 
 ## Contribution
-
+contact woojoo@softmarshmallow.com for contribution or package usage
 
 
 ## TODO
