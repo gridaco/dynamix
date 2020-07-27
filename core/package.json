@@ -9,6 +9,9 @@
   "scripts": {
     "prepublish": "tsc"
   },
+  "dependencies": {
+    "mustache": "^4.0.1"
+  },
   "devDependencies": {
     "typescript": "^3.8.3"
   },
