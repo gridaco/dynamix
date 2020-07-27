@@ -1,14 +1,41 @@
 import {routes} from "../../index"
 
 
-routes.register()
-routes.load({})
+const MOCK_DATABASE = {
+    users: [
+        {
+            id: "1",
+            name: "softmarshmallow"
+        },
+        {
+            id: "2",
+            name: "GY"
+        },
+        {
+            id: "3",
+            name: "gin"
+        },
+    ]
+}
 
-const a = new routes.spec({})
+function fetchUserFromMockDatabase(id: string){
+    return MOCK_DATABASE.users.find((e) => e.id == id);
+}
+
+
+routes.register(
+    new routes.spec({
+        name: "/users/:id",
+        pattern: "/users/:id"
+    })
+)
+// routes.load({})
 
 
 const route = "/users/1";
 const spec = routes.match(route)
+console.log(spec)
+routes.build(spec).then((d)=>{
+    console.log(d)
+})
 
-
-const item = routes.build(undefined)
