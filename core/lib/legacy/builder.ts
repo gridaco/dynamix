@@ -16,7 +16,7 @@ abstract class RUWidget {
     public variant: string;
     public version: string;
 
-    public constructor(init?: Partial<RUWidget>) {
+    protected constructor(init?: Partial<RUWidget>) {
         Object.assign(this, init);
     }
 }
