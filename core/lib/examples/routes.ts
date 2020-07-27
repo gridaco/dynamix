@@ -18,24 +18,28 @@ const MOCK_DATABASE = {
     ]
 }
 
-function fetchUserFromMockDatabase(id: string){
+function fetchUserFromMockDatabase(id: string): { id, name } {
     return MOCK_DATABASE.users.find((e) => e.id == id);
 }
 
 
 routes.register(
-    new routes.spec({
+    new routes.spec(new routes.spec<{ id }, { id, name }>({
         name: "/users/:id",
-        pattern: "/users/:id"
-    })
+        pattern: "/users/:id",
+        dataFetcher: async (p) => {
+            return fetchUserFromMockDatabase(p.id);
+        },
+        title: {
+            default: "user detail",
+            template: "user {{name}}"
+        }
+    }))
 )
-// routes.load({})
-
 
 const route = "/users/1";
 const spec = routes.match(route)
-console.log(spec)
-routes.build(spec).then((d)=>{
+routes.build(spec).then((d) => {
     console.log(d)
 })
 

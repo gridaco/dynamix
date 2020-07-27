@@ -18,9 +18,8 @@ function match(route): RouteInstance<any, any> {
     for (const spec of specs) {
         const res = spec._compiledPattern.match(route)
         if (res) {
-            return new RouteInstance<any, any>({
-                name: spec.name, params: res, pattern: spec.pattern
-            });
+            spec.params = res;
+            return new RouteInstance<any, any>(spec);
         }
     }
     return null;
