@@ -109,6 +109,7 @@ console.log(rui.icons.material.note)
 ```typescript
 import {routes} from "@bridged.io/remote-ui-core"
 
+
 const MOCK_DATABASE = {
     users: [
         {
@@ -133,14 +134,14 @@ function fetchUserFromMockDatabase(id: string): { id, name } {
 
 routes.register(
     new routes.spec(new routes.spec<{ id }, { id, name }>({
-        name: "/users/:id",
+        key: "/users/:id",
         pattern: "/users/:id",
         dataFetcher: async (p) => {
             return fetchUserFromMockDatabase(p.id);
         },
         title: {
             default: "user detail",
-            template: "user {{name}}"
+            template: "user {{ data.name }}",
         }
     }))
 )
@@ -165,8 +166,7 @@ routes.build(spec).then((d) => {
 
 
 ## Contribution
-contact woojoo@softmarshmallow.com for contribution or package usage
-
+[contribution guideline](CONTRIBUTING.md)
 
 ## TODO
 * remote ui dashboard -> customize & configure your app through web interface remotely, realtime.
