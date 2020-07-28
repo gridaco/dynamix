@@ -166,8 +166,7 @@ routes.build(spec).then((d) => {
 
 
 ## Contribution
-contact woojoo@softmarshmallow.com for contribution or package usage
-
+[contribution guideline](CONTRIBUTING.md)
 
 ## TODO
 * remote ui dashboard -> customize & configure your app through web interface remotely, realtime.
