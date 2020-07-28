@@ -32,7 +32,7 @@ routes.register(
         },
         title: {
             default: "user detail",
-            template: "user {{ name }}",
+            template: "user {{ data.name }}",
         }
     }))
 )
