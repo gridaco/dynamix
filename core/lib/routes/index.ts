@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2020. UZU, J (softmarshmallow) under MIT license.
+ * This software is free to use.
+ */
+
 import {IRouteSpec, RouteInstance, RouteSpec} from "./spec"
 
 const specs: Array<RouteSpec<any, any>> = []

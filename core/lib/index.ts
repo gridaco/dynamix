@@ -1,3 +1,9 @@
+
+/*
+ * Copyright (c) 2020. UZU, J (softmarshmallow) under MIT license.
+ * This software is free to use.
+ */
+
 import {SearchLayouts} from "./layouts/search.layout";
 import {Actions} from "./actions";
 import {UI} from "./layouts"

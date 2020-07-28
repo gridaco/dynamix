@@ -1,3 +1,9 @@
+
+/*
+ * Copyright (c) 2020. UZU, J (softmarshmallow) under MIT license.
+ * This software is free to use.
+ */
+
 export namespace Actions {
     export interface IAction<T> {
         namespace: ActionNamespace; // namespace of this action

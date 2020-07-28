@@ -3,13 +3,16 @@ import {RemoteIconData} from "../icons";
 import MaterialIcons from "../icons/material-icons";
 import * as Mustache from "mustache"
 
-export interface IRouteDisplay {
+interface IRouteDisplay {
     title: string
     description: string
     route: string
     icon: RemoteIconData
 }
 
+/**
+ * a route display data for sending built route data to client. if your client uses remote-ui, it will draw a interactive button, listTile, etc, . automatically targets the route provided.
+ */
 export class RouteDisplay implements IRouteDisplay {
     description: string;
     icon: RemoteIconData;
@@ -34,6 +37,16 @@ export enum RouteType {
     MIXED
 }
 
+
+/**
+ * @type:P the interface structure type of parameter. e.g. "/users/:id" will take param type { id: string }
+ * @type:T the data type used for building route contents like, title, description, icon
+ * @field:pattern a unique url  pattern for this route. e.g. "/users/:id"
+ * @field:key use for loading template, or localized string (template formatted) automatically builds child's key. e.g. if key "menu/user" is provided, it will make title field's key as "menu/user/title" if no override key is provided
+ * @field:params a parsed params value for built route input. e.g. if "/user/123" is provided, params will be { id : "123"}
+ * @field:type a type of this route.
+ * @function:dataFetcher a function for loading data T via provided params P.
+ */
 export interface IRouteSpec<P, T> {
     pattern: string
     key: string
@@ -42,16 +55,41 @@ export interface IRouteSpec<P, T> {
 
     dataFetcher?: (params: P) => Promise<T>
 
-    title: DisplayFieldBuilder<T, string>
-    description?: DisplayFieldBuilder<T, string>
-    icon?: DisplayFieldBuilder<T, RemoteIconData>
+    title: IDisplayFieldBuilder<T, string>
+    description?: IDisplayFieldBuilder<T, string>
+    icon?: IDisplayFieldBuilder<T, RemoteIconData>
 }
 
-interface DisplayFieldBuilder<I, O> {
+/**
+ * a data container interface for building route's specific field. for example, title. (used along with function buildField)
+ * @type:I input data type
+ * @type:O output value type
+ * @field:default a fallback string or default value if no template, key, builder is provided
+ * @field:key use for loading template, or localized string (template formatted)
+ * @field:template a mustache based template, data I from RouteSpec is filled automatically. use valid template. if template is not valid, fallback default value will be returned
+ * @field:builder a builder function which takes I as input and returns O as output
+ */
+interface IDisplayFieldBuilder<I, O> {
     default: O
+    key?: string
     template?: string
     builder?: (data: I) => O
 }
+
+
+function buildField<I, O>(data: I, field: IDisplayFieldBuilder<I, O>): O {
+    if (!field) {
+        return undefined
+    }
+    if (field.builder) {
+        return field.builder(data);
+    }
+    if (field.template) {
+        return Mustache.render(field.template, data);
+    }
+    return field.default;
+}
+
 
 export class RouteSpec<P, T> implements IRouteSpec<P, T> {
 
@@ -62,9 +100,9 @@ export class RouteSpec<P, T> implements IRouteSpec<P, T> {
     type: RouteType;
     dataFetcher: (params: P) => Promise<T>;
 
-    title: DisplayFieldBuilder<T, string>;
-    description?: DisplayFieldBuilder<T, string>;
-    icon?: DisplayFieldBuilder<T, RemoteIconData>;
+    title: IDisplayFieldBuilder<T, string>;
+    description?: IDisplayFieldBuilder<T, string>;
+    icon?: IDisplayFieldBuilder<T, RemoteIconData>;
 
     _compiledPattern: UrlPattern
 
@@ -131,18 +169,4 @@ export class RouteInstance<P, T> extends RouteSpec<P, T> {
         const data = await this.fetchData();
         return buildField<T, RemoteIconData>(data, this.icon);
     }
-}
-
-
-function buildField<I, O>(data: I, field: DisplayFieldBuilder<I, O>): O {
-    if (!field) {
-        return undefined
-    }
-    if (field.builder) {
-        return field.builder(data);
-    }
-    if (field.template) {
-        return Mustache.render(field.template, data);
-    }
-    return field.default;
 }

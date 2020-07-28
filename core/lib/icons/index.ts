@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2020. UZU, J (softmarshmallow) under MIT license.
+ * This software is free to use.
+ */
+
 enum RemoteIconType {
     MATERIAL_NATIVE = "MATERIAL_NATIVE",
     REMOTE_RESOURCE = "REMOTE_RESOURCE",
