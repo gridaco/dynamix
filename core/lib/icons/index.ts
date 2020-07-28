@@ -1,11 +1,10 @@
-
-export enum RemoteIconType {
+enum RemoteIconType {
     MATERIAL_NATIVE = "MATERIAL_NATIVE",
     REMOTE_RESOURCE = "REMOTE_RESOURCE",
     LOCAL_ASSET = "LOCAL_ASSET"
 }
 
-export class RemoteIconData {
+class RemoteIconData {
     uri: string;
     type: RemoteIconType;
     asset: string;
@@ -72,4 +71,14 @@ export class RemoteIconData {
 }
 
 
-export * as MaterialIcons from "./material-icons"
+// region export
+import MaterialIcons from "./material-icons";
+
+export {
+    RemoteIconType,
+    RemoteIconData,
+    RemoteIconData as data,
+    MaterialIcons,
+    MaterialIcons as material,
+}
+// endregion export

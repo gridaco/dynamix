@@ -25,7 +25,7 @@ function fetchUserFromMockDatabase(id: string): { id, name } {
 
 routes.register(
     new routes.spec(new routes.spec<{ id }, { id, name }>({
-        name: "/users/:id",
+        key: "/users/:id",
         pattern: "/users/:id",
         dataFetcher: async (p) => {
             return fetchUserFromMockDatabase(p.id);

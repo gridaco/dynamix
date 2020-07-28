@@ -36,7 +36,7 @@ export enum RouteType {
 
 export interface IRouteSpec<P, T> {
     pattern: string
-    name: string
+    key: string
     params?: P
     type?: RouteType
 
@@ -56,7 +56,7 @@ interface DisplayFieldBuilder<I, O> {
 export class RouteSpec<P, T> implements IRouteSpec<P, T> {
 
     pattern: string
-    name: string
+    key: string
     params: P
     data: T
     type: RouteType;
@@ -98,7 +98,7 @@ export class RouteInstance<P, T> extends RouteSpec<P, T> {
             description: props.description,
             icon: props.icon,
             title: props.title,
-            name: props.name,
+            key: props.key,
             params: props.params,
             pattern: props.pattern
         });
