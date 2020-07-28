@@ -7,8 +7,12 @@ import {IRouteSpec, RouteInstance, RouteSpec} from "./spec"
 
 const specs: Array<RouteSpec<any, any>> = []
 
-function register(spec) {
-    specs.push(spec);
+function register(spec: RouteSpec<any, any> | Array<RouteSpec<any, any>>) {
+    if (Array.isArray(spec)) {
+        specs.push(...spec);
+    } else {
+        specs.push(spec);
+    }
 }
 
 function load(json) {
