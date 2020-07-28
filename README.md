@@ -109,6 +109,24 @@ console.log(rui.icons.material.note)
 ```typescript
 import {routes} from "@bridged.io/remote-ui-core"
 
+
+const MOCK_DATABASE = {
+    users: [
+        {
+            id: "1",
+            name: "softmarshmallow"
+        },
+        {
+            id: "2",
+            name: "GY"
+        },
+        {
+            id: "3",
+            name: "gin"
+        },
+    ]
+}
+
 function fetchUserFromMockDatabase(id: string): { id, name } {
     return MOCK_DATABASE.users.find((e) => e.id == id);
 }
