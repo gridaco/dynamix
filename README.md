@@ -109,23 +109,6 @@ console.log(rui.icons.material.note)
 ```typescript
 import {routes} from "@bridged.io/remote-ui-core"
 
-const MOCK_DATABASE = {
-    users: [
-        {
-            id: "1",
-            name: "softmarshmallow"
-        },
-        {
-            id: "2",
-            name: "GY"
-        },
-        {
-            id: "3",
-            name: "gin"
-        },
-    ]
-}
-
 function fetchUserFromMockDatabase(id: string): { id, name } {
     return MOCK_DATABASE.users.find((e) => e.id == id);
 }
@@ -133,14 +116,14 @@ function fetchUserFromMockDatabase(id: string): { id, name } {
 
 routes.register(
     new routes.spec(new routes.spec<{ id }, { id, name }>({
-        name: "/users/:id",
+        key: "/users/:id",
         pattern: "/users/:id",
         dataFetcher: async (p) => {
             return fetchUserFromMockDatabase(p.id);
         },
         title: {
             default: "user detail",
-            template: "user {{name}}"
+            template: "user {{ data.name }}",
         }
     }))
 )
