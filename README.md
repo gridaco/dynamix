@@ -92,7 +92,7 @@ Concepts & onthology will be documented under notion document, which will be add
 ```typescript
 import * as rui from "@bridged.io/remote-ui-core"
 
-console.log(rui.Icons.MaterialIcons.default.note)
+console.log(rui.icons.material.note)
 
 /// logs 
 /// RemoteIconData {
