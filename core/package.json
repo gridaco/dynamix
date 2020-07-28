@@ -7,7 +7,7 @@
   "license": "MIT",
   "repository": "https://github.com/softmarshmallow/remote-ui",
   "scripts": {
-    "examples": "ts-node lib/examples/icons.ts",
+    "examples": "ts-node lib/examples/routes.ts",
     "prepublish": "tsc"
   },
   "dependencies": {

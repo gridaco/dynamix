@@ -55,9 +55,9 @@ export interface IRouteSpec<P, T> {
 
     dataFetcher?: (params: P) => Promise<T>
 
-    title: IDisplayFieldBuilder<T, string>
-    description?: IDisplayFieldBuilder<T, string>
-    icon?: IDisplayFieldBuilder<T, RemoteIconData>
+    title: IDisplayFieldBuilder<P, T, string>
+    description?: IDisplayFieldBuilder<P, T, string>
+    icon?: IDisplayFieldBuilder<P, T, RemoteIconData>
 }
 
 /**
@@ -69,15 +69,20 @@ export interface IRouteSpec<P, T> {
  * @field:template a mustache based template, data I from RouteSpec is filled automatically. use valid template. if template is not valid, fallback default value will be returned
  * @field:builder a builder function which takes I as input and returns O as output
  */
-interface IDisplayFieldBuilder<I, O> {
+interface IDisplayFieldBuilder<P, I, O> {
     default: O
     key?: string
     template?: string
-    builder?: (data: I) => O
+    builder?: (data: IDisplayFieldBuilderInput<P, I>) => O
 }
 
+interface IDisplayFieldBuilderInput<P, T> {
+    data: T
+    params: P
+    key: string
+}
 
-function buildField<I, O>(data: I, field: IDisplayFieldBuilder<I, O>): O {
+function buildField<P, T, O>(data: IDisplayFieldBuilderInput<P, T>, field: IDisplayFieldBuilder<P, T, O>): O {
     if (!field) {
         return undefined
     }
@@ -100,9 +105,9 @@ export class RouteSpec<P, T> implements IRouteSpec<P, T> {
     type: RouteType;
     dataFetcher: (params: P) => Promise<T>;
 
-    title: IDisplayFieldBuilder<T, string>;
-    description?: IDisplayFieldBuilder<T, string>;
-    icon?: IDisplayFieldBuilder<T, RemoteIconData>;
+    title: IDisplayFieldBuilder<P, T, string>;
+    description?: IDisplayFieldBuilder<P, T, string>;
+    icon?: IDisplayFieldBuilder<P, T, RemoteIconData>;
 
     _compiledPattern: UrlPattern
 
@@ -157,16 +162,31 @@ export class RouteInstance<P, T> extends RouteSpec<P, T> {
 
     async buildTitle(): Promise<string> {
         const data = await this.fetchData();
-        return buildField<T, string>(data, this.title);
+        const input: IDisplayFieldBuilderInput<P, T> = {
+            data: data,
+            params: this.params,
+            key: this.title.key,
+        }
+        return buildField<P, T, string>(input, this.title);
     }
 
     async buildDescription(): Promise<string> {
         const data = await this.fetchData();
-        return buildField<T, string>(data, this.description);
+        const input: IDisplayFieldBuilderInput<P, T> = {
+            data: data,
+            params: this.params,
+            key: this.description?.key,
+        }
+        return buildField<P, T, string>(input, this.description);
     }
 
     async buildIcon(): Promise<RemoteIconData> {
         const data = await this.fetchData();
-        return buildField<T, RemoteIconData>(data, this.icon);
+        const input: IDisplayFieldBuilderInput<P, T> = {
+            data: data,
+            params: this.params,
+            key: this.icon?.key,
+        }
+        return buildField<P, T, RemoteIconData>(input, this.icon);
     }
 }
