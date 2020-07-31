@@ -1,43 +1,43 @@
-
 /*
  * Copyright (c) 2020. UZU, J (softmarshmallow) under MIT license.
  * This software is free to use.
  */
 
+import {Session, SessionManager} from "../_utils/_session";
+
 export namespace Actions {
-    export interface IAction<T> {
-        namespace: ActionNamespace; // namespace of this action
-        session: string; // session that this action will be sent through
-        type: string; // type of action
-        message: string; // developer's message
-        data: T // data of this action
+    export interface IAction<T extends IBaseActionData> {
+        // namespace of this action
+        namespace: ActionNamespace;
+        // session that this action will be sent through
+        session: Session;
+        // timeout of the session in seconds
+        timeout: number;
+        // type of action
+        type: string;
+        // developer's message
+        message: string;
+        // data of this action
+        data: T
+        // any extra meta data you want this action to hold. (general purpose)
+        extra: any
+    }
+
+    interface IBaseActionData {
+
     }
 
     export abstract class BaseAction<T extends IBaseActionData> implements IAction<T> {
         data: T;
         message: string;
         namespace: ActionNamespace;
-        session: string;
+        session: Session;
         type: string;
-
-    }
-
-    export class TableAction<T> extends BaseAction<T> {
-        dumpAction: DumpActionType
-    }
-
-    export enum DumpActionType {
-        SINGLE = "SINGLE",
-        MULTIPLE = "MULTIPLE",
-        NONE = "NONE",
-        CUSTOM = "CUSTOM"
+        extra: any;
+        timeout: number;
     }
 
     interface IRoute {
-
-    }
-
-    interface IBaseActionData {
 
     }
 
@@ -45,22 +45,23 @@ export namespace Actions {
         data: T;
         message: string;
         namespace: Actions.ActionNamespace;
-        session: string;
+        session: Session;
         type: string;
+        extra: any;
+        timeout: number;
 
         constructor(
             props: {
                 data: T,
                 message?: string,
                 namespace: Actions.ActionNamespace,
-                session?: string,
                 type?: string
             }
         ) {
             this.data = props.data;
             this.namespace = props.namespace;
             this.message = props.message;
-            this.session = props.session;
+            this.session = SessionManager.newSession();
             this.type = props.type;
         }
 

@@ -3,7 +3,7 @@ import * as bodyParser from 'body-parser'
 import {resolve} from "path"
 const app = express();
 import * as cors from 'cors';
-import * as remote from "remote-ui-core";
+import * as rui from "@bridged.io/remote-ui-core";
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
@@ -12,7 +12,7 @@ interface SearchResult{
     title: string
     description: string
     avatar: string
-    action: remote.Actions.PushRoute
+    action: rui.actions.PushRoute
 }
 
 app.get('search/', (req, res)=>{
@@ -21,8 +21,8 @@ app.get('search/', (req, res)=>{
         {
             title: "instagram",
             description: "aint it awesome?",
-            action: new remote.Actions.PopRoute(),
-            avatar: remote.Icons.MaterialIcons.note.uri
+            action: new rui.Actions.PopRoute(),
+            avatar: rui.Icons.MaterialIcons.note.uri
         }
     ];
 

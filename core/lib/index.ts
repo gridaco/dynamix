@@ -4,19 +4,21 @@
  * This software is free to use.
  */
 
-import {SearchLayouts} from "./layouts/search.layout";
 import {Actions} from "./actions";
 import {UI} from "./layouts"
 import * as Icons from "./icons"
-import * as routes from "./routes"
+import * as screens from "./screen-specs"
 
 export {
+    // deprecated
     Actions,
     Actions as actions,
+    // deprecated
     UI,
     UI as ui,
-    SearchLayouts,
     Icons,
     Icons as icons,
-    routes as routes
+    // deprecated
+    screens as routes,
+    screens as screens
 }

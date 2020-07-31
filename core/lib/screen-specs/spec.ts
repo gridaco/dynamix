@@ -1,7 +1,7 @@
 import UrlPattern from "url-pattern";
-import {RemoteIconData} from "../icons";
 import MaterialIcons from "../icons/material-icons";
 import * as Mustache from "mustache"
+import {RemoteIconData} from "../icons/icons";
 
 interface IRouteDisplay {
     title: string

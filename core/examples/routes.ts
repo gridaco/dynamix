@@ -1,4 +1,4 @@
-import {routes} from "../../index"
+import {routes} from "../lib"
 
 
 const MOCK_DATABASE = {
