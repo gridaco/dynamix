@@ -3,7 +3,7 @@
  * This software is free to use.
  */
 
-import {Session, SessionManager} from "../_utils/_session";
+import { Session, SessionManager } from "../_utils/_session";
 
 export namespace Actions {
     export interface IAction<T extends IBaseActionData> {
@@ -81,9 +81,9 @@ export namespace Actions {
     }
 
 
-// region general
+    // region general
 
-// region routes
+    // region routes
 
     interface IRouteActionData extends IBaseActionData {
         route: string
@@ -99,9 +99,9 @@ export namespace Actions {
         type = "POP_ROUTE";
     }
 
-// endregion routes
+    // endregion routes
 
-// endregion general
+    // endregion general
 
 
     export enum ActionNamespace {
