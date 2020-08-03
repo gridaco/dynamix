@@ -6,6 +6,10 @@
 import { Session, SessionManager } from "../_utils/_session";
 
 export namespace Actions {
+    export function register() {
+        // todo
+    }
+
     export interface IAction<T extends IBaseActionData> {
         // namespace of this action
         namespace: ActionNamespace;
