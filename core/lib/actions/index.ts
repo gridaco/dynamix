@@ -72,16 +72,6 @@ export namespace Actions {
         build(): string {
             return JSON.stringify(this)
         }
-
-        static pushRoute(route: string): ActionData<IRouteActionData> {
-            return new ActionData({
-                data: {
-                    route: route
-                },
-                type: "pushRoute",
-                namespace: ActionNamespace.MATERIAL,
-            });
-        }
     }
 
 
@@ -107,6 +97,16 @@ export namespace Actions {
 
     // endregion general
 
+
+    export function pushRoute(route: string): ActionData<IRouteActionData> {
+        return new ActionData({
+            data: {
+                route: route
+            },
+            type: "pushRoute",
+            namespace: ActionNamespace.MATERIAL,
+        });
+    }
 
     export enum ActionNamespace {
         GENERAL,
