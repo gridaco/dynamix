@@ -40,7 +40,7 @@ router.get("ui", (req, res)=>{
 
  const ui = new rui.Layout(
   {
-   icon: rui.Icon.MaterialIcns.note.uri,
+   icon: rui.icons.material.note.uri,
    title: new rui.Text("hello world!")
   }
  );
