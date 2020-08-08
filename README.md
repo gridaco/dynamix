@@ -40,7 +40,7 @@ router.get("ui", (req, res)=>{
 
  const ui = new rui.Layout(
   {
-   icon: rui.Icon.MaterialIcns.note.uri,
+   icon: rui.icons.material.note.uri,
    title: new rui.Text("hello world!")
   }
  );
@@ -180,6 +180,11 @@ routes.build(spec).then((d) => {
 
 
 ### Sponsors
+
+
+### References
+[dynamic_widget](https://github.com/dengyin2000/dynamic_widget)
+
 
 ### Blogs
 [starting remote ui project](https://medium.com/launchers/starting-remote-ui-project-4b1d0841afc2)
