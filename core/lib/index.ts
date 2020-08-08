@@ -4,11 +4,10 @@
  * This software is free to use.
  */
 
-import {Actions} from "./actions";
-import {UI} from "./layouts"
+import { Actions } from "./actions";
+import { UI, layouts } from "./layouts"
 import * as Icons from "./icons"
 import * as screens from "./screen-specs"
-
 export {
     // deprecated
     Actions,
@@ -18,6 +17,8 @@ export {
     UI as ui,
     Icons,
     Icons as icons,
+    //
+    layouts,
     // deprecated
     screens as routes,
     screens as screens

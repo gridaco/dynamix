@@ -3,7 +3,17 @@
  * This software is free to use.
  */
 
-import {UI} from "./layout"
+import { UI } from "./layout"
+import { Layouts as searchLayouts } from "./search.layout"
+import { Layouts as materialLayouts } from "./material.layout"
+
+const Layouts = {
+    search: searchLayouts,
+    material: materialLayouts
+}
+
 export {
-    UI
+    UI,
+    Layouts,
+    Layouts as layouts
 }

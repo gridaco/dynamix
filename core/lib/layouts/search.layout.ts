@@ -1,8 +1,12 @@
 import { UI } from "./index";
 import { icons } from "..";
 
-export namespace SearchLayouts {
-    export interface SearchItemLayoutBase extends UI.Layout {
+export namespace Layouts {
+    export class SearchItemLayoutBase extends UI.Layout {
+        constructor() {
+            super();
+        }
+
         title: UI.Text
         content?: UI.View
         avatar?: UI.Avatar | UI.Icon
@@ -10,8 +14,9 @@ export namespace SearchLayouts {
         chips?: Array<UI.Chip>
     }
 
-    export class BasicSearchItemLayout implements SearchItemLayoutBase {
+    export class BasicSearchItemLayout extends SearchItemLayoutBase {
         constructor(params: { avatar?: UI.Avatar | UI.Icon, title: UI.Text, content: UI.Text, meta?: UI.Text, chips?: Array<UI.Chip> }) {
+            super();
             this.avatar = params.avatar;
             this.title = params.title;
             this.meta = params.meta;
@@ -25,8 +30,9 @@ export namespace SearchLayouts {
         chips?: Array<UI.Chip>
     }
 
-    export class SearchHistoryItemLayout implements SearchItemLayoutBase {
+    export class SearchHistoryItemLayout extends SearchItemLayoutBase {
         constructor(params: { title: UI.Text, meta: UI.Text }) {
+            super();
             this.title = params.title;
             this.meta = params.meta;
         }
@@ -36,13 +42,3 @@ export namespace SearchLayouts {
     }
 
 }
-
-
-
-// region example
-const cardLayout: SearchLayouts.BasicSearchItemLayout = new SearchLayouts.BasicSearchItemLayout({
-    avatar: new UI.Icon(icons.material.add),
-    title: new UI.Text(""),
-    chips: [],
-    content: new UI.Text("")
-})

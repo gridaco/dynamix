@@ -7,20 +7,24 @@
 import { icons } from "..";
 
 export namespace UI {
-    export class Layout {
-
+    export class View {
+        build(): string {
+            return JSON.stringify(this, null, 2);
+        }
     }
 
-    export class View {
+    export class Layout extends View {
 
     }
 
     export class Text extends View {
-        constructor(text: string) {
+        constructor(text: string, oprions?: {}) {
             super();
             this.text = text;
+            this.options = oprions;
         }
         text: string
+        options?: {}
     }
 
     export class Icon extends View {
@@ -41,7 +45,7 @@ export namespace UI {
 
     export class Chip extends View {
         label: Text
-        leading?: View
+        avatar?: View
 
         constructor() {
             super();
