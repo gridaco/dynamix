@@ -1,4 +1,4 @@
-# flutter_remote_ui
+# flutter_remote_ui [![](https://img.shields.io/badge/pub-latest-brightgreen)](https://pub.dev/packages/flutter_remote_ui)
 
 remote ui client for flutter
 
@@ -106,7 +106,7 @@ var coverImage = (RU.Image image) => Image.network(
 
 Function onTapAction = (RU.Action action) => {
   action.handle();
-};
+}
 
 var truckItemView =
     (BuildContext context, TruckItemLayout layout) => GestureDetector(
