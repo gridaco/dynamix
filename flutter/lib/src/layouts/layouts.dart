@@ -1,6 +1,6 @@
-export 'package:flutter_remote_ui/src/layouts/Action.dart';
-export 'package:flutter_remote_ui/src/layouts/Button.dart';
-export 'package:flutter_remote_ui/src/layouts/Image.dart';
-export 'package:flutter_remote_ui/src/layouts/Layout.dart';
-export 'package:flutter_remote_ui/src/layouts/Text.dart';
-export 'package:flutter_remote_ui/src/layouts/Widget.dart';
+export 'package:flutter_remote_ui/src/layouts/action.dart';
+export 'package:flutter_remote_ui/src/layouts/button.dart';
+export 'package:flutter_remote_ui/src/layouts/image.dart';
+export 'package:flutter_remote_ui/src/layouts/layout.dart';
+export 'package:flutter_remote_ui/src/layouts/text.dart';
+export 'package:flutter_remote_ui/src/layouts/widget.dart';

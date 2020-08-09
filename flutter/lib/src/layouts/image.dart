@@ -1,4 +1,4 @@
-import 'Widget.dart';
+import 'widget.dart';
 
 class Image extends Widget
 {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_remote_ui/action/action_handler.dart';
+import 'action_handler.dart';
 
 class RouteHandler extends ActionHandler {
   RouteHandler(BuildContext context, {ActionData actionData})
