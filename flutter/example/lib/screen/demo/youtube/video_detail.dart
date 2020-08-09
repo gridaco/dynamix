@@ -58,10 +58,10 @@ class SmallVideoItem extends StatelessWidget {
               children: <Widget>[
                 Text(
                   "title holder",
-                  style: Theme.of(context).textTheme.subhead,
+                  style: Theme.of(context).textTheme.subtitle1,
                 ),
                 Text("descripton holder",
-                    style: Theme.of(context).textTheme.body2),
+                    style: Theme.of(context).textTheme.bodyText2),
               ],
             ),
           )

@@ -1,20 +1,20 @@
 import 'package:flutter_remote_ui_example/data/model/foodle.dart';
-import 'package:flutter_remote_ui/flutter_remote_ui.dart' as RU;
+import 'package:flutter_remote_ui/flutter_remote_ui.dart' as rui;
 
 var truckItem1 = TruckItemLayout(
     body: TruckItemBody(
-        title: RU.Text(null),
-        description: RU.Text(null),
-        image: RU.Image(null),
-        onTap: RU.Action(null)
+        title: rui.Text(null),
+        description: rui.Text(null),
+        image: rui.Image(null),
+        onTap: rui.Action(null)
     )
 );
 
 var truckItem2 = TruckItemLayout(
     body: TruckItemBody(
-        title: RU.Text(null),
-        description: RU.Text(null),
-        image: RU.Image(null),
-        onTap: RU.Action(null)
+        title: rui.Text(null),
+        description: rui.Text(null),
+        image: rui.Image(null),
+        onTap: rui.Action(null)
     )
 );

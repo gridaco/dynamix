@@ -127,7 +127,7 @@ class Section extends StatelessWidget {
                 ),
                 Text(
                   title,
-                  style: Theme.of(context).textTheme.subhead,
+                  style: Theme.of(context).textTheme.subtitle1,
                 ),
               ],
             ),
@@ -168,7 +168,7 @@ class TruckItem extends StatelessWidget {
               ),
               Text(
                 "Hook and Ladder",
-                style: Theme.of(context).textTheme.body2,
+                style: Theme.of(context).textTheme.bodyText2,
               ),
               Text("150m", style: Theme.of(context).textTheme.overline),
             ],
@@ -208,7 +208,7 @@ class MenuItem extends StatelessWidget {
               ),
               Text(
                 data.name,
-                style: Theme.of(context).textTheme.body2,
+                style: Theme.of(context).textTheme.bodyText2,
               ),
               Text("150m", style: Theme.of(context).textTheme.overline),
             ],
@@ -249,7 +249,7 @@ class TruckStoryItem extends StatelessWidget{
               ),
               Text(
                 data.name,
-                style: Theme.of(context).textTheme.body2,
+                style: Theme.of(context).textTheme.bodyText2,
               ),
               Text("150m", style: Theme.of(context).textTheme.overline),
             ],

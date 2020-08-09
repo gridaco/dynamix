@@ -1,5 +1,5 @@
 import 'package:flutter_remote_ui_example/data/model/foodle.dart';
-import 'package:flutter_remote_ui/flutter_remote_ui.dart' as RU;
+import 'package:flutter_remote_ui/flutter_remote_ui.dart' as rui;
 import 'package:flutter_remote_ui_example/screen/demo/foodle/models.dart';
 import 'package:flutter/material.dart';
 
@@ -11,33 +11,32 @@ var truckData = TruckData(
 
 var truckItemLayout = (TruckData data) => TruckItemLayout(
     body: TruckItemBody(
-        title: RU.Text(data.name),
-        description: RU.Text(data.shortDescription),
-        image: RU.Image(data.image),
-        onTap: RU.Action(null)));
-
+        title: rui.Text(data.name),
+        description: rui.Text(data.shortDescription),
+        image: rui.Image(data.image),
+        onTap: rui.Action(null)));
 
 // region view segments
-var titleText = (BuildContext context, RU.Text text) => Text(
-  text.content,
-  style: Theme.of(context).textTheme.body2,
-);
+var titleText = (BuildContext context, rui.Text text) => Text(
+      text.content,
+      style: Theme.of(context).textTheme.bodyText2,
+    );
 
-var descriptionText = (BuildContext context, RU.Text text) => Text(
-  text.content,
-  style: Theme.of(context).textTheme.overline,
-);
+var descriptionText = (BuildContext context, rui.Text text) => Text(
+      text.content,
+      style: Theme.of(context).textTheme.overline,
+    );
 
-var coverImage = (RU.Image image) => Image.network(
-  image.src,
-  height: 100.0,
-  width: 140.0,
-  fit: BoxFit.cover,
-);
+var coverImage = (rui.Image image) => Image.network(
+      image.src,
+      height: 100.0,
+      width: 140.0,
+      fit: BoxFit.cover,
+    );
 
-Function onTapAction = (RU.Action action) => {
-  // handle action
-};
+Function onTapAction = (rui.Action action) => {
+      // handle action
+    };
 // endregion view segments
 
 var truckItemView =
@@ -50,9 +49,8 @@ var truckItemView =
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               new ClipRRect(
-                borderRadius: new BorderRadius.circular(2.0),
-                child: coverImage(layout.body.image)
-              ),
+                  borderRadius: new BorderRadius.circular(2.0),
+                  child: coverImage(layout.body.image)),
               titleText(context, layout.body.title),
               descriptionText(context, layout.body.description),
             ],

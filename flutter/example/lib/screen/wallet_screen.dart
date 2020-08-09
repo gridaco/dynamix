@@ -85,11 +85,11 @@ class WalletItem extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Text(this.data.title, style: Theme.of(_context).textTheme.headline),
+          Text(this.data.title, style: Theme.of(_context).textTheme.headline1),
           Text(this.data.desc,
               style: Theme.of(_context)
                   .textTheme
-                  .body2
+                  .bodyText2
                   .copyWith(color: Colors.grey)),
           Spacer(),
           RaisedButton(

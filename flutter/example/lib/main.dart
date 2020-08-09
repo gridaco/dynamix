@@ -108,7 +108,7 @@ class DemoItem extends StatelessWidget {
                   this.title,
                   style: Theme.of(context)
                       .textTheme
-                      .display2
+                      .headline2
                       .copyWith(color: Colors.white),
                 ),
               )

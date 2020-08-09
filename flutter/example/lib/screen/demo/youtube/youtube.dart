@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_remote_ui/src/data/model/Action.dart' as RUAction;
 import 'package:flutter_remote_ui_example/screen/demo/youtube/video_detail.dart';
+import 'package:flutter_remote_ui/flutter_remote_ui.dart' as rui;
 
 class YoutubeDemo extends StatefulWidget {
   static const routeName = "demo/youtube";
@@ -44,18 +44,16 @@ class _YoutubeDemo extends State<YoutubeDemo> {
 }
 
 class YoutubeVideoItem extends StatelessWidget {
-  VideoItemData data;
-  BuildContext _context;
+  final VideoItemData data;
 
   YoutubeVideoItem(this.data);
 
-  _moveToDetail() {
-    Navigator.of(_context).pushNamed(VideoDetail.routeName);
+  _moveToDetail(BuildContext context) {
+    Navigator.of(context).pushNamed(VideoDetail.routeName);
   }
 
   @override
   Widget build(BuildContext context) {
-    this._context = context;
     return Card(
       child: Container(
         child: Column(
@@ -72,7 +70,9 @@ class YoutubeVideoItem extends StatelessWidget {
                   )
                 ],
               ),
-              onTap: _moveToDetail,
+              onTap: () {
+                _moveToDetail(context);
+              },
             ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -92,10 +92,10 @@ class YoutubeVideoItem extends StatelessWidget {
                       Text("title container",
                           style: Theme.of(context)
                               .textTheme
-                              .subhead
+                              .subtitle1
                               .copyWith(fontWeight: FontWeight.w800)),
                       Text("description container",
-                          style: Theme.of(context).textTheme.body2),
+                          style: Theme.of(context).textTheme.bodyText2),
                     ],
                   ),
                 ),
@@ -124,5 +124,5 @@ class VideoItemData {
   String publisherThumbnail;
   String title;
   String description;
-  List<RUAction.Action> moreAction;
+  List<rui.Action> moreAction;
 }

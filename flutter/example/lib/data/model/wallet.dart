@@ -1,6 +1,6 @@
-import 'package:flutter_remote_ui/flutter_remote_ui.dart' as RU;
+import 'package:flutter_remote_ui/flutter_remote_ui.dart' as rui;
 
-class WalletLayout extends RU.Layout<WalletBody> {
+class WalletLayout extends rui.Layout<WalletBody> {
   WalletLayout(this.body) : super(body: body);
   WalletBody body;
 }
@@ -8,9 +8,9 @@ class WalletLayout extends RU.Layout<WalletBody> {
 class WalletBody {
   WalletBody(this.title, this.desc, this.background, this.asset, this.action);
 
-  RU.Text title;
-  RU.Text desc;
-  RU.Image background;
-  RU.Image asset;
-  RU.Button action;
+  rui.Text title;
+  rui.Text desc;
+  rui.Image background;
+  rui.Image asset;
+  rui.Button action;
 }
