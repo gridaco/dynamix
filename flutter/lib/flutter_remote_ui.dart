@@ -1,3 +1,4 @@
 library flutter_remote_ui;
 
-export 'models.dart';
+export 'src/layouts/layouts.dart';
+export 'src/icons/icons.dart';

@@ -1,5 +1,4 @@
-import 'package:flutter/foundation.dart';
-import 'package:flutter_remote_ui/src/data/model/Widget.dart';
+import 'Widget.dart';
 
 class Image extends Widget
 {

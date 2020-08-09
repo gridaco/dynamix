@@ -1,5 +1,4 @@
-import 'package:flutter_remote_ui/models.dart' as RU;
-
+import 'package:flutter_remote_ui/flutter_remote_ui.dart' as RU;
 class TruckItemLayout extends RU.Layout<TruckItemBody>{
   TruckItemLayout({this.body}): super(body: body);
   TruckItemBody body;

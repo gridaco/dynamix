@@ -1,5 +1,5 @@
 import 'package:flutter_remote_ui_example/data/model/foodle.dart';
-import 'package:flutter_remote_ui/models.dart' as RU;
+import 'package:flutter_remote_ui/flutter_remote_ui.dart' as RU;
 
 var truckItem1 = TruckItemLayout(
     body: TruckItemBody(
