@@ -5,9 +5,11 @@
  */
 
 import { Actions } from "./actions";
-import { UI, layouts } from "./layouts"
+import { layouts } from "./layouts"
+import * as UI from "./components"
 import * as Icons from "./icons"
 import * as screens from "./screen-specs"
+
 export {
     // deprecated
     Actions,

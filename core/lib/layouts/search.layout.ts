@@ -1,5 +1,4 @@
-import { UI } from "./index";
-import { icons } from "..";
+import * as UI from "../components";
 
 export namespace Layouts {
     export class SearchItemLayoutBase extends UI.Layout {

@@ -3,7 +3,6 @@
  * This software is free to use.
  */
 
-import { UI } from "./layout"
 import { Layouts as searchLayouts } from "./search.layout"
 import { Layouts as materialLayouts } from "./material.layout"
 
@@ -13,7 +12,6 @@ const Layouts = {
 }
 
 export {
-    UI,
     Layouts,
     Layouts as layouts
 }
