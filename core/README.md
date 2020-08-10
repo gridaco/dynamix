@@ -3,6 +3,14 @@
 > New to remote-ui? read [this](../README.md)
 > "remote-ui is for sending client built-ui-data. yes you can customize the looks, but not a recommanded way."
 
+## Installation
+```sh
+# install with yarn
+yarn add @bridged.io/remote-ui-core
+
+# install with npm
+npm install @bridged.io/remote-ui-core
+```
 
 ## UI Importing
 ```ts
