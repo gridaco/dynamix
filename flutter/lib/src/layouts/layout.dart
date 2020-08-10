@@ -1,4 +1,3 @@
-
 import 'package:flutter/foundation.dart';
 
 abstract class Layout<Body>{

@@ -1,6 +1,6 @@
-import 'widget.dart';
+import 'package:flutter_remote_ui/flutter_remote_ui.dart';
 
-class Text extends Widget{
+class Text extends View{
   Text(this.content);
   String content;
 }

@@ -1,6 +1,6 @@
 name: flutter_remote_ui
 description: bridged's remote-ui for flutter app. bump your flutter project to enterprise level
-version: 0.0.4+1
+version: 0.0.4+3
 homepage: https://github.com/softmarshmallow/remote-ui/tree/master/flutter
 repository: https://github.com/softmarshmallow/remote-ui
 
