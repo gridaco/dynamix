@@ -18,11 +18,11 @@ npm install @bridged.io/remote-ui-core
 import * as rui from "@bridged.io/remote-ui-core";
 new rui.UI.Text("remote ui rules  😎")
 
-// method 1. namespace import
+// method 2. namespace import
 import { UI } from "@bridged.io/remote-ui-core";
 new UI.Text("remote ui rules  😎")
 
-// method 1. component import
+// method 3. component import
 import { Text } from "@bridged.io/remote-ui-core/components";
 new Text("remote ui rules 😎")
 ```
