@@ -7,5 +7,6 @@ export class Chip extends View {
 
     constructor(label: Text,) {
         super();
+        this.label = label;
     }
 }

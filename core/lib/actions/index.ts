@@ -4,6 +4,7 @@
  */
 
 import { Session, SessionManager } from "../_utils/_session";
+import { assert } from "console";
 
 export namespace Actions {
     export function register() {
@@ -58,12 +59,13 @@ export namespace Actions {
             props: {
                 data: T,
                 message?: string,
-                namespace: Actions.ActionNamespace,
+                namespace?: Actions.ActionNamespace,
                 type?: string
             }
         ) {
+            assert(this.namespace || props.namespace);
             this.data = props.data;
-            this.namespace = props.namespace;
+            this.namespace = props.namespace && props.namespace;
             this.message = props.message;
             this.session = SessionManager.newSession();
             this.type = props.type;
@@ -83,34 +85,101 @@ export namespace Actions {
         route: string
     }
 
-    export class PushRoute extends BaseAction<IRouteActionData> {
-        namespace = ActionNamespace.GENERAL;
-        type = "PUSH_ROUTE";
+    interface IDialogBody extends IBaseActionData {
+        content: string
     }
 
-    export class PopRoute extends BaseAction<IRouteActionData> {
+    interface ITextDialogBody extends IDialogBody {
+        content: string
+        title?: string
+    }
+
+    interface IWebDialogBody extends IDialogBody {
+        content: string
+    }
+
+    export class PushRoute extends ActionData<IRouteActionData> {
+        namespace = ActionNamespace.GENERAL;
+        type = "PUSH_ROUTE";
+
+        constructor(route: string) {
+            super({
+                data: {
+                    route: route
+                }
+            });
+        }
+    }
+
+    export class PopRoute extends ActionData<IRouteActionData> {
         namespace = ActionNamespace.GENERAL;
         type = "POP_ROUTE";
+
+        constructor(route: string) {
+            super({
+                data: {
+                    route: route
+                }
+            });
+        }
     }
 
     // endregion routes
 
     // endregion general
 
-
     export function pushRoute(route: string): ActionData<IRouteActionData> {
+        return new PushRoute(route);
+    }
+
+    export function popRoute(route: string): ActionData<IRouteActionData> {
+        return new PopRoute(route);
+    }
+
+    export function showShortDialog(message: string): ActionData<ITextDialogBody> {
         return new ActionData({
             data: {
-                route: route
+                content: ""
             },
-            type: "pushRoute",
+            type: "showShortDialog",
+            namespace: ActionNamespace.GENERAL,
+        });
+    }
+
+    export function showDetailedDialog(title: string, message: string): ActionData<ITextDialogBody> {
+        return new ActionData({
+            data: {
+                content: ""
+            },
+            type: "showDetailedDialog",
+            namespace: ActionNamespace.GENERAL,
+        });
+    }
+
+    export function showWebDialog(url: string): ActionData<IWebDialogBody> {
+        return new ActionData({
+            data: {
+                content: url
+            },
+            type: "showWebDialog",
+            namespace: ActionNamespace.GENERAL,
+        });
+    }
+
+    export function showSnack() {
+        return new ActionData({
+            data: {
+                content: ""
+            },
+            type: "showSnack",
             namespace: ActionNamespace.MATERIAL,
         });
     }
 
+
     export enum ActionNamespace {
-        GENERAL,
-        MATERIAL,
-        CUSTOM
+        GENERAL = "GENERAL",
+        MATERIAL = "MATERIAL",
+        CUSTOM = "CUSTOM"
     }
 }

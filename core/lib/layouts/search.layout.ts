@@ -1,4 +1,5 @@
 import * as UI from "../components";
+import { Actions } from "..";
 
 export namespace Layouts {
     export class SearchItemLayoutBase extends UI.Layout {
@@ -6,22 +7,25 @@ export namespace Layouts {
             super();
         }
 
+        onTap: Actions.IAction<any>
         title: UI.Text
-        content?: UI.View
+        content?: UI.Text
         avatar?: UI.Avatar | UI.Icon
-        meta?: UI.View
+        meta?: UI.Text
         chips?: Array<UI.Chip>
     }
 
     export class BasicSearchItemLayout extends SearchItemLayoutBase {
-        constructor(params: { avatar?: UI.Avatar | UI.Icon, title: UI.Text, content: UI.Text, meta?: UI.Text, chips?: Array<UI.Chip> }) {
+        constructor(params: { avatar?: UI.Avatar | UI.Icon, title: UI.Text, content: UI.Text, meta?: UI.Text, chips?: Array<UI.Chip>, onTap: Actions.IAction<any> }) {
             super();
             this.avatar = params.avatar;
             this.title = params.title;
             this.meta = params.meta;
             this.content = params.content;
             this.chips = params.chips;
+            this.onTap = params.onTap;
         }
+        onTap: Actions.IAction<any>
         avatar?: UI.Avatar | UI.Icon
         content: UI.Text
         meta: UI.Text

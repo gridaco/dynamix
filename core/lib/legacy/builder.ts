@@ -1,4 +1,4 @@
-import {AppActions, AppPageUrls} from "./resources";
+import { AppActions, AppPageUrls } from "./resources";
 
 export class RULayout<BodyType> {
     public version: string;
@@ -61,7 +61,7 @@ export enum ButtonState {
 export class RUActionString {
     public static pushNativePage(page: AppPageUrls): string {
         return JSON.stringify({
-            action : {
+            action: {
                 name: AppActions.PushNativePage,
                 page,
                 data: {}
@@ -71,7 +71,7 @@ export class RUActionString {
 
     public static pushPage(url: string): string {
         return JSON.stringify({
-            action : {
+            action: {
                 name: AppActions.PushPage,
                 url,
             }
