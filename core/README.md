@@ -31,7 +31,7 @@ new Text("remote ui rules 😎")
 
 ## Usage: Building Layout / Component
 ```ts
-import { icons, UI, layouts, Actions } from "../lib";
+import { icons, UI, layouts, Actions } from "@bridged.io/remote-ui-core";
 
 const cardLayout = new layouts.search.BasicSearchItemLayout({
     avatar: new UI.Icon(icons.material.add),
