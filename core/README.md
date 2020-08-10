@@ -1,4 +1,4 @@
-# remote ui server core implementation (node)
+# remote ui core [![](https://img.shields.io/badge/npm-latest-brightgreen)](https://www.npmjs.com/package/@bridged.io/remote-ui-core)
 
 
 ## UI Importing
