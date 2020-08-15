@@ -3,6 +3,14 @@
 > New to remote-ui? read [this](../README.md)
 > "remote-ui is for sending client built-ui-data. yes you can customize the looks, but not a recommanded way."
 
+## Installation
+```sh
+# install with yarn
+yarn add @bridged.io/remote-ui-core
+
+# install with npm
+npm install @bridged.io/remote-ui-core
+```
 
 ## UI Importing
 ```ts
@@ -10,11 +18,11 @@
 import * as rui from "@bridged.io/remote-ui-core";
 new rui.UI.Text("remote ui rules  😎")
 
-// method 1. namespace import
+// method 2. namespace import
 import { UI } from "@bridged.io/remote-ui-core";
 new UI.Text("remote ui rules  😎")
 
-// method 1. component import
+// method 3. component import
 import { Text } from "@bridged.io/remote-ui-core/components";
 new Text("remote ui rules 😎")
 ```
@@ -23,7 +31,7 @@ new Text("remote ui rules 😎")
 
 ## Usage: Building Layout / Component
 ```ts
-import { icons, UI, layouts, Actions } from "../lib";
+import { icons, UI, layouts, Actions } from "@bridged.io/remote-ui-core";
 
 const cardLayout = new layouts.search.BasicSearchItemLayout({
     avatar: new UI.Icon(icons.material.add),
