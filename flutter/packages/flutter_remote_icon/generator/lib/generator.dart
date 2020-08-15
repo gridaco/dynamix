@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:build/build.dart';
+// ignore: implementation_imports
 import 'package:flutter_remote_icon/src/annotations/icon_mapper.dart';
 import 'package:source_gen/source_gen.dart';
 import 'package:analyzer/dart/element/element.dart';
