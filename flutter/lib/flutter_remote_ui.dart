@@ -5,3 +5,4 @@ export 'src/icons/icons.dart';
 export 'src/images/images.dart';
 export 'src/layouts/layouts.dart';
 export 'src/action/action.dart';
+export 'src/prebuilt/prebuilt.dart';
