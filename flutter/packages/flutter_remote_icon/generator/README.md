@@ -1,0 +1,1 @@
+## Icon mapping generator
