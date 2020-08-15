@@ -7,7 +7,7 @@ targets:
 builders:
   icon_mapper:
     target: ":icon_mapper_generator"
-    import: "package:flutter_remote_icon/src/builder/builder.dart"
+    import: "package:flutter_remote_icon_generator/builder/builder.dart"
     builder_factories: ["iconMapper"]
     build_extensions: {".dart": [".icon_mapper.g.part"]}
     auto_apply: dependents

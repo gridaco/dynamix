@@ -2,6 +2,13 @@
 
 flutter_remote_icon example app
 
+## READ THIS !
+```shell script
+flutter pub get
+flutter pub run build_runner build # generates icons mapping file
+```
+
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.

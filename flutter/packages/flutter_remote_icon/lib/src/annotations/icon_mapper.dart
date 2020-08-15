@@ -1,5 +1,9 @@
 class IconMapper {
   final String namespace;
 
-  IconMapper(this.namespace) : assert(namespace != null);
+  const IconMapper(this.namespace)
+      :
+
+        /// todo namespace validator required
+        assert(namespace != null);
 }
