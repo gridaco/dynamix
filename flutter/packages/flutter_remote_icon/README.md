@@ -46,4 +46,4 @@ class AwesomeIcons{
 }
 ```
 
-> for using font as a icon please read ()[https://medium.com/flutterpub/how-to-use-custom-icons-in-flutter-834a079d977]
+> for using font as a icon please read [this blog](https://medium.com/flutterpub/how-to-use-custom-icons-in-flutter-834a079d977)
