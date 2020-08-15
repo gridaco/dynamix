@@ -1,0 +1,15 @@
+targets:
+  $default:
+    builders:
+      icon_mapper_generator|icon_mapper:
+        enabled: true
+
+builders:
+  icon_mapper:
+    target: ":icon_mapper_generator"
+    import: "package:flutter_remote_icon/src/builder/builder.dart"
+    builder_factories: ["iconMapper"]
+    build_extensions: {".dart": [".icon_mapper.g.part"]}
+    auto_apply: dependents
+    build_to: cache
+    applies_builders: ["source_gen|combining_builder"]
