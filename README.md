@@ -80,8 +80,8 @@ Concepts & onthology will be documented under notion document, which will be add
 
 **App**
 
-* [flutter-remote-ui](https://github.com/softmarshmallow/remote-ui/tree/master/flutter-remote-ui)
-  * examples: [flutter remote ui example](https://github.com/softmarshmallow/remote-ui/tree/master/flutter-remote-ui/example)
+* [flutter-remote-ui](https://github.com/softmarshmallow/remote-ui/tree/master/flutter)
+  * examples: [flutter remote ui example](https://github.com/softmarshmallow/remote-ui/tree/master/flutter/example)
 * android
 * ios
 
