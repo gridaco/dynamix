@@ -22,3 +22,22 @@ Widget buildRemoteIcon(){
 2.  "http://~"
 3.  "https://~"
 4.  "material://icons.name"
+
+
+
+## register custom font icon schema
+
+
+## generate icons mapping for your own font IconData
+
+```dart
+// your font based IconData class
+class AwesomeIcons{
+  // ...
+  IconData add_awesome;
+  IconData person_awesome;
+  // ...
+}
+```
+
+> for using font as a icon please read ()[https://medium.com/flutterpub/how-to-use-custom-icons-in-flutter-834a079d977]

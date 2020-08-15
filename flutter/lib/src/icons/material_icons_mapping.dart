@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-const Map<String, IconData> ICONS_MAPPING = {
+const Map<String, IconData> MATERIAL_ICONS_MAPPING = {
   "threesixty": Icons.threesixty,
   "threed_rotation": Icons.threed_rotation,
   "four_k": Icons.four_k,
