@@ -2,7 +2,7 @@ name: flutter_remote_icon
 description: remote icon loader for flutter
 version: 0.0.1
 author: softmarshmallow <woojoo@softmarshmallow.com>
-homepage:
+homepage: https://github.com/softmarshmallow/remote-ui/tree/master/flutter/packages/flutter_remote_icon
 
 environment:
   sdk: ">=2.7.0 <3.0.0"

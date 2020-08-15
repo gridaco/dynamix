@@ -1,6 +1,6 @@
-# flutter-remote-icon [![](https://img.shields.io/badge/pub-latest-brightgreen)](https://pub.dev/packages/flutter_remote_ui)
+# flutter-remote-icon [![](https://img.shields.io/badge/pub-latest-brightgreen)](https://pub.dev/packages/flutter_remote_icon)
 
-> general remote icon loader for flutter. (this is part of bridged's remote-ui project)
+> general remote icon loader for flutter. (this is part of bridged's [remote-ui](https://github.com/softmarshmallow/remote-ui) project)
 
 ## Installation
 ```yaml
