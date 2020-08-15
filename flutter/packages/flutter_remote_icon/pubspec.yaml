@@ -1,38 +1,31 @@
-name: flutter_remote_ui
-description: bridged's remote-ui for flutter app. bump your flutter project to enterprise level
-version: 0.0.4+4
-homepage: https://github.com/softmarshmallow/remote-ui/tree/master/flutter
-repository: https://github.com/softmarshmallow/remote-ui
+name: flutter_remote_icon
+description: remote icon loader for flutter
+version: 0.0.1
+author: softmarshmallow <woojoo@softmarshmallow.com>
+homepage:
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">=2.7.0 <3.0.0"
+  flutter: ">=1.17.0 <2.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
 
-  # https://github.com/dnfield/flutter_svg
-  flutter_svg: ^0.18.0
-
-  flutter_remote_icon:
-    path: ./packages/flutter_remote_icon
-
-  # https://github.com/grpc/grpc-dart
-  grpc: ^2.2.0
-
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  # https://github.com/dart-lang/build
-  build_runner: ^1.10.2
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter.
 flutter:
 
   # To add assets to your package, add an assets section, like this:
-  assets:
-    - assets/specs/flutter_material_icon_specs.json
+  # assets:
+  #   - images/a_dot_burr.jpeg
+  #   - images/a_dot_ham.jpeg
   #
   # For details regarding assets in packages, see
   # https://flutter.dev/assets-and-images/#from-packages

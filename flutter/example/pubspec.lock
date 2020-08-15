@@ -104,6 +104,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.0.1+1"
+  flutter_remote_icon:
+    dependency: transitive
+    description:
+      path: "../packages/flutter_remote_icon"
+      relative: true
+    source: path
+    version: "0.0.1"
   flutter_remote_ui:
     dependency: "direct main"
     description:

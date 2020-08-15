@@ -1,5 +1,4 @@
 import 'package:flutter/widgets.dart';
-
 import 'material_icons_mapping.dart';
 
 /// RemoteIconType

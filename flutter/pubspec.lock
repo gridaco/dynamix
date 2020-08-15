@@ -188,6 +188,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_remote_icon:
+    dependency: "direct main"
+    description:
+      path: "packages/flutter_remote_icon"
+      relative: true
+    source: path
+    version: "0.0.1"
   flutter_svg:
     dependency: "direct main"
     description:
