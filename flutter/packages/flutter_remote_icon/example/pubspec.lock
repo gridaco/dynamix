@@ -201,14 +201,14 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "0.0.1"
+    version: "0.0.2"
   flutter_remote_icon_generator:
     dependency: "direct dev"
     description:
       path: "../generator"
       relative: true
     source: path
-    version: "0.0.1+1"
+    version: "0.0.1+2"
   flutter_test:
     dependency: "direct dev"
     description: flutter

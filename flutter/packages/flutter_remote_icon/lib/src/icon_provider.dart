@@ -14,12 +14,16 @@ class IconProvider {
   }
 
   /// fetches the icons mapping by namespace
-  static Map<String, IconData> _fetchMappingByNamespace(String namespace) {
+  static Map<String, IconData> fetchMappingByNamespace(String namespace) {
     try {
       return _registry[namespace];
     } catch (e) {
       throw FlutterError(
           "namespace not registered error: remote icon failed to find any icon mapping with the provided namespace '$namespace'");
     }
+  }
+
+  static bool hasNamespace(String namespace){
+    return _registry.containsKey(namespace);
   }
 }

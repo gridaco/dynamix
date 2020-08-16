@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_remote_icon/flutter_remote_icon.dart';
 import 'package:flutter_remote_icon_example/custom_icons.dart';
+
 void main() {
-  IconProvider.register("custom", {
-    "custom://CustomIcons.first_icon": CustomIcons.first_icon
-  });
+  IconProvider.register("custom", CustomIcons.mapping);
   runApp(ExampleApp());
 }
-
 
 class ExampleApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -45,6 +43,15 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Widget buildBody() {
-    return Container();
+    return Column(
+      children: [customIcon()],
+    );
+  }
+
+  Widget customIcon() {
+    final uri = "custom://CustomIcons.add";
+    return Column(
+      children: [Text(uri), RemoteIcon(RemoteIconData.fromUri(uri))],
+    );
   }
 }

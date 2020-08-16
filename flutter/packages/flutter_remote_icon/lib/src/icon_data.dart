@@ -1,4 +1,5 @@
 import 'package:flutter/widgets.dart';
+import 'package:flutter_remote_icon/flutter_remote_icon.dart';
 import 'material_icons_mapping.dart';
 
 /// RemoteIconType
@@ -34,7 +35,13 @@ class RemoteIconData {
     }
 
     /// get [IconData] via mapped string set.
-    return MATERIAL_ICONS_MAPPING[iconNameFromUri];
+    if (type == RemoteIconType.MATERIAL_NATIVE) {
+      return MATERIAL_ICONS_MAPPING[iconNameFromUri];
+    } else if (type == RemoteIconType.CUSTOM_FONT) {
+      return IconProvider.fetchMappingByNamespace(namespaceFromUri(uri))[uri];
+    }
+
+    throw FlutterError("no valid icon data found for provided uri : $uri");
   }
 
   String get iconNameFromUri {
@@ -62,15 +69,20 @@ class RemoteIconData {
   }
 
   factory RemoteIconData.fromUri(String uri) {
+    if (!isValidUri(uri)) {
+      throw FlutterError("$uri is not a valid icon uri format");
+    }
+    final namespace = namespaceFromUri(uri);
     // parse type from uri
-
-    var type;
-    if (uri.contains("asset://")) {
+    var type = RemoteIconType.AUTOMATIC;
+    if (namespace == "asset") {
       type = RemoteIconType.LOCAL_ASSET;
-    } else if (uri.contains("http://") || uri.contains("https://")) {
+    } else if (namespace == "http" || namespace == "https") {
       type = RemoteIconType.REMOTE_RESOURCE;
-    } else if (uri.contains("material://")) {
+    } else if (namespace == "material") {
       type = RemoteIconType.MATERIAL_NATIVE;
+    } else if (IconProvider.hasNamespace(namespace)) {
+      type = RemoteIconType.CUSTOM_FONT;
     }
     return RemoteIconData(uri: uri, type: type);
   }
@@ -109,3 +121,14 @@ const SUPPORTED_RESOURCE_FORMATS = [
   "jpg",
   "jpeg"
 ]; // todo use for validation
+
+bool isValidUri(String uri) {
+  if (uri != null && uri.isNotEmpty) {
+    return uri.contains("://");
+  }
+  return false;
+}
+
+String namespaceFromUri(String uri) {
+  return uri.split("://")[0];
+}
