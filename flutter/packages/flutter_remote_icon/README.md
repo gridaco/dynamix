@@ -16,7 +16,7 @@ dependencies:
 ```dart
 Widget buildRemoteIcon(){
   // var remoteIconData = new RemoteIconData(Icons.add); // -> flutter native material icons
-// var remoteIconData = new RemoteIconData("material://Icons.add"); // -> native material icons remotely (dynamically)  
+  // var remoteIconData = new RemoteIconData("material://Icons.add"); // -> native material icons remotely (dynamically)  
   // var remoteIconData = new RemoteIconData("https://example.com/svg.svg");  // -> loading remote svg
   // var remoteIconData = new RemoteIconData("assets/icons/add.png"); // -> loading local assets 
   // var remoteIconData = new RemoteIconData("custom-namespace://CustomIcons.icon_name"); // -> (requires pre-usage definition)
@@ -44,7 +44,7 @@ void main() {
 }
 ```
 
-## generate icons mapping for your own font IconData
+## generate icons mapping for your own custom font IconData
 
 in your `custom_icons.dart`
 ```dart
@@ -52,11 +52,15 @@ in your `custom_icons.dart`
 part 'custom_icons.g.dart';
 
 @IconMapper("namespace")
-class AwesomeIcons{
+class CustomIcons{
   // ...
-  IconData add_awesome;
-  IconData person_awesome;
+  static const IconData add_awesome; // ~
+  static const IconData person_awesome; // ~
   // ...
+
+  Map<String, IconData> get mapping{
+    return _CUSTOM_ICONS_MAPPING;
+  }
 }
 ```
 
@@ -64,8 +68,30 @@ and run `flutter pub build_runner build`
 
 will generate `custom_icons.g.dart`
 ```dart
+    part of 'custom_icons.dart';
 
+    static const _CUSTOM_ICONS_MAPPING = {
+      "namespace://CustomIcons.add_awesome": CustomIcons.add_awesome,
+      "namespace://CustomIcons.person_awesome": CustomIcons.person_awesome,
+    };
+  
+    IconData _$CustomIconsFromUri(String uri){
+      return _CUSTOM_ICONS_MAPPING[uri];
+    }
+```
 
+next, you can register the namespace and mappings easily
+```dart
+void main() {
+  // register mapping
+  IconProvider.register("namespace", CustomIcons.mapping);
+  runApp(ExampleApp());
+}
+
+// and use it!
+Widget buildDynamicIcon(){
+  RemoteIcon(icon: RemoteIconData("namespace://CustomIcons.person_awesome"));
+}
 ```
 
 > for using font as a icon please read [this blog](https://medium.com/flutterpub/how-to-use-custom-icons-in-flutter-834a079d977)
