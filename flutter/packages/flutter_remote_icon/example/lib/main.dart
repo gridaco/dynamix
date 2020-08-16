@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_remote_icon/flutter_remote_icon.dart';
+import 'package:flutter_remote_icon_example/custom_icons.dart';
 void main() {
+  IconProvider.register("custom", {
+    "custom://CustomIcons.first_icon": CustomIcons.first_icon
+  });
   runApp(ExampleApp());
 }
 

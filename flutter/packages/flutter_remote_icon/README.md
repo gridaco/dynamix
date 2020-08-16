@@ -30,6 +30,7 @@ Widget buildRemoteIcon(){
 ```
 
 **supported icons**
+0.  `Icons.add` (non dynamic usage)
 1.  "local://assets/image.png"
 2.  "http://example.com/image.png"
 3.  "https://example.com/image.png"
@@ -72,16 +73,16 @@ and run `flutter pub build_runner build`
 
 will generate `custom_icons.g.dart`
 ```dart
-    part of 'custom_icons.dart';
+part of 'custom_icons.dart';
 
-    static const _CUSTOM_ICONS_MAPPING = {
-      "namespace://CustomIcons.add_awesome": CustomIcons.add_awesome,
-      "namespace://CustomIcons.person_awesome": CustomIcons.person_awesome,
-    };
-  
-    IconData _$CustomIconsFromUri(String uri){
-      return _CUSTOM_ICONS_MAPPING[uri];
-    }
+static const _CUSTOM_ICONS_MAPPING = {
+  "namespace://CustomIcons.add_awesome": CustomIcons.add_awesome,
+  "namespace://CustomIcons.person_awesome": CustomIcons.person_awesome,
+};
+
+IconData _$CustomIconsFromUri(String uri){
+  return _CUSTOM_ICONS_MAPPING[uri];
+}
 ```
 
 next, you can register the namespace and mappings easily
@@ -94,7 +95,7 @@ void main() {
 
 // and use it!
 Widget buildDynamicIcon(){
-  RemoteIcon(icon: RemoteIconData("namespace://CustomIcons.person_awesome"));
+  return RemoteIcon(icon: RemoteIconData("namespace://CustomIcons.person_awesome"));
 }
 ```
 

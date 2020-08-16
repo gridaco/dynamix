@@ -3,7 +3,7 @@ import 'package:flutter_remote_icon/flutter_remote_icon.dart';
 
 part 'custom_icons.g.dart';
 
-@IconMapper("custom-ns")
+@IconMapper("custom")
 class CustomIcons{
-  IconData first_icon;
+  static const IconData first_icon = null;
 }
