@@ -1,4 +1,6 @@
 import 'package:flutter/widgets.dart';
+import 'package:flutter_remote_icon/flutter_remote_icon.dart';
+import 'package:flutter_remote_icon/src/icon_data.dart';
 
 class IconProvider {
   static Map<String, Map<String, IconData>> _registry = {};
@@ -23,7 +25,21 @@ class IconProvider {
     }
   }
 
-  static bool hasNamespace(String namespace){
+  static bool hasNamespace(String namespace) {
     return _registry.containsKey(namespace);
+  }
+
+  static IconData fetchIcon(String uri) {
+    final namespace = namespaceFromUri(uri);
+    return _registry[namespace][uri];
+  }
+
+  static validate(String uri) {
+    try {
+      RemoteIcon(RemoteIconData.fromUri(uri));
+      return true;
+    } catch (e) {
+      return false;
+    }
   }
 }

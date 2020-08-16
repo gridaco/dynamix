@@ -12,6 +12,7 @@ class ExampleApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Remote Icon',
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -42,16 +43,94 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  Widget buildBody() {
+  String dynamicUri = "material://Icons.title";
+  String error;
+
+  Widget dynamicIconsLoader() {
     return Column(
-      children: [customIcon()],
+      children: [
+        TextField(
+          onSubmitted: (s) {
+            if (IconProvider.validate(s)) {
+              setState(() {
+                dynamicUri = s;
+                error = null;
+              });
+            } else {
+              print("invalid uri");
+              setState(() {
+                error = "invalid uri";
+              });
+            }
+          },
+        ),
+        SizedBox(
+          width: 56,
+          height: 56,
+          child: RemoteIcon(
+            RemoteIconData.fromUri(dynamicUri),
+            size: 56,
+          ),
+        ),
+        if (error != null)
+          Text(
+            error,
+            style: Theme.of(context)
+                .textTheme
+                .caption
+                .copyWith(color: Theme.of(context).errorColor),
+          )
+      ],
     );
   }
 
-  Widget customIcon() {
-    final uri = "custom://CustomIcons.add";
+  final List<String> demoUri = [
+    "custom://CustomIcons.add",
+    "material://Icons.person",
+    "material://Icons.pause",
+    "material://Icons.star",
+  ];
+
+  Widget buildBody() {
     return Column(
-      children: [Text(uri), RemoteIcon(RemoteIconData.fromUri(uri))],
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [dynamicIconsLoader(), dynamicDemo()],
+    );
+  }
+
+  Widget dynamicDemo() {
+    return ListView.builder(
+      itemBuilder: (c, i) {
+        var uri = demoUri[i];
+        return Container(
+          padding: EdgeInsets.all(12),
+          child: customIcon(uri),
+        );
+      },
+      itemCount: demoUri.length,
+      shrinkWrap: true,
+      physics: NeverScrollableScrollPhysics(),
+    );
+  }
+
+  Widget customIcon(String uri) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          '''RemoteIcon(
+        RemoteIconData.fromUri("$uri")
+)''',
+          style: Theme.of(context)
+              .textTheme
+              .caption
+              .copyWith(color: Theme.of(context).primaryColor),
+        ),
+        SizedBox(
+          height: 8,
+        ),
+        RemoteIcon(RemoteIconData.fromUri(uri))
+      ],
     );
   }
 }

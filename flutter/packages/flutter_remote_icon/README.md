@@ -2,6 +2,9 @@
 
 > general remote icon loader for flutter. (this is part of bridged's [remote-ui](https://github.com/softmarshmallow/remote-ui) project)
 
+![](./doc/remote-icon-demo.gif)
+
+
 ## Installation
 ```yaml
 dependencies:
@@ -12,11 +15,14 @@ dev_dependencies:
   build_runner: latest
 ```
 
+## Usage
+**supported usage**
 * loading native icons (IconData)
 * loading remote icon (svg, png) into `Icon()`
 * loading packaged (local) asset as Icon
 * loading packaged (local) font as Icon
 
+**example**
 ```dart
 Widget buildRemoteIcon(){
   // var remoteIconData = new RemoteIconData(Icons.add); // -> flutter native material icons
