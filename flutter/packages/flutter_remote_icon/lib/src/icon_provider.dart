@@ -14,7 +14,7 @@ class IconProvider {
   }
 
   /// fetches the icons mapping by namespace
-  static _fetchMappingByNamespace(String namespace) {
+  static Map<String, IconData> _fetchMappingByNamespace(String namespace) {
     try {
       return _registry[namespace];
     } catch (e) {

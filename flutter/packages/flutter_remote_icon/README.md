@@ -64,8 +64,10 @@ class CustomIcons{
   // ...
 
   Map<String, IconData> get mapping{
-    return _CUSTOM_ICONS_MAPPING;
+    return _CustomIconsMapping;
   }
+
+  static IconData fromUri(String uri) => _$CustomIconsFromUri(uri);
 }
 ```
 
@@ -75,13 +77,13 @@ will generate `custom_icons.g.dart`
 ```dart
 part of 'custom_icons.dart';
 
-static const _CUSTOM_ICONS_MAPPING = {
+const _CustomIconsMapping = {
   "namespace://CustomIcons.add_awesome": CustomIcons.add_awesome,
   "namespace://CustomIcons.person_awesome": CustomIcons.person_awesome,
 };
 
 IconData _$CustomIconsFromUri(String uri){
-  return _CUSTOM_ICONS_MAPPING[uri];
+  return _CustomIconsMapping;[uri];
 }
 ```
 
