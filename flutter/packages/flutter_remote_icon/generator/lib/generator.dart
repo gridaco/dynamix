@@ -23,8 +23,6 @@ class IconMapperGenerator extends GeneratorForAnnotation<IconMapper> {
     final classElement = element as ClassElement;
     final helper = _GeneratorHelper(this, classElement, annotation, namespace);
     return helper._generate();
-
-    return "// Hey! Annotation found!";
   }
 }
 
@@ -41,9 +39,10 @@ class _GeneratorHelper {
     final StringBuffer codeBuffer = StringBuffer();
     final String className = element.name;
 
-    /// fields should be `static const`
+    /// fields should be `static const` and type of `IconData`
     final elementInstanceFields = Map.fromEntries(element.fields
-        .where((e) => e.isStatic && e.isConst)
+        .where(
+            (e) => e.isStatic && e.isConst && e.type.toString() == "IconData")
         .map((e) => MapEntry(e.name, e)));
 
     /// convert to
