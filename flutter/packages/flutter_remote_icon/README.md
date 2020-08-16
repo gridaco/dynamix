@@ -15,35 +15,57 @@ dependencies:
 
 ```dart
 Widget buildRemoteIcon(){
-  // var remoteIconData = new RemoteIconData(Icons.add); // -> native material icons  
+  // var remoteIconData = new RemoteIconData(Icons.add); // -> flutter native material icons
+// var remoteIconData = new RemoteIconData("material://Icons.add"); // -> native material icons remotely (dynamically)  
   // var remoteIconData = new RemoteIconData("https://example.com/svg.svg");  // -> loading remote svg
-  // var remoteIconData = new RemoteIconData("assets/icons/add.png"); // ->
-  // var remoteIconData = new RemoteIconData(""); // -> (requires pre-usage definition)
+  // var remoteIconData = new RemoteIconData("assets/icons/add.png"); // -> loading local assets 
+  // var remoteIconData = new RemoteIconData("custom-namespace://CustomIcons.icon_name"); // -> (requires pre-usage definition)
   var remoteIconData = new RemoteIconData();
   return RemoteIcon(icon: remoteIconData, color: Colors.black);
 }
 ```
 
-1. "local://assets/~"
-2.  "http://~"
-3.  "https://~"
+**supported icons**
+1.  "local://assets/image.png"
+2.  "http://example.com/image.png"
+3.  "https://example.com/image.png"
 4.  "material://icons.name"
+5.  "custom-namespace://CustomIcons.icon_name"
 
 
 
 ## register custom font icon schema
-
+```dart
+void main() {
+  IconProvider.register("namespace", {
+    "namespace://CustomIcons.icon_name": CustomIcons.icon_name
+  });
+  runApp(ExampleApp());
+}
+```
 
 ## generate icons mapping for your own font IconData
 
+in your `custom_icons.dart`
 ```dart
 // your font based IconData class
+part 'custom_icons.g.dart';
+
+@IconMapper("namespace")
 class AwesomeIcons{
   // ...
   IconData add_awesome;
   IconData person_awesome;
   // ...
 }
+```
+
+and run `flutter pub build_runner build`
+
+will generate `custom_icons.g.dart`
+```dart
+
+
 ```
 
 > for using font as a icon please read [this blog](https://medium.com/flutterpub/how-to-use-custom-icons-in-flutter-834a079d977)
