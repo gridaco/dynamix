@@ -37,7 +37,10 @@ class RemoteIcon extends StatelessWidget {
             width: iconTheme.size, height: iconTheme.size);
         break;
       case RemoteIconType.CUSTOM_FONT:
-        return Icon(icon.icon);
+        return Icon(
+          icon.icon,
+          size: size,
+        );
         break;
       case RemoteIconType.CUPERTINO_NATIVE:
         // TODO: Handle this case.

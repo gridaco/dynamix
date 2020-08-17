@@ -46,31 +46,23 @@ class _MyHomePageState extends State<MyHomePage> {
   String dynamicUri = "material://Icons.title";
   String error;
 
+  final double size = 112.0;
+
   Widget dynamicIconsLoader() {
     return Column(
       children: [
-        TextField(
-          onSubmitted: (s) {
-            if (IconProvider.validate(s)) {
-              setState(() {
-                dynamicUri = s;
-                error = null;
-              });
-            } else {
-              print("invalid uri");
-              setState(() {
-                error = "invalid uri";
-              });
-            }
-          },
-        ),
-        SizedBox(
-          width: 56,
-          height: 56,
+        Container(
+          width: size,
+          height: size,
           child: RemoteIcon(
             RemoteIconData.fromUri(dynamicUri),
-            size: 56,
+            size: size,
           ),
+          margin: EdgeInsets.all(24),
+        ),
+        Container(
+          child: buildInput(),
+          padding: EdgeInsets.all(24),
         ),
         if (error != null)
           Text(
@@ -81,6 +73,28 @@ class _MyHomePageState extends State<MyHomePage> {
                 .copyWith(color: Theme.of(context).errorColor),
           )
       ],
+    );
+  }
+
+  Widget buildInput() {
+    return TextField(
+      textAlign: TextAlign.center,
+      style: Theme.of(context).textTheme.headline5,
+      decoration: InputDecoration(
+          border: InputBorder.none, hintText: "enter icon name"),
+      onSubmitted: (s) {
+        if (IconProvider.validate(s)) {
+          setState(() {
+            dynamicUri = s;
+            error = null;
+          });
+        } else {
+          print("invalid uri");
+          setState(() {
+            error = "invalid uri";
+          });
+        }
+      },
     );
   }
 
