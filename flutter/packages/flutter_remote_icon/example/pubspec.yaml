@@ -21,7 +21,7 @@ dev_dependencies:
     sdk: flutter
 
   flutter_remote_icon_generator:
-    path: ../generator
+    path: ../../flutter_remote_icon_generator
 
   build_runner: ^1.10.2
 

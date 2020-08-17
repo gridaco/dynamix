@@ -170,10 +170,10 @@ packages:
   flutter_remote_icon:
     dependency: "direct main"
     description:
-      path: ".."
+      path: "../flutter_remote_icon"
       relative: true
     source: path
-    version: "0.0.1"
+    version: "0.0.2"
   glob:
     dependency: transitive
     description:
