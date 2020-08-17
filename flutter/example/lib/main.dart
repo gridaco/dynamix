@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_remote_ui_example/screen/demo/foodle/foodle.dart';
+import 'package:flutter_remote_ui_example/screen/demo/search_example/search_screen.dart';
 import 'package:flutter_remote_ui_example/screen/demo/stile/stile_demo.dart';
+import 'package:flutter_remote_ui_example/screen/demo/timeline/timeline_demo_screen.dart';
 import 'package:flutter_remote_ui_example/screen/wallet_screen.dart';
 import 'package:flutter_remote_ui_example/screen/demo/youtube/youtube.dart';
 import 'package:flutter_remote_ui_example/utils/routes.dart';
@@ -18,20 +20,42 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: MyHomePage.routeName,
+      initialRoute: DemoHomePage.routeName,
       routes: buildRoute(context),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
+const List<DemoData> demos = [
+  const DemoData(title: "remote icons", route: IconsDemoScreen.routeName),
+  const DemoData(
+      title: "Foodle",
+      route: Foodle.routeName,
+      cover:
+          'https://blog.luz.vc/wp-content/uploads/2019/01/food-truck-ou-food-container-2-696x356.jpg'),
+  const DemoData(
+      title: "Wallet",
+      route: WalletDemo.routeName,
+      cover:
+          "https://www.loveworldplus.tv/wp-content/uploads/2019/04/bank.jpg"),
+  const DemoData(
+      title: "Youtube",
+      route: YoutubeDemo.routeName,
+      cover:
+          "https://marketingland.com/wp-content/ml-loads/2017/08/youtube-logo-1920-800x450.jpg"),
+  const DemoData(title: "Stile", route: StileDemo.routeName),
+  const DemoData(title: "Timeline", route: TimelineDemoScreen.routeName),
+  const DemoData(title: "Search results", route: SearchScreen.routeName),
+];
+
+class DemoHomePage extends StatefulWidget {
   static const routeName = "/home";
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _DemoHomePageState createState() => _DemoHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _DemoHomePageState extends State<DemoHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,80 +64,77 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         body: SingleChildScrollView(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              DemoItem(
-                title: "remote icons",
-                route: IconsDemoScreen.routeName,
-                cover: null,
-              ),
-              DemoItem(
-                title: "Foodle",
-                route: Foodle.routeName,
-                cover:
-                    'https://blog.luz.vc/wp-content/uploads/2019/01/food-truck-ou-food-container-2-696x356.jpg',
-              ),
-              DemoItem(
-                title: "Wallet",
-                route: WalletDemo.routeName,
-                cover:
-                    "https://www.loveworldplus.tv/wp-content/uploads/2019/04/bank.jpg",
-              ),
-              DemoItem(
-                  title: "Youtube",
-                  route: YoutubeDemo.routeName,
-                  cover:
-                      "https://marketingland.com/wp-content/ml-loads/2017/08/youtube-logo-1920-800x450.jpg"),
-              DemoItem(title: "Stile", route: StileDemo.routeName, cover: null)
-            ],
+            children: [demoListBuilder()],
           ),
         ));
   }
+
+  Widget demoListBuilder() {
+    return ListView.builder(
+      itemBuilder: (c, i) {
+        var demo = demos[i];
+        return DemoRow(
+          title: Text(demo.title),
+          cover: demo.cover != null
+              ? Image.network(
+                  demo.cover,
+                  width: double.maxFinite,
+                  fit: BoxFit.fitWidth,
+                )
+              : null,
+          onTap: () {
+            Navigator.of(context).pushNamed(demo.route);
+          },
+        );
+      },
+      itemCount: demos.length,
+      shrinkWrap: true,
+      physics: NeverScrollableScrollPhysics(),
+    );
+  }
 }
 
-class DemoItem extends StatelessWidget {
-  BuildContext _context;
+class DemoData {
   final String cover;
   final String title;
   final String route;
 
-  DemoItem({this.cover, this.title, this.route});
+  const DemoData({this.cover, @required this.title, @required this.route});
+}
 
-  _onTap() {
-    Navigator.of(_context).pushNamed(route);
-  }
+class DemoRow extends StatelessWidget {
+  final Function onTap;
+  final Widget title;
+  final Widget cover;
+
+  const DemoRow({Key key, this.onTap, this.title, this.cover})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    _context = context;
     return GestureDetector(
-        onTap: _onTap,
+        onTap: onTap,
         child: Container(
-          width: MediaQuery.of(context).size.width,
+          width: double.maxFinite,
           height: 200,
           child: Stack(
             children: <Widget>[
               this.cover != null
-                  ? Image.network(
-                      this.cover,
-                      fit: BoxFit.cover,
-                    )
+                  ? this.cover
                   : Container(
                       color: Colors.blueAccent,
                     ),
-              Positioned(
-                left: 24,
-                bottom: 24,
-                child: Text(
-                  this.title,
-                  style: Theme.of(context)
-                      .textTheme
-                      .headline2
-                      .copyWith(color: Colors.white),
-                ),
-              )
+              Positioned(left: 24, bottom: 24, child: _title(context))
             ],
           ),
         ));
+  }
+
+  Widget _title(BuildContext context) {
+    return DefaultTextStyle(
+      child: this.title,
+      style:
+          Theme.of(context).textTheme.headline2.copyWith(color: Colors.white),
+    );
   }
 }

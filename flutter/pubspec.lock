@@ -191,10 +191,10 @@ packages:
   flutter_remote_icon:
     dependency: "direct main"
     description:
-      path: "packages/flutter_remote_icon"
-      relative: true
-    source: path
-    version: "0.0.3"
+      name: flutter_remote_icon
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.3+2"
   flutter_svg:
     dependency: "direct main"
     description:
