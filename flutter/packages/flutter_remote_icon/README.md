@@ -118,3 +118,9 @@ Widget buildDynamicIcon(){
 ```
 
 > for using font as a icon please read [this blog](https://medium.com/flutterpub/how-to-use-custom-icons-in-flutter-834a079d977)
+
+
+
+## What problem does it solve?
+
+- https://github.com/flutter/flutter/issues/16189
