@@ -205,7 +205,7 @@ packages:
   flutter_remote_icon_generator:
     dependency: "direct dev"
     description:
-      path: "../generator"
+      path: "../../flutter_remote_icon_generator"
       relative: true
     source: path
     version: "0.0.1+2"

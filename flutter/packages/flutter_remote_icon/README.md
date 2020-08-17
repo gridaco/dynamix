@@ -1,11 +1,17 @@
 # flutter-remote-icon [![](https://img.shields.io/badge/pub-latest-brightgreen)](https://pub.dev/packages/flutter_remote_icon) [![](https://img.shields.io/badge/generator-latest-brightgreen)](https://pub.dev/packages/flutter_remote_icon_generator)
 
-> general remote icon loader for flutter. (this is part of bridged's [remote-ui](https://github.com/softmarshmallow/remote-ui) project)
+> What if you decided to load icon from server? But want to use local's font icons?
+>
+> "general remote icon loader for flutter." (this is part of bridged's [remote-ui](https://github.com/softmarshmallow/remote-ui) project)
 
 ![](./doc/remote-icon-demo.gif)
 
 
+
+> Flutter remote icon enables you to load material icons (`Icons.~`) or your custom icon (`CustomIcons.~`) or remotely fetched content (svg) to your icon widget via `uri`, wich can be dynamically configured, remotely loaded.
+
 ## Installation
+
 ```yaml
 dependencies:
   flutter_remote_icon: latest
@@ -14,8 +20,12 @@ dev_dependencies:
   flutter_remote_icon_generator: latest
   build_runner: latest
 ```
+> for more information about  [flutter_remote_icon_generator](../flutter_remote_icon_generator), please refer [here](../flutter_remote_icon_generator)
+
+
 
 ## Usage
+
 **supported usage**
 * loading native icons (IconData)
 * loading remote icon (svg, png) into `Icon()`
