@@ -46,6 +46,7 @@ Widget buildRemoteIcon(){
 ```
 
 **supported icons**
+
 0.  `Icons.add` (non dynamic usage)
 1.  "local://assets/image.png"
 2.  "http://example.com/image.png"
