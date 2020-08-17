@@ -12,6 +12,16 @@ client - dynamically load content from server & with dynamic layout / component 
 
 
 
+| Platform            | Package                                                      |
+| ------------------- | ------------------------------------------------------------ |
+| NodeJS (for server) | [@bridged.io/remote-ui-core](./core) [![](https://img.shields.io/badge/npm-latest-brightgreen)](https://www.npmjs.com/package/@bridged.io/remote-ui-core)<br />[@bridged.io/remote-ui-server](./server) [![](https://img.shields.io/badge/npm-latest-brightgreen)](https://www.npmjs.com/package/@bridged.io/remote-ui-server) |
+| NodeJS (for web)    | (comming soon)<br />(@bridged.io/remote-ui)                  |
+| flutter             | [flutter_remote_ui](./flutter) [![](https://img.shields.io/badge/pub-latest-brightgreen)](https://pub.dev/packages/flutter_remote_ui)<br />[flutter_remote_ui_generator](./flutter/packages/flutter_remote_ui_generator) [![](https://img.shields.io/badge/pub-latest-brightgreen)](https://pub.dev/packages/flutter_remote_ui_generator)<br />[flutter_remote_icon](./flutter/packages/flutter_remote_icon) [![](https://img.shields.io/badge/pub-latest-brightgreen)](https://pub.dev/packages/flutter_remote_icon)<br />[flutter_remote_icon_generator](./flutter/packages/flutter_remote_icon_generator) [![](https://img.shields.io/badge/pub-latest-brightgreen)](https://pub.dev/packages/flutter_remote_icon_generator) |
+
+
+
+
+
 ## Installation
 
 Server side
