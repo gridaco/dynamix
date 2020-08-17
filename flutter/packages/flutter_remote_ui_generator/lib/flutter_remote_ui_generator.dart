@@ -1,0 +1,1 @@
+library flutter_remote_ui_generator;
