@@ -78,22 +78,16 @@ Concepts & onthology will be documented under notion document, which will be add
 
 ## Platform support
 
-**Web**
+|                | usage                                                        | language | runs on                                                    | example                                                      | Ready? |
+| -------------- | ------------------------------------------------------------ | -------- | ---------------------------------------------------------- | ------------------------------------------------------------ | ------ |
+| core           | rui core library ([@bridged.io/remote-ui-core](./core))      | TS/JS    | NodeJS                                                     | [@bridged.io/remote-ui-core](https://github.com/softmarshmallow/remote-ui/tree/master/core) | ✅      |
+| flutter        | [flutter_remote_ui](./flutter)                               | dart     | iOS<br />Android<br />OSX<br />Windows<br />Linux<br />Web | [flutter-remote-ui](https://github.com/softmarshmallow/remote-ui/tree/master/flutter)<br />[flutter remote ui example](https://github.com/softmarshmallow/remote-ui/tree/master/flutter/example) | ✅      |
+| express        | remote-ui-core wrapper for ExpressJS ([@bridged.io/remote-ui-server](./server)) (in 2020) | TS/JS    | NodeJS (server)                                            | [express](https://github.com/softmarshmallow/remote-ui/tree/master/server/examples/express), [plain](https://github.com/softmarshmallow/remote-ui/tree/master/server/examples/plain) | 👩‍💻     |
+| iOS native     | note supported (2021 Q2)                                     | swift    | iOS OSX                                                    |                                                              | 👩‍💻     |
+| android native | note supported (2021 Q2)                                     | kotlin   | Android                                                    |                                                              | 👩‍💻     |
+| vue            | vueJS wrapper for remote-ui                                  |          | Web                                                        |                                                              | 👩‍💻     |
 
-* server
-  * language: ts/js [@bridged.io/remote-ui-core](https://github.com/softmarshmallow/remote-ui/tree/master/core)
-  * examples: [express](https://github.com/softmarshmallow/remote-ui/tree/master/server/examples/express), [plain](https://github.com/softmarshmallow/remote-ui/tree/master/server/examples/plain)
-* client
-  * Language: ts/js
-  * Examples: vue
 
-
-**App**
-
-* [flutter-remote-ui](https://github.com/softmarshmallow/remote-ui/tree/master/flutter)
-  * examples: [flutter remote ui example](https://github.com/softmarshmallow/remote-ui/tree/master/flutter/example)
-* android
-* ios
 
 
 ## Concepts
