@@ -184,6 +184,10 @@ routes.build(spec).then((d) => {
 ## Contribution
 [contribution guideline](CONTRIBUTING.md)
 
+
+## Contributor's documentation
+we are using [figma file](https://www.figma.com/file/DpbDmtkGzz1g3aXPt5MmgS/remote-ui?node-id=135%3A32) for the contributor's documenting and suggesting roadmap.
+
 ## TODO
 * remote ui dashboard -> customize & configure your app through web interface remotely, realtime.
 
