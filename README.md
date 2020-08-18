@@ -99,13 +99,14 @@ Concepts & onthology will be documented under notion document, which will be add
 ## Concepts
 | concept            | description  | example | demo  |
 | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| action |                                                              | ||
-| layout | | | |
-| icon | | | |
-| route | | | |
-| modal | | | |
-| client | | | |
-| session | | | |
+| action | provide client action data to be executed on specific events                                                             | ||
+| layout | register & call layouts with built data dynamically  | | |
+| icon | register & use font based icons or svg icons dynamically | | |
+| image | use registered local assets or remote assets dynamically | | |
+| route | specify route spec to provide routing, building menus, shortcuts, etc.. | | |
+| modal | show modals with custom transition with desired content | | |
+| client | the client is the app instance, customize with your database user | | |
+| session | the session of single flow. show modal, get event of "ok" button clicked, trigger the action in single session so it can be tracked & managed | | |
 
 
 ### Remote Icons
