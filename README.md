@@ -78,26 +78,32 @@ Concepts & onthology will be documented under notion document, which will be add
 
 ## Platform support
 
-**Web**
-
-* server
-  * language: ts/js [@bridged.io/remote-ui-core](https://github.com/softmarshmallow/remote-ui/tree/master/core)
-  * examples: [express](https://github.com/softmarshmallow/remote-ui/tree/master/server/examples/express), [plain](https://github.com/softmarshmallow/remote-ui/tree/master/server/examples/plain)
-* client
-  * Language: ts/js
-  * Examples: vue
-
-
-**App**
-
-* [flutter-remote-ui](https://github.com/softmarshmallow/remote-ui/tree/master/flutter)
-  * examples: [flutter remote ui example](https://github.com/softmarshmallow/remote-ui/tree/master/flutter/example)
-* android
-* ios
+|                | usage                                                        | language | runs on                                                    | example                                                      | Ready? |
+| -------------- | ------------------------------------------------------------ | -------- | ---------------------------------------------------------- | ------------------------------------------------------------ | ------ |
+| core           | rui core library ([@bridged.io/remote-ui-core](./core))      | TS/JS    | NodeJS                                                     | [@bridged.io/remote-ui-core](https://github.com/softmarshmallow/remote-ui/tree/master/core) | ✅      |
+| flutter        | [flutter_remote_ui](./flutter)                               | dart     | iOS<br />Android<br />OSX<br />Windows<br />Linux<br />Web | [flutter-remote-ui](https://github.com/softmarshmallow/remote-ui/tree/master/flutter)<br />[flutter remote ui example](https://github.com/softmarshmallow/remote-ui/tree/master/flutter/example) | ✅      |
+| express        | remote-ui-core wrapper for ExpressJS ([@bridged.io/remote-ui-server](./server)) (in 2020) | TS/JS    | NodeJS (server)                                            | [express](https://github.com/softmarshmallow/remote-ui/tree/master/server/examples/express), [plain](https://github.com/softmarshmallow/remote-ui/tree/master/server/examples/plain) | 👩‍💻     |
+| iOS native     | note supported (2021 Q2)                                     | swift    | iOS OSX                                                    |                                                              | 👩‍💻     |
+| android native | note supported (2021 Q2)                                     | kotlin   | Android                                                    |                                                              | 👩‍💻     |
+| vue            | vueJS wrapper for remote-ui                                  |          | Web                                                        |                                                              | 👩‍💻     |
 
 
 
-## Remote Icons
+
+## Concepts
+| concept            | description  | example | demo  |
+| ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| action | provide client action data to be executed on specific events                                                             | ||
+| layout | register & call layouts with built data dynamically  | | |
+| icon | register & use font based icons or svg icons dynamically | | |
+| image | use registered local assets or remote assets dynamically | | |
+| route | specify route spec to provide routing, building menus, shortcuts, etc.. | | |
+| modal | show modals with custom transition with desired content | | |
+| client | the client is the app instance, customize with your database user | | |
+| session | the session of single flow. show modal, get event of "ok" button clicked, trigger the action in single session so it can be tracked & managed | | |
+
+
+### Remote Icons
 
 ```typescript
 import * as rui from "@bridged.io/remote-ui-core"
