@@ -17,7 +17,6 @@ enum RemoteIconType {
   // image from your project's local asset
   LOCAL_ASSET,
   // icon font from your local project's custom font
-  // todo - not implemented
   CUSTOM_FONT,
 }
 
