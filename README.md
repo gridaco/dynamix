@@ -96,8 +96,19 @@ Concepts & onthology will be documented under notion document, which will be add
 * ios
 
 
+## Concepts
+| concept            | description  | demo  |
+| ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| action |                                                              | |
+| layout | | |
+| icon | | |
+| route | | |
+| modal | | |
+| client | | |
+| session | | |
 
-## Remote Icons
+
+### Remote Icons
 
 ```typescript
 import * as rui from "@bridged.io/remote-ui-core"
