@@ -23,9 +23,6 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  # https://github.com/dart-lang/build
-  build_runner: ^1.10.2
-
 # The following section is specific to Flutter.
 flutter:
 #  assets:

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'file:///Users/softmarshmallow/Documents/Apps/bridged/remote-ui/flutter/packages/flutter_remote_icon/lib/src/icon_data.dart';
-import 'file:///Users/softmarshmallow/Documents/Apps/bridged/remote-ui/flutter/packages/flutter_remote_icon/lib/src/icons.dart';
+import 'package:flutter_remote_icon/flutter_remote_icon.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class RemoteImage extends StatelessWidget {
