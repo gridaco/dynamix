@@ -14,8 +14,8 @@ client - dynamically load content from server & with dynamic layout / component 
 
 | Platform            | Package                                                      |
 | ------------------- | ------------------------------------------------------------ |
-| NodeJS (for server) | [@bridged.io/remote-ui-core](./core) [![](https://img.shields.io/badge/npm-latest-brightgreen)](https://www.npmjs.com/package/@bridged.io/remote-ui-core)<br />[@bridged.io/remote-ui-server](./server) [![](https://img.shields.io/badge/npm-latest-brightgreen)](https://www.npmjs.com/package/@bridged.io/remote-ui-server) |
-| NodeJS (for web)    | (comming soon)<br />(@bridged.io/remote-ui)                  |
+| NodeJS (for server) | [@bridged.xyz/remote-ui-core](./core) [![](https://img.shields.io/badge/npm-latest-brightgreen)](https://www.npmjs.com/package/@bridged.xyz/remote-ui-core)<br />[@bridged.xyz/remote-ui-server](./server) [![](https://img.shields.io/badge/npm-latest-brightgreen)](https://www.npmjs.com/package/@bridged.xyz/remote-ui-server) |
+| NodeJS (for web)    | (comming soon)<br />(@bridged.xyz/remote-ui)                  |
 | flutter             | [flutter_remote_ui](./flutter) [![](https://img.shields.io/badge/pub-latest-brightgreen)](https://pub.dev/packages/flutter_remote_ui)<br />[flutter_remote_ui_generator](./flutter/packages/flutter_remote_ui_generator) [![](https://img.shields.io/badge/pub-latest-brightgreen)](https://pub.dev/packages/flutter_remote_ui_generator)<br />[flutter_remote_icon](./flutter/packages/flutter_remote_icon) [![](https://img.shields.io/badge/pub-latest-brightgreen)](https://pub.dev/packages/flutter_remote_icon)<br />[flutter_remote_icon_generator](./flutter/packages/flutter_remote_icon_generator) [![](https://img.shields.io/badge/pub-latest-brightgreen)](https://pub.dev/packages/flutter_remote_icon_generator) |
 
 
@@ -28,10 +28,10 @@ Server side
 
 ```shell
 # install with yarn
-yarn add @bridged.io/remote-ui-core
+yarn add @bridged.xyz/remote-ui-core
 
 # install with npm
-npm install @bridged.io/remote-ui-core
+npm install @bridged.xyz/remote-ui-core
 ```
 
 
@@ -44,7 +44,7 @@ npm install @bridged.io/remote-ui-core
 ## How to use
 server side (express/ts)
 ```ts
-import * as rui from "@bridged.io/remote-ui-core"
+import * as rui from "@bridged.xyz/remote-ui-core"
 
 router.get("ui", (req, res)=>{
 
@@ -80,9 +80,9 @@ Concepts & onthology will be documented under notion document, which will be add
 
 |                | usage                                                        | language | runs on                                                    | example                                                      | Ready? |
 | -------------- | ------------------------------------------------------------ | -------- | ---------------------------------------------------------- | ------------------------------------------------------------ | ------ |
-| core           | rui core library ([@bridged.io/remote-ui-core](./core))      | TS/JS    | NodeJS                                                     | [@bridged.io/remote-ui-core](https://github.com/softmarshmallow/remote-ui/tree/master/core) | ✅      |
+| core           | rui core library ([@bridged.xyz/remote-ui-core](./core))      | TS/JS    | NodeJS                                                     | [@bridged.xyz/remote-ui-core](https://github.com/softmarshmallow/remote-ui/tree/master/core) | ✅      |
 | flutter        | [flutter_remote_ui](./flutter)                               | dart     | iOS<br />Android<br />OSX<br />Windows<br />Linux<br />Web | [flutter-remote-ui](https://github.com/softmarshmallow/remote-ui/tree/master/flutter)<br />[flutter remote ui example](https://github.com/softmarshmallow/remote-ui/tree/master/flutter/example) | ✅      |
-| express        | remote-ui-core wrapper for ExpressJS ([@bridged.io/remote-ui-server](./server)) (in 2020) | TS/JS    | NodeJS (server)                                            | [express](https://github.com/softmarshmallow/remote-ui/tree/master/server/examples/express), [plain](https://github.com/softmarshmallow/remote-ui/tree/master/server/examples/plain) | 👩‍💻     |
+| express        | remote-ui-core wrapper for ExpressJS ([@bridged.xyz/remote-ui-server](./server)) (in 2020) | TS/JS    | NodeJS (server)                                            | [express](https://github.com/softmarshmallow/remote-ui/tree/master/server/examples/express), [plain](https://github.com/softmarshmallow/remote-ui/tree/master/server/examples/plain) | 👩‍💻     |
 | iOS native     | note supported (2021 Q2)                                     | swift    | iOS OSX                                                    |                                                              | 👩‍💻     |
 | android native | note supported (2021 Q2)                                     | kotlin   | Android                                                    |                                                              | 👩‍💻     |
 | vue            | vueJS wrapper for remote-ui                                  |          | Web                                                        |                                                              | 👩‍💻     |
@@ -106,7 +106,7 @@ Concepts & onthology will be documented under notion document, which will be add
 ### Remote Icons
 
 ```typescript
-import * as rui from "@bridged.io/remote-ui-core"
+import * as rui from "@bridged.xyz/remote-ui-core"
 
 console.log(rui.icons.material.note)
 
@@ -123,7 +123,7 @@ console.log(rui.icons.material.note)
 ## Remote Route Specs
 
 ```typescript
-import {routes} from "@bridged.io/remote-ui-core"
+import {routes} from "@bridged.xyz/remote-ui-core"
 
 
 const MOCK_DATABASE = {
@@ -194,7 +194,7 @@ we are using [figma file](https://www.figma.com/file/DpbDmtkGzz1g3aXPt5MmgS/remo
 
 
 ## related projects
-- [bridged.io](https://github.com/softmarshmallow/bridged.io)
+- [bridged.xyz](https://github.com/softmarshmallow/bridged.xyz)
 - [bridged's inapp-bridge](https://github.com/softmarshmallow/inapp-bridge)
 - [bridged's schema-studio](https://github.com/softmarshmallow/schema-studio)
 

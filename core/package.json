@@ -1,5 +1,5 @@
 {
-  "name": "@bridged.io/remote-ui-core",
+  "name": "@bridged.xyz/remote-ui-core",
   "version": "0.0.29",
   "private": false,
   "main": "./dist/index.js",

@@ -8,10 +8,10 @@
 
 ```shell
 # install with yarn
-yarn add @bridged.io/remote-ui
+yarn add @bridged.xyz/remote-ui
 
 # install with npm
-npm install @bridged.io/remote-ui
+npm install @bridged.xyz/remote-ui
 ```
 
 
