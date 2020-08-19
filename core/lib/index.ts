@@ -6,22 +6,15 @@
 
 import { Actions } from "./actions";
 import { layouts } from "./layouts"
-import * as UI from "./components"
-import * as Icons from "./icons"
+import * as widgets from "./widgets"
+import * as icons from "./icons"
 import * as screens from "./screen-specs"
 
 export {
-    // deprecated
-    Actions,
     Actions as actions,
-    // deprecated
-    UI,
-    UI as ui,
-    Icons,
-    Icons as icons,
-    //
+    widgets as widgets,
+    widgets as ui,
+    icons,
     layouts,
-    // deprecated
-    screens as routes,
-    screens as screens
+    screens
 }

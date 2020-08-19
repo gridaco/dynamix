@@ -1,4 +1,4 @@
-import * as UI from "../components";
+import * as UI from "../widgets";
 import { Actions } from "..";
 
 export namespace Layouts {

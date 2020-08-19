@@ -3,26 +3,42 @@ import * as bodyParser from 'body-parser'
 import { resolve } from "path"
 const app = express();
 import * as cors from 'cors';
-import * as rui from "@bridged.xyz/remote-ui-core";
+import { actions, ui, icons } from "@bridged.xyz/remote-ui-core";
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 
-interface SearchResult {
-    title: string
-    description: string
-    avatar: string
-    action: rui.actions.PushRoute
+interface SearchResultLayout {
+    title: ui.Text
+    subtitle: ui.Text
+    meta?: ui.Text
+    icon: ui.Icon
+    action: actions.IAction<any>
+    tags?: Array<ui.Chip>
 }
 
 app.get('/search', (req, res) => {
+    const { query } = req.query;
 
-    const searchResults: Array<SearchResult> = [
+    const searchResults: Array<SearchResultLayout> = [
         {
-            title: "instagram",
-            description: "aint it awesome?",
-            action: rui.actions.popRoute(""),
-            avatar: rui.icons.material.note.uri
+            title: new ui.Text("remte ui"),
+            subtitle: new ui.Text("load ui dynamically from serverside"),
+            action: actions.pushRoute("/home"),
+            icon: new ui.Icon(icons.material.accessibility)
+        },
+        {
+            title: new ui.Text(`${query}`),
+            subtitle: new ui.Text("load ui dynamically from serverside"),
+            action: actions.pushRoute("/home"),
+            meta: new ui.Text(`${Date.now()}`),
+            icon: new ui.Icon(icons.material.accessibility)
+        },
+        {
+            title: new ui.Text(`${query}`),
+            subtitle: new ui.Text("load ui dynamically from serverside"),
+            action: actions.pushRoute("/home"),
+            icon: new ui.Icon(icons.material.accessibility)
         }
     ];
 

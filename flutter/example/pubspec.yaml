@@ -3,11 +3,13 @@ description: example app for flutter_remote_ui
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">2.2.2 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
+
+  http: ^0.12.2
 
   flutter_remote_ui:
     path: ../
