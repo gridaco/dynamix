@@ -1,0 +1,11 @@
+syntax = "proto3";
+package messenger;
+
+service Messenger {
+  rpc SendMessage (Message) returns (Message) {}
+  rpc SubscribeMessages (Message) returns (stream Message) {}
+}
+
+message Message {
+  string msg = 1;
+}

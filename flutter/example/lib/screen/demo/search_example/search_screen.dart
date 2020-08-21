@@ -154,7 +154,7 @@ class SearchResultRow extends StatelessWidget {
 
   Widget _subtitle(BuildContext context) {
     return DefaultTextStyle(
-        style: Theme.of(context).textTheme.overline, child: subtitle);
+        style: Theme.of(context).textTheme.overline.copyWith(color: Colors.grey), child: subtitle);
   }
 
   Widget _meta(BuildContext context) {

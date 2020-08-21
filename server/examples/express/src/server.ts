@@ -1,9 +1,11 @@
 import * as express from 'express'
 import * as bodyParser from 'body-parser'
 import { resolve } from "path"
+
 const app = express();
 import * as cors from 'cors';
 import { actions, ui, icons } from "@bridged.xyz/remote-ui-core";
+import { startGrpc } from './grpc';
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
@@ -17,8 +19,15 @@ interface SearchResultLayout {
     tags?: Array<ui.Chip>
 }
 
-app.get('/search', (req, res) => {
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+app.get('/search', async (req, res) => {
     const { query } = req.query;
+
+    await sleep(120);
+
 
     const searchResults: Array<SearchResultLayout> = [
         {
@@ -45,6 +54,8 @@ app.get('/search', (req, res) => {
     res.json(searchResults);
 });
 
+
+startGrpc()
 
 app.listen(3001, () =>
     console.log('Server is running on http://localhost:3001'),

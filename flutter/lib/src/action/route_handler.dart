@@ -11,6 +11,7 @@ class RouteHandler extends ActionHandler {
 
   @override
   handle() {
+    super.handle();
     Navigator.of(context).pushNamed(actionData.route);
   }
 }
