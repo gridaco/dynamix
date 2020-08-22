@@ -54,6 +54,9 @@ app.get('/search', async (req, res) => {
     res.json(searchResults);
 });
 
+app.post(`/show-dialog`, (req, res) => {
+    res.json(req.body).send();
+});
 
 startGrpc()
 

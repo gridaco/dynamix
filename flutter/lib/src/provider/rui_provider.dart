@@ -1,5 +1,5 @@
-class RuiProvider{
-  factory RuiProvider.of(){
+class XProvider{
+  factory XProvider.of(){
     return null;
   }
 

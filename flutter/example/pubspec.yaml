@@ -29,6 +29,12 @@ dependencies:
   # https://github.com/felangel/bloc/tree/master/packages/flutter_bloc
   flutter_bloc: ^6.0.1
 
+  # https://github.com/rikulo/socket.io-client-dart
+  socket_io_client: ^0.9.11
+
+  # https://github.com/grpc/grpc-dart
+  grpc: ^2.2.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

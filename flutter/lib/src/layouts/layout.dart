@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 
-abstract class Layout<Body>{
-  Layout({@required this.body});
+abstract class XLayout<Body>{
+  XLayout({@required this.body});
   String version;
   String layout;
   String variant;

@@ -1,5 +1,5 @@
 import 'package:flutter_remote_ui/flutter_remote_ui.dart' as rui;
-class TruckItemLayout extends rui.Layout<TruckItemBody>{
+class TruckItemLayout extends rui.XLayout<TruckItemBody>{
   TruckItemLayout({this.body}): super(body: body);
   TruckItemBody body;
 }
@@ -7,8 +7,8 @@ class TruckItemLayout extends rui.Layout<TruckItemBody>{
 
 class TruckItemBody {
   TruckItemBody({this.title, this.description, this.image, this.onTap});
-  rui.Text title;
-  rui.Text description;
-  rui.Image image;
-  rui.Action onTap;
+  rui.XText title;
+  rui.XText description;
+  rui.XImage image;
+  rui.XAction onTap;
 }

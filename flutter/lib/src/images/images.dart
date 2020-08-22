@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_remote_icon/flutter_remote_icon.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class RemoteImage extends StatelessWidget {
+class XImage extends StatelessWidget {
   final bool remote;
   final String uri;
 
@@ -26,7 +26,7 @@ class RemoteImage extends StatelessWidget {
   final BoxFit fit;
   final WidgetBuilder placeholderBuilder;
 
-  RemoteImage(
+  XImage(
       {@required this.uri,
       @required this.remote,
       this.width,
@@ -35,12 +35,12 @@ class RemoteImage extends StatelessWidget {
       this.placeholderBuilder,
       this.overrideWidget});
 
-  factory RemoteImage.asset(String asset,
+  factory XImage.asset(String asset,
       {double width,
       double height,
       BoxFit fit = BoxFit.contain,
       WidgetBuilder placeholderBuilder}) {
-    return RemoteImage(
+    return XImage(
       uri: asset,
       remote: false,
       width: width,
@@ -50,12 +50,12 @@ class RemoteImage extends StatelessWidget {
     );
   }
 
-  factory RemoteImage.network(String url,
+  factory XImage.network(String url,
       {double width,
       double height,
       BoxFit fit = BoxFit.contain,
       WidgetBuilder placeholderBuilder}) {
-    return RemoteImage(
+    return XImage(
         uri: url,
         remote: true,
         width: width,
@@ -64,12 +64,12 @@ class RemoteImage extends StatelessWidget {
         placeholderBuilder: placeholderBuilder);
   }
 
-  factory RemoteImage.icon(
+  factory XImage.icon(
     String icon, {
     double width,
     double height,
   }) {
-    return RemoteImage(
+    return XImage(
       uri: null,
       remote: true,
       width: width,

@@ -11,30 +11,30 @@ var truckData = TruckData(
 
 var truckItemLayout = (TruckData data) => TruckItemLayout(
     body: TruckItemBody(
-        title: rui.Text(data.name),
-        description: rui.Text(data.shortDescription),
-        image: rui.Image(data.image),
-        onTap: rui.Action(null)));
+        title: rui.XText(data.name),
+        description: rui.XText(data.shortDescription),
+        image: rui.XImage.network(data.image),
+        onTap: rui.XAction(null)));
 
 // region view segments
-var titleText = (BuildContext context, rui.Text text) => Text(
+var titleText = (BuildContext context, rui.XText text) => Text(
       text.content,
       style: Theme.of(context).textTheme.bodyText2,
     );
 
-var descriptionText = (BuildContext context, rui.Text text) => Text(
+var descriptionText = (BuildContext context, rui.XText text) => Text(
       text.content,
       style: Theme.of(context).textTheme.overline,
     );
 
-var coverImage = (rui.Image image) => Image.network(
-      image.src,
+var coverImage = (rui.XImage image) => Image.network(
+      image.uri,
       height: 100.0,
       width: 140.0,
       fit: BoxFit.cover,
     );
 
-Function onTapAction = (rui.Action action) => {
+Function onTapAction = (rui.XAction action) => {
       // handle action
     };
 // endregion view segments

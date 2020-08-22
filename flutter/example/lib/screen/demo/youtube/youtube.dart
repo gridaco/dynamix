@@ -124,5 +124,5 @@ class VideoItemData {
   String publisherThumbnail;
   String title;
   String description;
-  List<rui.Action> moreAction;
+  List<rui.XAction> moreAction;
 }

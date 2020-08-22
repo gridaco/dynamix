@@ -1,6 +1,6 @@
 
-class Action{
-  Action(this.name, {this.group});
+class XAction{
+  XAction(this.name, {this.group});
   String name;
   String group;
 }
@@ -17,22 +17,22 @@ const String ACTION_MATERIAL_SHOW_DIALOG = "ACTION_MATERIAL_SHOW_DIALOG";
 
 
 // region core route
-class ActionPushPage extends Action{
+class ActionPushPage extends XAction{
   ActionPushPage(): super(ACTION_PUSH_PAGE, group: GROUP_CORE_ROUTE_KEY);
 }
 
-class ActionPopPage extends Action{
+class ActionPopPage extends XAction{
   ActionPopPage(): super(ACTION_POP_PAGE, group: GROUP_CORE_ROUTE_KEY);
 }
 // endregion core route
 
 
-class ActionMaterialShowSnackbar extends Action{
+class ActionMaterialShowSnackbar extends XAction{
   ActionMaterialShowSnackbar() : super(ACTION_MATERIAL_SHOW_SNACKBAR);
 
 }
 
-class ActionMaterialShowDialog extends Action{
+class ActionMaterialShowDialog extends XAction{
   ActionMaterialShowDialog() : super(ACTION_MATERIAL_SHOW_DIALOG);
 
 }

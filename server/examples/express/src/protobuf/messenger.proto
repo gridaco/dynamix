@@ -1,11 +1,29 @@
 syntax = "proto3";
 package messenger;
 
-service Messenger {
-  rpc SendMessage (Message) returns (Message) {}
-  rpc SubscribeMessages (Message) returns (stream Message) {}
+
+service Greeter {
+  // Sends a greeting
+  rpc SayHello (HelloRequest) returns (HelloReply) {}
+  rpc SendMessage (Messagea) returns (Messagea) {}
+  rpc SubscribeMessages (Messagea) returns (stream Messagea) {}
 }
 
-message Message {
+// The request message containing the user's name.
+message HelloRequest {
+  string name = 1;
+}
+
+// The response message containing the greetings
+message HelloReply {
+  string message = 1;
+}
+
+service Messenger {
+  rpc SendMessage (Messagea) returns (Messagea) {}
+  rpc SubscribeMessages (Messagea) returns (stream Messagea) {}
+}
+
+message Messagea {
   string msg = 1;
 }

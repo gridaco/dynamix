@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_remote_ui/flutter_remote_ui.dart' as rui;
+import 'package:flutter_remote_ui/flutter_remote_ui.dart';
 import 'package:http/http.dart' as http;
 
 class SearchScreen extends StatefulWidget {
@@ -75,10 +75,14 @@ class _SearchScreen extends State<SearchScreen> {
         var d = data[i];
         return SearchResultRow(
           icon:
-              Icon(rui.RemoteIconData.fromUri("material://Icons.person").icon),
+              Icon(RemoteIconData.fromUri("material://Icons.person").icon),
           title: Text(d["title"]["text"]),
           subtitle: Text(d["subtitle"]["text"]),
           onTap: () {
+            final actionData = d["action"];
+            RouteHandler(context,
+                    actionData: ActionData(rawData: actionData))
+                .handle();
 //            rui.RouteHandler.of(context).handle();
           },
         );
@@ -89,6 +93,17 @@ class _SearchScreen extends State<SearchScreen> {
     );
   }
 }
+
+
+class XSearchResultRow extends XLayout{
+  XText title;
+  XText subtitle;
+  XText meta;
+  XImage icon;
+  XAction onTap;
+  List<XText> tags;
+}
+
 
 //@rui.LayoutConvert("search-result-row")
 class SearchResultRow extends StatelessWidget {
@@ -154,7 +169,9 @@ class SearchResultRow extends StatelessWidget {
 
   Widget _subtitle(BuildContext context) {
     return DefaultTextStyle(
-        style: Theme.of(context).textTheme.overline.copyWith(color: Colors.grey), child: subtitle);
+        style:
+            Theme.of(context).textTheme.overline.copyWith(color: Colors.grey),
+        child: subtitle);
   }
 
   Widget _meta(BuildContext context) {
