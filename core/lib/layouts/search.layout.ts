@@ -1,13 +1,14 @@
 import * as UI from "../widgets";
-import { Actions } from "..";
+import { actions } from "..";
 
 export namespace Layouts {
     export class SearchItemLayoutBase extends UI.Layout {
+        type: string = "bridged.search-item-base";
         constructor() {
             super();
         }
 
-        onTap: Actions.IAction<any>
+        onTap: actions.IAction<any>
         title: UI.Text
         content?: UI.Text
         avatar?: UI.Avatar | UI.Icon
@@ -16,7 +17,8 @@ export namespace Layouts {
     }
 
     export class BasicSearchItemLayout extends SearchItemLayoutBase {
-        constructor(params: { avatar?: UI.Avatar | UI.Icon, title: UI.Text, content: UI.Text, meta?: UI.Text, chips?: Array<UI.Chip>, onTap: Actions.IAction<any> }) {
+        type: string = "bridged.easy.basic-search-row";
+        constructor(params: { avatar?: UI.Avatar | UI.Icon, title: UI.Text, content: UI.Text, meta?: UI.Text, chips?: Array<UI.Chip>, onTap: actions.IAction<any> }) {
             super();
             this.avatar = params.avatar;
             this.title = params.title;
@@ -25,7 +27,7 @@ export namespace Layouts {
             this.chips = params.chips;
             this.onTap = params.onTap;
         }
-        onTap: Actions.IAction<any>
+        onTap: actions.IAction<any>
         avatar?: UI.Avatar | UI.Icon
         content: UI.Text
         meta: UI.Text
@@ -34,6 +36,7 @@ export namespace Layouts {
     }
 
     export class SearchHistoryItemLayout extends SearchItemLayoutBase {
+        type: string = "bridged.easy.search-history";
         constructor(params: { title: UI.Text, meta: UI.Text }) {
             super();
             this.title = params.title;

@@ -3,11 +3,15 @@ class XProvider{
     return null;
   }
 
-  registerSchema(){
+  registerAsset(asset){
 
   }
 
-  registerRoutes(){
+  registerLayout(layout){
+
+  }
+
+  registerScreen(screen){
 
   }
 }

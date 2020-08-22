@@ -1,4 +1,4 @@
-import {routes} from "../lib"
+import { screens } from "../lib"
 
 
 const MOCK_DATABASE = {
@@ -23,8 +23,8 @@ function fetchUserFromMockDatabase(id: string): { id, name } {
 }
 
 
-routes.register(
-    new routes.spec(new routes.spec<{ id }, { id, name }>({
+screens.register(
+    new screens.spec(new screens.spec<{ id }, { id, name }>({
         key: "/users/:id",
         pattern: "/users/:id",
         dataFetcher: async (p) => {
@@ -38,8 +38,8 @@ routes.register(
 )
 
 const route = "/users/1";
-const spec = routes.match(route)
-routes.build(spec).then((d) => {
+const spec = screens.match(route)
+screens.build(spec).then((d) => {
     console.log(d)
 })
 

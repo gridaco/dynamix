@@ -12,5 +12,5 @@ class WalletBody {
   XText desc;
   XImage background;
   XImage asset;
-  Button action;
+  XButton action;
 }

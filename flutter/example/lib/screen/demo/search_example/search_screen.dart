@@ -73,15 +73,16 @@ class _SearchScreen extends State<SearchScreen> {
     return ListView.builder(
       itemBuilder: (c, i) {
         var d = data[i];
+        XText title = XTranslator.translate(d["title"]);
+        XText subtitle = XTranslator.translate(d["subtitle"]);
+        
         return SearchResultRow(
-          icon:
-              Icon(RemoteIconData.fromUri("material://Icons.person").icon),
-          title: Text(d["title"]["text"]),
-          subtitle: Text(d["subtitle"]["text"]),
+          icon: Icon(RemoteIconData.fromUri("material://Icons.person").icon),
+          title: Text(title.text),
+          subtitle: Text(subtitle.text),
           onTap: () {
             final actionData = d["action"];
-            RouteHandler(context,
-                    actionData: ActionData(rawData: actionData))
+            RouteHandler(context, actionData: ActionData(rawData: actionData))
                 .handle();
 //            rui.RouteHandler.of(context).handle();
           },
@@ -94,8 +95,7 @@ class _SearchScreen extends State<SearchScreen> {
   }
 }
 
-
-class XSearchResultRow extends XLayout{
+class XSearchResultRow extends XLayout {
   XText title;
   XText subtitle;
   XText meta;
@@ -103,7 +103,6 @@ class XSearchResultRow extends XLayout{
   XAction onTap;
   List<XText> tags;
 }
-
 
 //@rui.LayoutConvert("search-result-row")
 class SearchResultRow extends StatelessWidget {

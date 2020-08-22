@@ -5,6 +5,7 @@ interface I_ImageOptions {
 }
 
 export class Image extends View {
+    type: string = "image";
     src: string
     options?: I_ImageOptions
     constructor(src: string, options?: I_ImageOptions) {

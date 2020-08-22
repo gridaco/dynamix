@@ -18,12 +18,12 @@ var truckItemLayout = (TruckData data) => TruckItemLayout(
 
 // region view segments
 var titleText = (BuildContext context, rui.XText text) => Text(
-      text.content,
+      text.text,
       style: Theme.of(context).textTheme.bodyText2,
     );
 
 var descriptionText = (BuildContext context, rui.XText text) => Text(
-      text.content,
+      text.text,
       style: Theme.of(context).textTheme.overline,
     );
 

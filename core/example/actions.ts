@@ -1,7 +1,7 @@
-import { Actions } from "../lib"
-Actions.register()
+import { actions } from "../lib"
+actions.register()
 
-const popAction = new Actions.PopRoute("*")
+const popAction = new actions.PopRoute("*")
 
-const action = Actions.pushRoute("/users/1234").build()
+const action = actions.pushRoute("/users/1234").build()
 console.log(action);

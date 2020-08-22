@@ -6,7 +6,7 @@
 
 import { View } from "./view";
 
-export class Layout extends View {
+export abstract class Layout extends View {
     constructor() {
         super()
     }

@@ -71,7 +71,8 @@ var truckData = TruckData(
 
 
 
-**Layout**
+**Widgets & Layout**
+> Note. since flutter's widget and remote-ui's widget naming is identical, we choose to use the prefix token "X". e.g. XText is remote ui's text instance
 
 ```dart
 var truckItemLayout = (TruckData data) => TruckItemLayout(
