@@ -27,6 +27,6 @@ class _IconsDemoScreenState extends State<IconsDemoScreen> {
   }
 
   Widget _buildBody(BuildContext context) {
-    return rui.RemoteIcon(rui.RemoteIconData.fromUri("material://Icons.add"));
+    return rui.XIcon(rui.XIconData("material://Icons.add"));
   }
 }

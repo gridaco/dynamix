@@ -9,6 +9,5 @@ export 'src/prebuilt/prebuilt.dart';
 export 'src/annotations/annotations.dart';
 
 // region default packages
-export 'package:flutter_remote_icon/flutter_remote_icon.dart';
-
+export 'src/icons.dart';
 // endregion default packages

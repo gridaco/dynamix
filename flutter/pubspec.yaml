@@ -14,7 +14,8 @@ dependencies:
   # https://github.com/dnfield/flutter_svg
   flutter_svg: ^0.18.0
 
-  flutter_remote_icon: 0.0.3+2
+  x_icon: ^0.0.4
+  x_color: ^0.0.1
 
   # https://github.com/grpc/grpc-dart
   grpc: ^2.2.0

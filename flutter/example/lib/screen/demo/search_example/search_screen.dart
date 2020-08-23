@@ -77,7 +77,7 @@ class _SearchScreen extends State<SearchScreen> {
         XText subtitle = XTranslator.translate(d["subtitle"]);
         
         return SearchResultRow(
-          icon: Icon(RemoteIconData.fromUri("material://Icons.person").icon),
+          icon: Icon(XIconData("material://Icons.person")),
           title: Text(title.text),
           subtitle: Text(subtitle.text),
           onTap: () {

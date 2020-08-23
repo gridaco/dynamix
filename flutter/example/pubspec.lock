@@ -104,13 +104,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.0.1+1"
-  flutter_remote_icon:
-    dependency: transitive
-    description:
-      name: flutter_remote_icon
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.0.3+2"
   flutter_remote_ui:
     dependency: "direct main"
     description:
@@ -324,6 +317,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.0-nullsafety.2"
+  x_color:
+    dependency: transitive
+    description:
+      name: x_color
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.1"
+  x_icon:
+    dependency: transitive
+    description:
+      name: x_icon
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.4"
   xml:
     dependency: transitive
     description:

@@ -188,13 +188,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_remote_icon:
-    dependency: "direct main"
-    description:
-      name: flutter_remote_icon
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.0.3+2"
   flutter_svg:
     dependency: "direct main"
     description:
@@ -520,6 +513,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.0"
+  x_color:
+    dependency: "direct main"
+    description:
+      name: x_color
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.1"
+  x_icon:
+    dependency: "direct main"
+    description:
+      name: x_icon
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.4"
   xml:
     dependency: transitive
     description:
