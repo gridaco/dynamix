@@ -3,7 +3,7 @@ import 'package:flutter_remote_icon/flutter_remote_icon.dart';
 import 'package:flutter_remote_icon_example/custom_icons.dart';
 
 void main() {
-  IconProvider.register("custom", CustomIcons.mapping);
+  XIcons.register("custom", CustomIcons.mapping);
   runApp(ExampleApp());
 }
 
@@ -39,7 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: buildBody(),
+      body: SingleChildScrollView(child: buildBody(),),
     );
   }
 
@@ -54,8 +54,8 @@ class _MyHomePageState extends State<MyHomePage> {
         Container(
           width: size,
           height: size,
-          child: RemoteIcon(
-            RemoteIconData.fromUri(dynamicUri),
+          child: XIcon(
+            XIconData.fromUri(dynamicUri),
             size: size,
           ),
           margin: EdgeInsets.all(24),
@@ -83,7 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
       decoration: InputDecoration(
           border: InputBorder.none, hintText: "enter icon name"),
       onSubmitted: (s) {
-        if (IconProvider.validate(s)) {
+        if (XIcons.validate(s)) {
           setState(() {
             dynamicUri = s;
             error = null;
@@ -143,7 +143,7 @@ class _MyHomePageState extends State<MyHomePage> {
         SizedBox(
           height: 8,
         ),
-        RemoteIcon(RemoteIconData.fromUri(uri))
+        XIcon(XIconData.fromUri(uri))
       ],
     );
   }

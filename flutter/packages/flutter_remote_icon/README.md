@@ -35,13 +35,13 @@ dev_dependencies:
 **example**
 ```dart
 Widget buildRemoteIcon(){
-  // var remoteIconData = new RemoteIconData(Icons.add); // -> flutter native material icons
-  // var remoteIconData = new RemoteIconData("material://Icons.add"); // -> native material icons remotely (dynamically)  
-  // var remoteIconData = new RemoteIconData("https://example.com/svg.svg");  // -> loading remote svg
-  // var remoteIconData = new RemoteIconData("assets/icons/add.png"); // -> loading local assets 
-  // var remoteIconData = new RemoteIconData("custom-namespace://CustomIcons.icon_name"); // -> (requires pre-usage definition)
-  var remoteIconData = new RemoteIconData();
-  return RemoteIcon(icon: remoteIconData, color: Colors.black);
+  // var remoteIconData = new XIconData(Icons.add); // -> flutter native material icons
+  // var remoteIconData = new XIconData("material://Icons.add"); // -> native material icons remotely (dynamically)
+  // var remoteIconData = new XIconData("https://example.com/svg.svg");  // -> loading remote svg
+  // var remoteIconData = new XIconData("assets/icons/add.png"); // -> loading local assets
+  // var remoteIconData = new XIconData("custom-namespace://CustomIcons.icon_name"); // -> (requires pre-usage definition)
+  var remoteIconData = new XIconData();
+  return XIcon(icon: remoteIconData, color: Colors.black);
 }
 ```
 
@@ -59,7 +59,7 @@ Widget buildRemoteIcon(){
 ## register custom font icon schema
 ```dart
 void main() {
-  IconProvider.register("namespace", {
+  XIcons.register("namespace", {
     "namespace://CustomIcons.icon_name": CustomIcons.icon_name
   });
   runApp(ExampleApp());
@@ -108,13 +108,13 @@ next, you can register the namespace and mappings easily
 ```dart
 void main() {
   // register mapping
-  IconProvider.register("namespace", CustomIcons.mapping);
+  XIcons.register("namespace", CustomIcons.mapping);
   runApp(ExampleApp());
 }
 
 // and use it!
 Widget buildDynamicIcon(){
-  return RemoteIcon(icon: RemoteIconData("namespace://CustomIcons.person_awesome"));
+  return XIcon(icon: RemoteIconData("namespace://CustomIcons.person_awesome"));
 }
 ```
 

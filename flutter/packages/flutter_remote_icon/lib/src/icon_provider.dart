@@ -2,7 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_remote_icon/flutter_remote_icon.dart';
 import 'package:flutter_remote_icon/src/icon_data.dart';
 
-class IconProvider {
+class XIcons {
   static Map<String, Map<String, IconData>> _registry = {};
 
   /// register icon mapping with namespace
@@ -36,7 +36,7 @@ class IconProvider {
 
   static validate(String uri) {
     try {
-      RemoteIcon(RemoteIconData.fromUri(uri));
+      XIcon(XIconData.fromUri(uri));
       return true;
     } catch (e) {
       return false;

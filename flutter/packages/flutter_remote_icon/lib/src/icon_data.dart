@@ -1,12 +1,11 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_remote_icon/flutter_remote_icon.dart';
 import 'material_icons_mapping.dart';
 
-/// RemoteIconType
-enum RemoteIconType {
-  // automatically detects the type & schema of the icon uri
-  // todo - not implemented
-  AUTOMATIC,
+/// [XIconType]
+/// if this data is not provided, automatically detects the type & schema of the icon uri
+enum XIconType {
   // google's material icon
   MATERIAL_NATIVE,
   // apple's cupertino icon
@@ -20,10 +19,10 @@ enum RemoteIconType {
   CUSTOM_FONT,
 }
 
-/// [RemoteIconData] contains the data for dynamically loading icons registered via data sent from the server.
-class RemoteIconData {
+/// [XIconData] contains the data for dynamically loading icons registered via data sent from the server.
+class XIconData {
   final String uri;
-  final RemoteIconType type;
+  final XIconType type;
 
   /// optional
   final IconData initIconData;
@@ -34,17 +33,17 @@ class RemoteIconData {
     }
 
     /// get [IconData] via mapped string set.
-    if (type == RemoteIconType.MATERIAL_NATIVE) {
+    if (type == XIconType.MATERIAL_NATIVE) {
       return MATERIAL_ICONS_MAPPING[iconNameFromUri];
-    } else if (type == RemoteIconType.CUSTOM_FONT) {
-      return IconProvider.fetchMappingByNamespace(namespaceFromUri(uri))[uri];
+    } else if (type == XIconType.CUSTOM_FONT) {
+      return XIcons.fetchMappingByNamespace(namespaceFromUri(uri))[uri];
     }
 
     throw FlutterError("no valid icon data found for provided uri : $uri");
   }
 
   String get iconNameFromUri {
-    if (type == RemoteIconType.MATERIAL_NATIVE) {
+    if (type == XIconType.MATERIAL_NATIVE) {
       final plain = uri.replaceAll(
           new RegExp(r'material://Icons.'), ''); // removes material:// prefix
       return plain;
@@ -55,60 +54,60 @@ class RemoteIconData {
 
   final String asset;
 
-  RemoteIconData({
+  XIconData({
     @required this.uri,
     @required this.type,
     this.asset,
     this.initIconData,
-  });
+  }): assert(type != null);
 
-  factory RemoteIconData.fromMaterialIconName(String name) {
-    return RemoteIconData(
-        uri: "material://Icons.$name", type: RemoteIconType.MATERIAL_NATIVE);
+  factory XIconData.fromMaterialIconName(String name) {
+    return XIconData(
+        uri: "material://Icons.$name", type: XIconType.MATERIAL_NATIVE);
   }
 
-  factory RemoteIconData.fromUri(String uri) {
+  factory XIconData.fromUri(String uri) {
     if (!isValidUri(uri)) {
       throw FlutterError("$uri is not a valid icon uri format");
     }
     final namespace = namespaceFromUri(uri);
     // parse type from uri
-    var type = RemoteIconType.AUTOMATIC;
+    XIconType type;
     if (namespace == "asset") {
-      type = RemoteIconType.LOCAL_ASSET;
+      type = XIconType.LOCAL_ASSET;
     } else if (namespace == "http" || namespace == "https") {
-      type = RemoteIconType.REMOTE_RESOURCE;
+      type = XIconType.REMOTE_RESOURCE;
     } else if (namespace == "material") {
-      type = RemoteIconType.MATERIAL_NATIVE;
-    } else if (IconProvider.hasNamespace(namespace)) {
-      type = RemoteIconType.CUSTOM_FONT;
+      type = XIconType.MATERIAL_NATIVE;
+    } else if (XIcons.hasNamespace(namespace)) {
+      type = XIconType.CUSTOM_FONT;
     }
-    return RemoteIconData(uri: uri, type: type);
+    return XIconData(uri: uri, type: type);
   }
 
-  factory RemoteIconData.fromMaterialIcon(IconData icon) {
-    return RemoteIconData(
-        uri: null, type: RemoteIconType.MATERIAL_NATIVE, initIconData: icon);
+  factory XIconData.fromMaterialIcon(IconData icon) {
+    return XIconData(
+        uri: null, type: XIconType.MATERIAL_NATIVE, initIconData: icon);
   }
 
-  factory RemoteIconData.fromAssets(String asset) {
-    return RemoteIconData(
-        uri: "asset://$asset", type: RemoteIconType.LOCAL_ASSET, asset: asset);
+  factory XIconData.fromAssets(String asset) {
+    return XIconData(
+        uri: "asset://$asset", type: XIconType.LOCAL_ASSET, asset: asset);
   }
 
-  factory RemoteIconData.fromFont(String fontFamily, String icon) {
+  factory XIconData.fromFont(String fontFamily, String icon) {
     throw UnimplementedError();
 //    return RemoteIconData("");
     // todo implement
   }
 
-  factory RemoteIconData.fromRemote(String resource) {
+  factory XIconData.fromRemote(String resource) {
     throw UnimplementedError();
     // 1. validate
 //    return RemoteIconData("");
   }
 
-  factory RemoteIconData.fromBase64(String base64) {
+  factory XIconData.fromBase64(String base64) {
     throw UnimplementedError();
     // todo implement
   }
