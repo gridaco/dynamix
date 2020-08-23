@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart' as m;
 import 'package:flutter/widgets.dart';
-import 'package:flutter_remote_icon/flutter_remote_icon.dart';
-import 'package:flutter_remote_icon/src/utils.dart';
-import 'material_icons_mapping.dart';
+import 'package:x_icon/x_icon.dart';
+import 'package:x_icon/src/utils.dart';
+import 'package:json_annotation/json_annotation.dart';
+
+part 'icon_data.g.dart';
 
 /// [XIconType]
 /// if this data is not provided, automatically detects the type & schema of the icon uri
@@ -23,15 +25,19 @@ enum XIconType {
 const SUPPORTED_RESOURCE_FORMATS = ["svg", "png", "jpg", "jpeg"];
 
 /// [XIconData] contains the data for dynamically loading icons registered via data sent from the server.
+@JsonSerializable()
 class XIconData extends IconData {
   /// the [uri] is used for representing desired resource.
   /// this can be native local material icons and also can be remote resource url. (and more)
+  @JsonKey(name: "uri")
   final String uri;
 
-//  final double size;
-//  final Color color;
+  // todo : support color & size from the data holder
+  //  final double size;
+  //  final Color color;
 
   /// [_explicitType] is used for explicitly providing the type of the uri.
+  @JsonKey(name: "explicitType")
   final XIconType _explicitType;
 
   /// if [_explicitType] is provided, use it instead of parsing from uri.
@@ -98,4 +104,6 @@ class XIconData extends IconData {
     assert(isValidResourceUrl(resource));
     return XIconData(resource, type: XIconType.LOCAL_ASSET);
   }
+  
+  factory XIconData.fromJson(json) => _$XIconDataFromJson(json);
 }

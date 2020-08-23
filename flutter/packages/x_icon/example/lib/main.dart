@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_remote_icon/flutter_remote_icon.dart';
+import 'package:x_icon/x_icon.dart';
 import 'package:flutter_remote_icon_example/custom_icons.dart';
 
 void main() {

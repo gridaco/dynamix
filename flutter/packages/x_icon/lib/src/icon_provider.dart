@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
-import 'package:flutter_remote_icon/flutter_remote_icon.dart';
-import 'package:flutter_remote_icon/src/icon_data.dart';
-import 'package:flutter_remote_icon/src/utils.dart';
+import 'package:x_icon/x_icon.dart';
+import 'package:x_icon/src/icon_data.dart';
+import 'package:x_icon/src/utils.dart';
 
 import 'material_icons_mapping.dart';
 

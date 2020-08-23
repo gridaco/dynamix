@@ -1,4 +1,4 @@
-library flutter_remote_icon;
+library x_icon;
 
 export 'src/icon_data.dart';
 export 'src/icon.dart';

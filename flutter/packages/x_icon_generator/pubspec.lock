@@ -9,7 +9,7 @@ packages:
     source: hosted
     version: "7.0.0"
   analyzer:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: analyzer
       url: "https://pub.dartlang.org"
@@ -28,16 +28,9 @@ packages:
       name: async
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.5.0-nullsafety"
-  boolean_selector:
-    dependency: transitive
-    description:
-      name: boolean_selector
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.1.0-nullsafety"
+    version: "2.4.2"
   build:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: build
       url: "https://pub.dartlang.org"
@@ -105,7 +98,7 @@ packages:
       name: charcode
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.2.0-nullsafety"
+    version: "1.1.3"
   checked_yaml:
     dependency: transitive
     description:
@@ -120,13 +113,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.2.0"
-  clock:
-    dependency: transitive
-    description:
-      name: clock
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.1.0-nullsafety"
   code_builder:
     dependency: transitive
     description:
@@ -162,13 +148,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.16.2"
-  cupertino_icons:
-    dependency: "direct main"
-    description:
-      name: cupertino_icons
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.1.3"
   dart_style:
     dependency: transitive
     description:
@@ -176,13 +155,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.3.6"
-  fake_async:
-    dependency: transitive
-    description:
-      name: fake_async
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.1.0-nullsafety"
   fixnum:
     dependency: transitive
     description:
@@ -191,26 +163,7 @@ packages:
     source: hosted
     version: "0.10.11"
   flutter:
-    dependency: "direct main"
-    description: flutter
-    source: sdk
-    version: "0.0.0"
-  flutter_remote_icon:
-    dependency: "direct main"
-    description:
-      path: ".."
-      relative: true
-    source: path
-    version: "0.0.3+6"
-  flutter_remote_icon_generator:
-    dependency: "direct dev"
-    description:
-      path: "../../flutter_remote_icon_generator"
-      relative: true
-    source: path
-    version: "0.0.1+2"
-  flutter_test:
-    dependency: "direct dev"
+    dependency: transitive
     description: flutter
     source: sdk
     version: "0.0.0"
@@ -283,7 +236,7 @@ packages:
       name: matcher
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.12.10-nullsafety"
+    version: "0.12.9"
   meta:
     dependency: transitive
     description:
@@ -325,7 +278,7 @@ packages:
       name: path
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.8.0-nullsafety"
+    version: "1.7.0"
   pedantic:
     dependency: transitive
     description:
@@ -381,7 +334,7 @@ packages:
     source: sdk
     version: "0.0.99"
   source_gen:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: source_gen
       url: "https://pub.dartlang.org"
@@ -393,49 +346,42 @@ packages:
       name: source_span
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.8.0-nullsafety"
+    version: "1.7.0"
   stack_trace:
     dependency: transitive
     description:
       name: stack_trace
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.10.0-nullsafety"
+    version: "1.9.5"
   stream_channel:
     dependency: transitive
     description:
       name: stream_channel
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.1.0-nullsafety"
+    version: "2.0.0"
   stream_transform:
     dependency: transitive
     description:
       name: stream_transform
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.2.0"
+    version: "0.0.20"
   string_scanner:
     dependency: transitive
     description:
       name: string_scanner
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.1.0-nullsafety"
+    version: "1.0.5"
   term_glyph:
     dependency: transitive
     description:
       name: term_glyph
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.2.0-nullsafety"
-  test_api:
-    dependency: transitive
-    description:
-      name: test_api
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.2.19-nullsafety"
+    version: "1.1.0"
   timing:
     dependency: transitive
     description:
@@ -471,6 +417,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.0"
+  x_icon:
+    dependency: "direct main"
+    description:
+      path: "../x_icon"
+      relative: true
+    source: path
+    version: "0.0.3+6"
   yaml:
     dependency: transitive
     description:

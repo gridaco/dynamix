@@ -1,4 +1,4 @@
-# flutter-remote-icon [![](https://img.shields.io/badge/pub-latest-brightgreen)](https://pub.dev/packages/flutter_remote_icon) [![](https://img.shields.io/badge/generator-latest-brightgreen)](https://pub.dev/packages/flutter_remote_icon_generator)
+# flutter XIcon [![](https://img.shields.io/badge/pub-latest-brightgreen)](https://pub.dev/packages/flutter_remote_icon) [![](https://img.shields.io/badge/generator-latest-brightgreen)](https://pub.dev/packages/flutter_remote_icon_generator)
 
 > What if you decided to load icon from server? But want to use local's font icons?
 >
@@ -14,13 +14,13 @@
 
 ```yaml
 dependencies:
-  flutter_remote_icon: latest
+  x_icon: latest
 
 dev_dependencies:
-  flutter_remote_icon_generator: latest
+  x_icon_generator: latest
   build_runner: latest
 ```
-> for more information about  [flutter_remote_icon_generator](../flutter_remote_icon_generator), please refer [here](../flutter_remote_icon_generator)
+> for more information about  [x_icon_generator](../x_icon_generator), please refer [here](../x_icon_generator)
 
 
 

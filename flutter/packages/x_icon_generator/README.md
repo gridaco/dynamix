@@ -5,7 +5,7 @@
 ## Installation
 ```yaml
 dev_dependencies:
-    flutter_remote_icon_generator: latest
+    x_icon_generator: latest
 ```
 
 ## Usages

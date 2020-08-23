@@ -1,13 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:json_annotation/json_annotation.dart';
 import 'icon_data.dart';
 
+part 'icon.g.dart';
+
+@JsonSerializable()
 class XIcon extends StatelessWidget {
+  @JsonKey(name: "icon")
   final XIconData icon;
+  @JsonKey(ignore: true)
   final Key key;
+  @JsonKey(name: "size")
   final double size;
+  @JsonKey(ignore: true, name: "color") // todo : use custom XColor object.
   final Color color;
 
-  XIcon(this.icon, {this.size, this.color, this.key}): super(key: key);
+  XIcon(this.icon, {this.size, this.color, this.key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -54,4 +62,6 @@ class XIcon extends StatelessWidget {
       size: size,
     );
   }
+
+  factory XIcon.fromJson(json) => _$XIconFromJson(json);
 }

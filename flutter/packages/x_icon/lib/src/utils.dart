@@ -1,5 +1,5 @@
-import 'package:flutter_remote_icon/src/icon_data.dart';
-import 'package:flutter_remote_icon/src/icon_provider.dart';
+import 'package:x_icon/src/icon_data.dart';
+import 'package:x_icon/src/icon_provider.dart';
 
 bool isValidUri(String uri) {
   // todo: consider updating logic using URI#parse
