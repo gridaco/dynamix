@@ -3,6 +3,8 @@ import 'package:flutter_remote_icon/flutter_remote_icon.dart';
 import 'package:flutter_remote_icon/src/icon_data.dart';
 import 'package:flutter_remote_icon/src/utils.dart';
 
+/// [XIcons] is a remote icon repository.
+/// this is used for validations and injecting custom parser etc..
 class XIcons {
   static Map<String, Map<String, IconData>> _registry = {};
 
@@ -26,6 +28,7 @@ class XIcons {
     }
   }
 
+  /// check if current XIcons contains the mapping of provided namespace
   static bool hasNamespace(String namespace) {
     return _registry.containsKey(namespace);
   }
@@ -35,7 +38,11 @@ class XIcons {
     return _registry[namespace][uri];
   }
 
-  static validate(String uri) {
+  /// validates if uri is available for usage/
+  /// if dry == true, it validates through logic and check if it will work or not.
+  /// running validate with dry == false will actually create the widget, runs a full validation
+  static validate(String uri, {bool dry = false}) {
+    // todo: implement dry run
     try {
       XIcon(XIconData.fromUri(uri));
       return true;

@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' as m;
 import 'package:flutter/widgets.dart';
 import 'package:flutter_remote_icon/flutter_remote_icon.dart';
 import 'package:flutter_remote_icon/src/utils.dart';
@@ -23,10 +23,13 @@ enum XIconType {
 const SUPPORTED_RESOURCE_FORMATS = ["svg", "png", "jpg", "jpeg"];
 
 /// [XIconData] contains the data for dynamically loading icons registered via data sent from the server.
-class XIconData {
+class XIconData extends IconData {
   /// the [uri] is used for representing desired resource.
   /// this can be native local material icons and also can be remote resource url. (and more)
   final String uri;
+
+//  final double size;
+//  final Color color;
 
   /// [_explicitType] is used for explicitly providing the type of the uri.
   XIconType _explicitType;
@@ -80,7 +83,20 @@ class XIconData {
         "this icon data does not contain flutter native material icon data ");
   }
 
-  XIconData({@required this.uri, XIconType type}) : this._explicitType = type;
+  static IconData _fetchIconDataForConstructor(String uri) {
+    try {
+      return XIcons.fetchIcon(uri);
+    } catch (e) {}
+    return m.Icons.error;
+  }
+
+  XIconData({@required this.uri, XIconType type})
+      : this._explicitType = type,
+        super(
+          _fetchIconDataForConstructor(uri).codePoint,
+          fontFamily: _fetchIconDataForConstructor(uri).fontFamily,
+          fontPackage: _fetchIconDataForConstructor(uri).fontPackage,
+        );
 
   factory XIconData.fromMaterialIconName(String name) {
     return XIconData(

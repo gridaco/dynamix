@@ -143,7 +143,7 @@ class _MyHomePageState extends State<MyHomePage> {
         SizedBox(
           height: 8,
         ),
-        XIcon(XIconData.fromUri(uri))
+        Icon(XIconData.fromUri(uri))
       ],
     );
   }
