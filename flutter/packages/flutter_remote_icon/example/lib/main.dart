@@ -39,7 +39,9 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: SingleChildScrollView(child: buildBody(),),
+      body: SingleChildScrollView(
+        child: buildBody(),
+      ),
     );
   }
 
@@ -132,8 +134,8 @@ class _MyHomePageState extends State<MyHomePage> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          '''RemoteIcon(
-        RemoteIconData.fromUri("$uri")
+          '''XIcon(
+        XIconData("$uri")
 )''',
           style: Theme.of(context)
               .textTheme
@@ -143,7 +145,7 @@ class _MyHomePageState extends State<MyHomePage> {
         SizedBox(
           height: 8,
         ),
-        Icon(XIconData.fromUri(uri))
+        Icon(XIconData(uri))
       ],
     );
   }

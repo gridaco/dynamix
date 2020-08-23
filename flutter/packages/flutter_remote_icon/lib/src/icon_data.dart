@@ -70,7 +70,7 @@ class XIconData extends IconData {
     return m.Icons.error;
   }
 
-  XIconData({@required this.uri, XIconType type})
+  XIconData(this.uri, {XIconType type})
       : this._explicitType = type,
         super(
           _fetchIconDataForConstructor(uri).codePoint,
@@ -79,24 +79,23 @@ class XIconData extends IconData {
         );
 
   factory XIconData.fromMaterialIconName(String name) {
-    return XIconData(
-        uri: "material://Icons.$name", type: XIconType.MATERIAL_NATIVE);
+    return XIconData("material://Icons.$name", type: XIconType.MATERIAL_NATIVE);
   }
 
   factory XIconData.fromUri(String uri) {
     if (!isValidUri(uri)) {
       throw FlutterError("$uri is not a valid icon uri format");
     }
-    return XIconData(uri: uri);
+    return XIconData(uri);
   }
 
   factory XIconData.fromAssets(String asset) {
-    return XIconData(uri: "asset://$asset", type: XIconType.LOCAL_ASSET);
+    return XIconData("asset://$asset", type: XIconType.LOCAL_ASSET);
   }
 
   factory XIconData.fromRemote(String resource) {
     // 1. validate
     assert(isValidResourceUrl(resource));
-    return XIconData(uri: resource, type: XIconType.LOCAL_ASSET);
+    return XIconData(resource, type: XIconType.LOCAL_ASSET);
   }
 }
