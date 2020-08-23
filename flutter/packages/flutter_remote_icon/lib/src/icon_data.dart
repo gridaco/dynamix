@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_remote_icon/flutter_remote_icon.dart';
+import 'package:flutter_remote_icon/src/utils.dart';
 import 'material_icons_mapping.dart';
 
 /// [XIconType]
@@ -9,7 +10,6 @@ enum XIconType {
   // google's material icon
   MATERIAL_NATIVE,
   // apple's cupertino icon
-  // todo - not implemented
   CUPERTINO_NATIVE,
   // image from network
   REMOTE_RESOURCE,
@@ -19,56 +19,23 @@ enum XIconType {
   CUSTOM_FONT,
 }
 
+/// the list of supported file formats
+const SUPPORTED_RESOURCE_FORMATS = ["svg", "png", "jpg", "jpeg"];
+
 /// [XIconData] contains the data for dynamically loading icons registered via data sent from the server.
 class XIconData {
+  /// the [uri] is used for representing desired resource.
+  /// this can be native local material icons and also can be remote resource url. (and more)
   final String uri;
-  final XIconType type;
 
-  /// optional
-  final IconData initIconData;
+  /// [_explicitType] is used for explicitly providing the type of the uri.
+  XIconType _explicitType;
 
-  IconData get icon {
-    if (initIconData != null) {
-      return initIconData;
-    }
-
-    /// get [IconData] via mapped string set.
-    if (type == XIconType.MATERIAL_NATIVE) {
-      return MATERIAL_ICONS_MAPPING[iconNameFromUri];
-    } else if (type == XIconType.CUSTOM_FONT) {
-      return XIcons.fetchMappingByNamespace(namespaceFromUri(uri))[uri];
-    }
-
-    throw FlutterError("no valid icon data found for provided uri : $uri");
-  }
-
-  String get iconNameFromUri {
-    if (type == XIconType.MATERIAL_NATIVE) {
-      final plain = uri.replaceAll(
-          new RegExp(r'material://Icons.'), ''); // removes material:// prefix
-      return plain;
-    }
-    throw Exception(
-        "this icon data does not contain flutter native material icon data ");
-  }
-
-  final String asset;
-
-  XIconData({
-    @required this.uri,
-    @required this.type,
-    this.asset,
-    this.initIconData,
-  }): assert(type != null);
-
-  factory XIconData.fromMaterialIconName(String name) {
-    return XIconData(
-        uri: "material://Icons.$name", type: XIconType.MATERIAL_NATIVE);
-  }
-
-  factory XIconData.fromUri(String uri) {
-    if (!isValidUri(uri)) {
-      throw FlutterError("$uri is not a valid icon uri format");
+  /// if [_explicitType] is provided, use it instead of parsing from uri.
+  /// describes what it stands for.
+  XIconType get type {
+    if (_explicitType != null) {
+      return _explicitType;
     }
     final namespace = namespaceFromUri(uri);
     // parse type from uri
@@ -82,51 +49,58 @@ class XIconData {
     } else if (XIcons.hasNamespace(namespace)) {
       type = XIconType.CUSTOM_FONT;
     }
-    return XIconData(uri: uri, type: type);
+    return type;
   }
 
-  factory XIconData.fromMaterialIcon(IconData icon) {
+  /// get [IconData] via mapped string set.
+  IconData get icon {
+    if (type == XIconType.MATERIAL_NATIVE) {
+      return MATERIAL_ICONS_MAPPING[name];
+    } else if (type == XIconType.CUSTOM_FONT) {
+      return XIcons.fetchMappingByNamespace(namespaceFromUri(uri))[uri];
+    }
+
+    // only font based uri supports icon getter. if not, throw error
+    throw FlutterError(
+        "no valid icon data found for provided uri : $uri. did you provided asset or remote uri for XIconData.icon usage?");
+  }
+
+  String get asset {
+    return uri.split("asset://")[1];
+  }
+
+  /// [name] returns the parsed icon name from the uri. for example, if given uri is "ns://Icons.add", name will be "add"
+  String get name {
+    if (type == XIconType.MATERIAL_NATIVE) {
+      final plain = uri.replaceAll(
+          new RegExp(r'material://Icons.'), ''); // removes material:// prefix
+      return plain;
+    }
+    throw Exception(
+        "this icon data does not contain flutter native material icon data ");
+  }
+
+  XIconData({@required this.uri, XIconType type}) : this._explicitType = type;
+
+  factory XIconData.fromMaterialIconName(String name) {
     return XIconData(
-        uri: null, type: XIconType.MATERIAL_NATIVE, initIconData: icon);
+        uri: "material://Icons.$name", type: XIconType.MATERIAL_NATIVE);
+  }
+
+  factory XIconData.fromUri(String uri) {
+    if (!isValidUri(uri)) {
+      throw FlutterError("$uri is not a valid icon uri format");
+    }
+    return XIconData(uri: uri);
   }
 
   factory XIconData.fromAssets(String asset) {
-    return XIconData(
-        uri: "asset://$asset", type: XIconType.LOCAL_ASSET, asset: asset);
-  }
-
-  factory XIconData.fromFont(String fontFamily, String icon) {
-    throw UnimplementedError();
-//    return RemoteIconData("");
-    // todo implement
+    return XIconData(uri: "asset://$asset", type: XIconType.LOCAL_ASSET);
   }
 
   factory XIconData.fromRemote(String resource) {
-    throw UnimplementedError();
     // 1. validate
-//    return RemoteIconData("");
+    assert(isValidResourceUrl(resource));
+    return XIconData(uri: resource, type: XIconType.LOCAL_ASSET);
   }
-
-  factory XIconData.fromBase64(String base64) {
-    throw UnimplementedError();
-    // todo implement
-  }
-}
-
-const SUPPORTED_RESOURCE_FORMATS = [
-  "svg",
-  "png",
-  "jpg",
-  "jpeg"
-]; // todo use for validation
-
-bool isValidUri(String uri) {
-  if (uri != null && uri.isNotEmpty) {
-    return uri.contains("://");
-  }
-  return false;
-}
-
-String namespaceFromUri(String uri) {
-  return uri.split("://")[0];
 }

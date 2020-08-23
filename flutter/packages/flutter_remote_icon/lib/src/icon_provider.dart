@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_remote_icon/flutter_remote_icon.dart';
 import 'package:flutter_remote_icon/src/icon_data.dart';
+import 'package:flutter_remote_icon/src/utils.dart';
 
 class XIcons {
   static Map<String, Map<String, IconData>> _registry = {};
