@@ -16,3 +16,11 @@ RemoteIcon(icon: RemoteIconData.fromUri("~").icon);
 // to 
 RemoteIcon.fromUri("~");
 ```
+
+## [0.0.4] - major updates
+RemoteIconData -> XIconData
+RemoteIcon -> XIcon
+
+both supports fromJson
+
+XIconData now extends from IconData, so you can use it like so. Icon(XIconData("uri"))

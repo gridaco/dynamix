@@ -1,6 +1,6 @@
-# Icon mapping generator [![](https://img.shields.io/badge/pub-latest-brightgreen)](https://pub.dev/packages/flutter_remote_icon_generator)
+# Icon mapping generator [![](https://img.shields.io/badge/pub-latest-brightgreen)](https://pub.dev/packages/x_icon_generator)
 
-> this package is a generator dev-dependency for [flutter_remote_icon](../flutter_remote_icon). generates custom icon mapping to be registered to `IconProvider` as namespace
+> this package is a generator dev-dependency for [x_icon](../x_icon). generates custom icon mapping to be registered to `IconProvider` as namespace
 
 ## Installation
 ```yaml

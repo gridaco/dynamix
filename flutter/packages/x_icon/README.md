@@ -1,4 +1,4 @@
-# flutter XIcon [![](https://img.shields.io/badge/pub-latest-brightgreen)](https://pub.dev/packages/flutter_remote_icon) [![](https://img.shields.io/badge/generator-latest-brightgreen)](https://pub.dev/packages/flutter_remote_icon_generator)
+# flutter XIcon [![](https://img.shields.io/badge/pub-latest-brightgreen)](https://pub.dev/packages/x_icon) [![](https://img.shields.io/badge/generator-latest-brightgreen)](https://pub.dev/packages/x_icon_generator)
 
 > What if you decided to load icon from server? But want to use local's font icons?
 >
