@@ -62,7 +62,7 @@ function sleep(ms) {
 app.get('/search', async (req, res) => {
     const { query } = req.query;
 
-    await sleep(120);
+    await sleep(10);
 
     const searchResults: Array<SearchResultLayout> = [
         new SearchResultLayout({
