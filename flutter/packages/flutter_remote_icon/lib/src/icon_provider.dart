@@ -3,6 +3,8 @@ import 'package:flutter_remote_icon/flutter_remote_icon.dart';
 import 'package:flutter_remote_icon/src/icon_data.dart';
 import 'package:flutter_remote_icon/src/utils.dart';
 
+import 'material_icons_mapping.dart';
+
 /// [XIcons] is a remote icon repository.
 /// this is used for validations and injecting custom parser etc..
 class XIcons {
@@ -33,9 +35,21 @@ class XIcons {
     return _registry.containsKey(namespace);
   }
 
-  static IconData fetchIcon(String uri) {
-    final namespace = namespaceFromUri(uri);
-    return _registry[namespace][uri];
+  static IconData fetchIcon(String uri, {XIconType type}) {
+    if (type == null) {
+      type = typeFromUri(uri);
+    }
+
+    if (type == XIconType.MATERIAL_NATIVE) {
+      final name = nameFromUri(uri);
+      return MATERIAL_ICONS_MAPPING[name];
+    } else if (type == XIconType.CUSTOM_FONT) {
+      final namespace = namespaceFromUri(uri);
+      return _registry[namespace][uri];
+    } else {
+      throw FlutterError(
+          "given uri : $uri cannot be fetched from XIcons registry with type $type");
+    }
   }
 
   /// validates if uri is available for usage/

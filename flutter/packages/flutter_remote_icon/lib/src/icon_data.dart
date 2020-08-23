@@ -32,7 +32,7 @@ class XIconData extends IconData {
 //  final Color color;
 
   /// [_explicitType] is used for explicitly providing the type of the uri.
-  XIconType _explicitType;
+  final XIconType _explicitType;
 
   /// if [_explicitType] is provided, use it instead of parsing from uri.
   /// describes what it stands for.
@@ -40,32 +40,18 @@ class XIconData extends IconData {
     if (_explicitType != null) {
       return _explicitType;
     }
-    final namespace = namespaceFromUri(uri);
-    // parse type from uri
-    XIconType type;
-    if (namespace == "asset") {
-      type = XIconType.LOCAL_ASSET;
-    } else if (namespace == "http" || namespace == "https") {
-      type = XIconType.REMOTE_RESOURCE;
-    } else if (namespace == "material") {
-      type = XIconType.MATERIAL_NATIVE;
-    } else if (XIcons.hasNamespace(namespace)) {
-      type = XIconType.CUSTOM_FONT;
-    }
-    return type;
+    return typeFromUri(uri);
   }
 
   /// get [IconData] via mapped string set.
   IconData get icon {
-    if (type == XIconType.MATERIAL_NATIVE) {
-      return MATERIAL_ICONS_MAPPING[name];
-    } else if (type == XIconType.CUSTOM_FONT) {
-      return XIcons.fetchMappingByNamespace(namespaceFromUri(uri))[uri];
+    try {
+      return XIcons.fetchIcon(uri, type: type);
+    } catch (e) {
+      // only font based uri supports icon getter. if not, throw error
+      throw FlutterError(
+          "no valid icon data found for provided uri : $uri. did you provided asset or remote uri for XIconData.icon usage?");
     }
-
-    // only font based uri supports icon getter. if not, throw error
-    throw FlutterError(
-        "no valid icon data found for provided uri : $uri. did you provided asset or remote uri for XIconData.icon usage?");
   }
 
   String get asset {
@@ -74,13 +60,7 @@ class XIconData extends IconData {
 
   /// [name] returns the parsed icon name from the uri. for example, if given uri is "ns://Icons.add", name will be "add"
   String get name {
-    if (type == XIconType.MATERIAL_NATIVE) {
-      final plain = uri.replaceAll(
-          new RegExp(r'material://Icons.'), ''); // removes material:// prefix
-      return plain;
-    }
-    throw Exception(
-        "this icon data does not contain flutter native material icon data ");
+    return nameFromUri(uri);
   }
 
   static IconData _fetchIconDataForConstructor(String uri) {
