@@ -45,6 +45,8 @@ Widget buildRemoteIcon(){
 }
 ```
 
+[Full example available here](./example)
+
 **supported icons**
 
 0.  `Icons.add` (non dynamic usage)
