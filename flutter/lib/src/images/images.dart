@@ -2,6 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:x_icon/x_icon.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+/// [XImageMode] indicates the mode of the [XImage].
+enum XImageMode{
+  REMOTE,
+  ASSET,
+  FILE
+}
+
 class XImage extends StatelessWidget {
   final bool remote;
   final String uri;
