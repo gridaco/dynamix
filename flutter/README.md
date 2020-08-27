@@ -1,6 +1,6 @@
-# flutter_remote_ui [![](https://img.shields.io/badge/pub-latest-brightgreen)](https://pub.dev/packages/flutter_remote_ui)
+# dynamic [![](https://img.shields.io/badge/pub-latest-brightgreen)](https://pub.dev/packages/dynamic)
 
-remote ui client for flutter
+dynamic: remote ui client for flutter
 
 ## What is "remote-ui" ?
 
@@ -9,9 +9,9 @@ What is "remote-ui". why and when to use?
 ## Installation
 
 ```shell script
-# https://pub.dev/packages/flutter_remote_ui
+# https://pub.dev/packages/dynamic
 dependencies:
-  flutter_remote_ui: latest
+  dynamic: latest
 ```
 
 Remote-ui is a cross platform ui structure standard, so you can develop with more consistency, integrity, maintainability.
@@ -147,4 +147,4 @@ woojoo@softmarshmallow.com
 
 
 
-©2020 Bridged design. development since 2019.9
+©2020 bridged XYZ. development since 2019.9

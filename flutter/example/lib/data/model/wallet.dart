@@ -1,4 +1,4 @@
-import 'package:flutter_remote_ui/flutter_remote_ui.dart';
+import 'package:dynamic/dynamic.dart';
 
 class WalletLayout extends XLayout<WalletBody> {
   WalletLayout(this.body) : super(body: body);

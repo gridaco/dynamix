@@ -1,4 +1,4 @@
-library flutter_remote_ui;
+library flutter_x;
 
 export 'src/engine/engine.dart';
 export 'src/layouts/layouts.dart';

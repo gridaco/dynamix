@@ -1,4 +1,4 @@
-import 'package:flutter_remote_ui/flutter_remote_ui.dart' as rui;
+import 'package:dynamic/dynamic.dart' as rui;
 class TruckItemLayout extends rui.XLayout<TruckItemBody>{
   TruckItemLayout({this.body}): super(body: body);
   TruckItemBody body;

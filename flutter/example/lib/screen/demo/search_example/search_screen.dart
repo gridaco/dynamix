@@ -1,7 +1,6 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_remote_ui/flutter_remote_ui.dart';
+import 'package:dynamic/dynamic.dart';
 import 'package:http/http.dart' as http;
 
 class SearchScreen extends StatefulWidget {

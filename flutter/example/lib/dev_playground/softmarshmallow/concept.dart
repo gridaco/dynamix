@@ -1,7 +1,7 @@
 import 'package:flutter_remote_ui_example/data/model/foodle.dart';
-import 'package:flutter_remote_ui/flutter_remote_ui.dart' as rui;
 import 'package:flutter_remote_ui_example/screen/demo/foodle/models.dart';
 import 'package:flutter/material.dart';
+import 'package:dynamic/dynamic.dart';
 
 var truckData = TruckData(
     name: "gony's burger",
@@ -11,30 +11,30 @@ var truckData = TruckData(
 
 var truckItemLayout = (TruckData data) => TruckItemLayout(
     body: TruckItemBody(
-        title: rui.XText(data.name),
-        description: rui.XText(data.shortDescription),
-        image: rui.XImage.network(data.image),
-        onTap: rui.XAction(null)));
+        title: XText(data.name),
+        description: XText(data.shortDescription),
+        image: XImage.network(data.image),
+        onTap: XAction(null)));
 
 // region view segments
-var titleText = (BuildContext context, rui.XText text) => Text(
+var titleText = (BuildContext context, XText text) => Text(
       text.text,
       style: Theme.of(context).textTheme.bodyText2,
     );
 
-var descriptionText = (BuildContext context, rui.XText text) => Text(
+var descriptionText = (BuildContext context, XText text) => Text(
       text.text,
       style: Theme.of(context).textTheme.overline,
     );
 
-var coverImage = (rui.XImage image) => Image.network(
+var coverImage = (XImage image) => Image.network(
       image.uri,
       height: 100.0,
       width: 140.0,
       fit: BoxFit.cover,
     );
 
-Function onTapAction = (rui.XAction action) => {
+Function onTapAction = (XAction action) => {
       // handle action
     };
 // endregion view segments

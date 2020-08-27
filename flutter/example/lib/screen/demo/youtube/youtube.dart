@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_remote_ui_example/screen/demo/youtube/video_detail.dart';
-import 'package:flutter_remote_ui/flutter_remote_ui.dart' as rui;
+import 'package:dynamic/dynamic.dart';
 
 class YoutubeDemo extends StatefulWidget {
   static const routeName = "demo/youtube";
@@ -124,5 +124,5 @@ class VideoItemData {
   String publisherThumbnail;
   String title;
   String description;
-  List<rui.XAction> moreAction;
+  List<XAction> moreAction;
 }

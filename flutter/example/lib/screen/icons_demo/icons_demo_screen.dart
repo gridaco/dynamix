@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_remote_ui/flutter_remote_ui.dart' as rui;
+import 'package:dynamic/dynamic.dart';
 
 // examples
 const ICON_LOCAL_ASSET_1 = "asset://assets/";
@@ -27,6 +27,6 @@ class _IconsDemoScreenState extends State<IconsDemoScreen> {
   }
 
   Widget _buildBody(BuildContext context) {
-    return rui.XIcon(rui.XIconData("material://Icons.add"));
+    return XIcon(XIconData("material://Icons.add"));
   }
 }

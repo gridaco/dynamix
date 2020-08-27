@@ -1,8 +1,8 @@
-name: flutter_remote_ui
-description: bridged's remote-ui for flutter app. bump your flutter project to enterprise level
-version: 0.0.4+6
-homepage: https://github.com/softmarshmallow/remote-ui/tree/master/flutter
-repository: https://github.com/softmarshmallow/remote-ui
+name: dynamic
+description: bridged's dynamic remote-ui for flutter app. bump your flutter project to enterprise level
+version: 0.0.4+7
+homepage: https://github.com/softmarshmallow/remote-ui
+repository: https://github.com/softmarshmallow/remote-ui/tree/master/flutter
 
 environment:
   sdk: ">=2.1.0 <3.0.0"

@@ -1,5 +1,5 @@
-export 'package:flutter_remote_ui/src/layouts/action.dart';
-export 'package:flutter_remote_ui/src/layouts/button.dart';
-export 'package:flutter_remote_ui/src/layouts/layout.dart';
-export 'package:flutter_remote_ui/src/layouts/text.dart';
-export 'package:flutter_remote_ui/src/layouts/view.dart';
+export 'package:dynamic/src/layouts/action.dart';
+export 'package:dynamic/src/layouts/button.dart';
+export 'package:dynamic/src/layouts/layout.dart';
+export 'package:dynamic/src/layouts/text.dart';
+export 'package:dynamic/src/layouts/view.dart';

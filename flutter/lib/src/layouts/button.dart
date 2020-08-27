@@ -1,4 +1,4 @@
-import 'package:flutter_remote_ui/flutter_remote_ui.dart';
+import 'package:dynamic/dynamic.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'button.g.dart';
