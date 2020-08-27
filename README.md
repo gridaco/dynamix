@@ -1,8 +1,8 @@
-![logo](docs/logo.png)
+![logo](docs/logo-3d.png)
 
 
 
-# dynamic : (remote-ui)
+> dynamic. a remotely configured user interface with super flexibility.
 
 
 
