@@ -12,8 +12,13 @@ dependencies:
 ```
 
 
-## Example ([code](./example))
+
+## Usage & Example ([code](./example))
+
+the XColor extends Color so you can use it anywhere originally color took place.
+
 ```dart
 var color = XColor("#FF23232");
 var icon = Icon(Icons.add, color: color);
 ```
+
