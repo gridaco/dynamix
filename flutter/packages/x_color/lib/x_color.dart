@@ -1,7 +1,4 @@
 library x_color;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export 'src/color.dart';
+export 'src/colors.dart';
