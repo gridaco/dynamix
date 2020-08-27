@@ -2,7 +2,7 @@
 
 
 
-# remote-ui
+# dynamic : (remote-ui)
 
 
 
@@ -15,8 +15,20 @@ client - dynamically load content from server & with dynamic layout / component 
 | Platform            | Package                                                      |
 | ------------------- | ------------------------------------------------------------ |
 | NodeJS (for server) | [@bridged.xyz/remote-ui-core](./core) [![](https://img.shields.io/badge/npm-latest-brightgreen)](https://www.npmjs.com/package/@bridged.xyz/remote-ui-core)<br />[@bridged.xyz/remote-ui-server](./server) [![](https://img.shields.io/badge/npm-latest-brightgreen)](https://www.npmjs.com/package/@bridged.xyz/remote-ui-server) |
-| NodeJS (for web)    | (comming soon)<br />(@bridged.xyz/remote-ui)                  |
-| flutter             | [flutter_remote_ui](./flutter) [![](https://img.shields.io/badge/pub-latest-brightgreen)](https://pub.dev/packages/flutter_remote_ui)<br />[flutter_remote_ui_generator](./flutter/packages/flutter_remote_ui_generator) [![](https://img.shields.io/badge/pub-latest-brightgreen)](https://pub.dev/packages/flutter_remote_ui_generator)<br />[flutter_remote_icon](./flutter/packages/flutter_remote_icon) [![](https://img.shields.io/badge/pub-latest-brightgreen)](https://pub.dev/packages/flutter_remote_icon)<br />[flutter_remote_icon_generator](./flutter/packages/flutter_remote_icon_generator) [![](https://img.shields.io/badge/pub-latest-brightgreen)](https://pub.dev/packages/flutter_remote_icon_generator) |
+| NodeJS (for web)    | (comming soon)<br />(@bridged.xyz/remote-ui)                 |
+| flutter             | [dynamic](./flutter) [![](https://img.shields.io/badge/pub-latest-brightgreen)](https://pub.dev/packages/flutter_remote_ui)<br /> |
+
+
+
+**sub packages**
+
+- [x_icon](./flutter/packages/x_icon) [![](https://img.shields.io/badge/pub-latest-brightgreen)](https://pub.dev/packages/flutter_remote_icon)
+
+- [x_icon_generator](./flutter/packages/x_icon_generator) [![](https://img.shields.io/badge/pub-latest-brightgreen)](https://pub.dev/packages/x_icon_generator)
+
+- [x_color](./flutter/packages/x_color) [![](https://img.shields.io/badge/pub-latest-brightgreen)](https://pub.dev/packages/x_color)
+
+* [x_action](./flutter/packages/x_action) [![](https://img.shields.io/badge/pub-latest-brightgreen)](https://pub.dev/packages/x_action)
 
 
 
