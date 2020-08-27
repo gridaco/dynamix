@@ -1,6 +1,6 @@
 name: x_color
 description: A dynamic and remote color data holder for flutter remote-ui project
-version: 0.0.2
+version: 0.0.2+1
 homepage: https://github.com/softmarshmallow/remote-ui/tree/master/flutter/packages/x_color
 repository: https://github.com/softmarshmallow/remote-ui/
 

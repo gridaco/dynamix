@@ -5,3 +5,5 @@ supports xcolor that accepts uri as the constructor input
 var color = XColor("#FF23232");
 var icon = Icon(Icons.add, color: color);
 ```
+## [0.0.2+1] -updated examples & docs
+version: 0.0.2+1
