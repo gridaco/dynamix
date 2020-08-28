@@ -1,0 +1,5 @@
+name: x_uri_example
+
+dependencies:
+  x_uri:
+    path: ../
