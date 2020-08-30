@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_remote_ui_example/screen/demo/action/action_demo_screen.dart';
 import 'package:flutter_remote_ui_example/screen/demo/foodle/foodle.dart';
 import 'package:flutter_remote_ui_example/screen/demo/search_example/search_screen.dart';
 import 'package:flutter_remote_ui_example/screen/demo/stile/stile_demo.dart';
@@ -46,6 +47,7 @@ const List<DemoData> demos = [
   const DemoData(title: "Stile", route: StileDemo.routeName),
   const DemoData(title: "Timeline", route: TimelineDemoScreen.routeName),
   const DemoData(title: "Search results", route: SearchScreen.routeName),
+  const DemoData(title: "Actions", route: ActionDemoScreen.routeName),
 ];
 
 class DemoHomePage extends StatefulWidget {

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_remote_ui_example/main.dart';
+import 'package:flutter_remote_ui_example/screen/demo/action/action_demo_screen.dart';
 import 'package:flutter_remote_ui_example/screen/demo/foodle/foodle.dart';
 import 'package:flutter_remote_ui_example/screen/demo/foodle/truck.dart';
 import 'package:flutter_remote_ui_example/screen/demo/search_example/search_screen.dart';
@@ -25,5 +26,6 @@ buildRoute(BuildContext context) {
     StileDemo.routeName: (context) => StileDemo(),
     SearchScreen.routeName: (context) => SearchScreen(),
     TimelineDemoScreen.routeName: (context) => TimelineDemoScreen(),
+    ActionDemoScreen.routeName: (context) => ActionDemoScreen(),
   };
 }
