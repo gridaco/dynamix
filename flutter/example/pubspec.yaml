@@ -14,6 +14,8 @@ dependencies:
   dynamic:
     path: ../
 
+  after_layout: ^1.0.7+2
+
   # image slider
   carousel_slider: ^2.2.1
 
@@ -31,6 +33,7 @@ dependencies:
 
   # https://github.com/rikulo/socket.io-client-dart
   socket_io_client: ^0.9.11
+  socket_io: ^0.9.4
 
   # https://github.com/grpc/grpc-dart
   grpc: ^2.2.0

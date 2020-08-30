@@ -1,6 +1,7 @@
 import * as express from 'express'
 import * as bodyParser from 'body-parser'
 import { resolve } from "path"
+import { initSockets, eventToClient } from "./socket";
 
 const app = express();
 import * as cors from 'cors';
@@ -8,24 +9,6 @@ import { actions, ui, icons } from "@bridged.xyz/remote-ui-core";
 import { startGrpc } from './grpc';
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
-
-
-class EXPerson {
-
-}
-
-class EXBook {
-
-}
-
-class EXQuote {
-
-}
-
-class EXWord {
-
-}
 
 
 class SearchResultLayout extends ui.Layout {
@@ -94,10 +77,18 @@ app.post(`/show-dialog`, (req, res) => {
     res.json(req.body).send();
 });
 
+
+app.post(`/ping`, (req, res) => {
+    const data = req.body;
+    eventToClient(data);
+    res.json(data);
+});
+
 // starts grpc server
 startGrpc()
+initSockets(app);
 
-app.listen(3001, () =>
-    console.log('Server is running on http://localhost:3001'),
+app.listen(3000, () =>
+    console.log('Server is running on http://localhost:3000'),
 );
 
