@@ -34,6 +34,12 @@ client - dynamically load content from server & with dynamic layout / component 
 
 
 
+## dyanmic actions
+
+![](./docs/demo-dynamic-actions.gif)
+
+
+
 ## Installation
 
 Server side

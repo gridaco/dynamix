@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:after_layout/after_layout.dart';
 import 'package:flutter/material.dart';
 import 'package:socket_io/socket_io.dart';
@@ -60,12 +62,17 @@ class RpcRepository {
 
     _socket.on("news", (event) {
       print(event);
+      final data = event["data"];
+      final title = data["title"];
+      final body = data["body"];
+      print(title);
+      print(body);
       showDialog(
           context: context,
           builder: (c) {
             return AlertDialog(
-              title: Text("remotely loaded dialog"),
-              content: Text("press close button to dismiss"),
+              title: Text(title),
+              content: Text(body),
             );
           });
     });
