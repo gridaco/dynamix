@@ -38,6 +38,10 @@ dependencies:
   # https://github.com/grpc/grpc-dart
   grpc: ^2.2.0
 
+#dependency_overrides:
+#  x_action:
+#    path: ../packages/x_action
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

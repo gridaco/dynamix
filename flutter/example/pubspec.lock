@@ -366,6 +366,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.0-nullsafety.2"
+  x_action:
+    dependency: transitive
+    description:
+      name: x_action
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.1+2"
   x_color:
     dependency: transitive
     description:

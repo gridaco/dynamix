@@ -23,14 +23,14 @@ class XTranslator {
     //    assert(fieldData.runtimeType is Map<String, dynamic>);
     // region button
     if (fieldType == "button") {
-      return XButton.fromJson(fieldData);
+//      return XButton.fromJson(fieldData);
     }
 
     // endregion button
 
     // region text
     if (fieldType == "text") {
-      return XText.fromJson(fieldData);
+//      return XText.fromJson(fieldData);
     }
     // endregion text
 

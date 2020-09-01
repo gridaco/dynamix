@@ -6,15 +6,11 @@ var truckItem1 = TruckItemLayout(
         title: XText(null),
         description: XText(null),
         image: XImage(),
-        onTap: XAction(null)
-    )
-);
+        onTap: XAction.fromUri(null)));
 
 var truckItem2 = TruckItemLayout(
     body: TruckItemBody(
         title: XText(null),
         description: XText(null),
         image: XImage(),
-        onTap: XAction(null)
-    )
-);
+        onTap: XAction.fromUri(null)));

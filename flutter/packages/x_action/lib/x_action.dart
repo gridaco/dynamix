@@ -1,7 +1,5 @@
 library x_action;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export 'src/action_handler.dart';
+export 'src/route_handler.dart';
+export 'src/action.dart';

@@ -74,16 +74,14 @@ class _SearchScreen extends State<SearchScreen> {
         var d = data[i];
         XText title = XTranslator.translate(d["title"]);
         XText subtitle = XTranslator.translate(d["subtitle"]);
-        
+
         return SearchResultRow(
           icon: Icon(XIconData("material://Icons.person")),
           title: Text(title.text),
           subtitle: Text(subtitle.text),
           onTap: () {
             final actionData = d["action"];
-            RouteHandler(context, actionData: ActionData(rawData: actionData))
-                .handle();
-//            rui.RouteHandler.of(context).handle();
+            XRouteAction.fromJson(actionData).invoke();
           },
         );
       },

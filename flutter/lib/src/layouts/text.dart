@@ -1,7 +1,7 @@
 import 'package:dynamic/dynamic.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-part 'text.g.dart';
+//part 'text.g.dart';
 
 @JsonSerializable()
 class XText extends XView {
@@ -11,6 +11,6 @@ class XText extends XView {
 
   // region json serialization.
   /// toJson is not required
-  factory XText.fromJson(Map<String, dynamic> json) => _$XTextFromJson(json);
+//  factory XText.fromJson(Map<String, dynamic> json) => _$XTextFromJson(json);
   // endregion
 }

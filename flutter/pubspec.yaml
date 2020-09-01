@@ -16,6 +16,7 @@ dependencies:
 
   x_icon: ^0.0.4
   x_color: ^0.0.1
+  x_action: ^0.0.1+2
 
   # https://github.com/grpc/grpc-dart
   grpc: ^2.2.0
@@ -27,7 +28,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-#  build_runner: ^1.10.2
+  build_runner: ^1.10.2
   json_serializable: ^3.4.0
 # The following section is specific to Flutter.
 flutter:

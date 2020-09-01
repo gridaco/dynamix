@@ -14,7 +14,7 @@ var truckItemLayout = (TruckData data) => TruckItemLayout(
         title: XText(data.name),
         description: XText(data.shortDescription),
         image: XImage.network(data.image),
-        onTap: XAction(null)));
+        onTap: XAction.fromUri(null)));
 
 // region view segments
 var titleText = (BuildContext context, XText text) => Text(

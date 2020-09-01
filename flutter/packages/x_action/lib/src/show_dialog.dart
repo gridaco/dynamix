@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'action_handler.dart';
+import 'package:x_action/src/action.dart';
+import 'package:x_action/x_action.dart';
 
 class DialogHandler extends ActionHandler {
-  DialogHandler(BuildContext context, {ActionData actionData})
-      : super(context, actionData: actionData);
+  DialogHandler(BuildContext context, {XAction actionData})
+      : super(context, action: actionData);
 
   factory DialogHandler.of(BuildContext context) {
     return DialogHandler(context);
@@ -11,7 +12,6 @@ class DialogHandler extends ActionHandler {
 
   @override
   handle() {
-    super.handle();
     showDialog(
         context: context,
         builder: (c) {
