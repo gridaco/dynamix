@@ -13,6 +13,8 @@ dependencies:
   flutter:
     sdk: flutter
 
+  flutter_modular: ^2.0.0+1
+
   x_action:
     path: ../
 

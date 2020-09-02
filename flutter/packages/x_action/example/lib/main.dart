@@ -1,5 +1,6 @@
-import 'package:example/routes.dart';
+import 'routes.dart';
 import 'package:flutter/material.dart';
+import 'package:x_action/x_action.dart';
 
 void main() {
   runApp(MyApp());
@@ -33,11 +34,12 @@ class _MyHomePageState extends State<MyHomePage> {
   String uri = "material://push.route.screen?to=first&args={'a':'b'}";
 
   void _invokeAction() {
-    print(uri);
+    RouteHandler.handle(XRouteAction.fromUri(uri));
   }
 
   @override
   Widget build(BuildContext context) {
+    XActions.setApp(context);
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),

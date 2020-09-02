@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:x_action/src/parser.dart';
+
 part 'action.g.dart';
 
 abstract class XAction {
@@ -31,6 +32,10 @@ class XRouteAction extends XAction {
       _$XRouteActionFromJson(json);
 
   // endregion
+
+  factory XRouteAction.fromUri(String uri) {
+    return XActionUriParser.parse(uri);
+  }
 
   @override
   invoke() {
