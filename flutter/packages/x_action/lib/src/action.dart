@@ -22,13 +22,13 @@ abstract class XAction {
 
 @JsonSerializable()
 class XRouteAction extends XAction {
-  XRouteAction({
-    String name,
-    String group,
-    this.route,
-  }) : super(name: name, group: group);
+  XRouteAction({String name, String group, this.route, this.presenter})
+      : super(name: name, group: group);
 
   String route;
+
+  /// [presenter] mode of how to present the route. (screen / fullscreen dialog /  modal / dialog)
+  String presenter;
 
   String get uri {
     return "${Schema.material}://$route";

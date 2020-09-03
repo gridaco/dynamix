@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:x_action/src/action.dart';
@@ -9,7 +10,18 @@ class RouteHandler {
     // todo use custom built route handler
 //    Modular.to.pushNamed(action.route);
 //    Modular.to.pushNamed("/second");
+
+    bool fullscreenDialog = action.presenter == "fullscreendialog";
     XActions.to.pushNamed(action.route);
-//    Navigator.of(XActions.context).pushNamed(action.route);
+
+    final a = XActions.to.routeNamed(action.route);
+
+
+    print(a);
+    XActions.to.push(a);
+    // showDialog(context: null)
+    // showBottomSheet(context: null, builder: null)
+    // showModalBottomSheet(context: null, builder: null)
+    // Navigator.of(context).pushNamed(route)
   }
 }

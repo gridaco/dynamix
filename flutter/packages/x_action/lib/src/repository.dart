@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class XActions {
-  static IModularNavigator navigatorDelegate;
+  static Map<String, RouteBuilder> routes;
 
-  static IModularNavigator get to {
+  static IXNavigator navigatorDelegate;
+
+  static IXNavigator get to {
     if (navigatorDelegate == null) {
       assert(_navigators.containsKey('app') == true,
       '''Add Modular.navigatorKey in your MaterialApp;
@@ -17,7 +19,7 @@ class XActions {
       ''');
     }
     return navigatorDelegate ??
-        ModularNavigator(_navigators['app'].currentState);
+        XNavigator(_navigators['app'].currentState);
   }
 
   static Map<String, GlobalKey<NavigatorState>> _navigators =
@@ -40,7 +42,7 @@ class XActions {
 
 
 
-abstract class IModularNavigator {
+abstract class IXNavigator {
   NavigatorState get navigator;
 
   Future showDialog({
@@ -81,6 +83,8 @@ abstract class IModularNavigator {
   /// ```
   Future<T> pushNamed<T extends Object>(String routeName, {Object arguments});
 
+
+  Route<T> routeNamed<T>(String name, {args});
   /// Push the route with the given name onto the navigator that most tightly
   /// encloses the given context, and then remove all the previous routes until
   /// the predicate returns true.
@@ -162,10 +166,10 @@ abstract class IModularNavigator {
 
 
 
-class ModularNavigator implements IModularNavigator {
+class XNavigator implements IXNavigator {
   final NavigatorState navigator;
 
-  ModularNavigator(this.navigator);
+  XNavigator(this.navigator);
 
   @override
   Future showDialog({
@@ -237,6 +241,10 @@ class ModularNavigator implements IModularNavigator {
   @override
   Future<T> pushNamed<T extends Object>(String routeName, {Object arguments}) =>
       navigator.pushNamed(routeName, arguments: arguments);
+
+  Route<T> routeNamed<T>(String name, {args}){
+    return navigator.routeNamed(name, arguments: args);
+  }
 
   @override
   Future<T> pushNamedAndRemoveUntil<T extends Object>(

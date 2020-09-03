@@ -45,7 +45,10 @@ class _RouteActionsScreenState extends State<RouteActionsScreen> {
           margin: EdgeInsets.all(24),
           child: TextField(
             decoration:
-                InputDecoration(labelText: "fullscreen dialog (true/false)"),
+                InputDecoration(labelText: "mode (screen / fullscreen dialog /  modal / dialog)"),
+            onChanged: (s){
+              action.presenter = s;
+            },
           ),
         ),
         Container(
