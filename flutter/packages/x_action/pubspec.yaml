@@ -12,6 +12,9 @@ dependencies:
     sdk: flutter
   json_annotation: ^3.0.1
 
+  x_uri:
+    path: ../x_uri
+
   # FIXME remove this before release
   flutter_modular: ^2.0.0+1
 

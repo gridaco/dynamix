@@ -1,6 +1,8 @@
 import 'dart:convert';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:x_action/src/handlers/handlers.dart';
 import 'package:x_action/src/parser.dart';
+import 'package:x_uri/x_uri.dart';
 
 part 'action.g.dart';
 
@@ -26,7 +28,11 @@ class XRouteAction extends XAction {
     this.route,
   }) : super(name: name, group: group);
 
-  final String route;
+  String route;
+
+  String get uri {
+    return "${Schema.material}://$route";
+  }
 
   // region json serialization.
   /// toJson is not required
@@ -44,7 +50,7 @@ class XRouteAction extends XAction {
 
   @override
   invoke() {
-    throw UnimplementedError();
+    RouteHandler.handle(this);
   }
 }
 

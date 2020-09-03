@@ -1,3 +1,5 @@
+import 'package:example/screens/route_actions_screen.dart';
+
 import 'routes.dart';
 import 'package:flutter/material.dart';
 import 'package:x_action/x_action.dart';
@@ -35,7 +37,6 @@ class _MyHomePageState extends State<MyHomePage> {
   String pushUri = "material://push.route.actions/first?a=b";
   String popUri = "material://pop.route.actions/first?a=b";
 
-
   void _invokeAction() {
     RouteHandler.handle(XRouteAction.fromUri(pushUri));
   }
@@ -50,6 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            buildDemoEntries(),
             Text(
               'prompt',
             ),
@@ -67,6 +69,15 @@ class _MyHomePageState extends State<MyHomePage> {
         tooltip: 'Increment',
         child: Icon(Icons.send),
       ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
+
+  buildDemoEntries() {
+    return ListTile(
+      title: Text("route actions"),
+      onTap: () {
+        XRouteAction(route: RouteActionsScreen.routeName).invoke();
+      },
     );
   }
 }
