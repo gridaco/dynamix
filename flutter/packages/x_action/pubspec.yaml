@@ -12,6 +12,9 @@ dependencies:
     sdk: flutter
   json_annotation: ^3.0.1
 
+  # FIXME remove this before release
+  flutter_modular: ^2.0.0+1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

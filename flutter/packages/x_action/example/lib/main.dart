@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
+      navigatorKey: XActions.navigatorKey,
       routes: buildRoute(),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -31,15 +32,16 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  String uri = "material://push.route.screen?to=first&args={'a':'b'}";
+  String pushUri = "material://push.route.actions/first?a=b";
+  String popUri = "material://pop.route.actions/first?a=b";
+
 
   void _invokeAction() {
-    RouteHandler.handle(XRouteAction.fromUri(uri));
+    RouteHandler.handle(XRouteAction.fromUri(pushUri));
   }
 
   @override
   Widget build(BuildContext context) {
-    XActions.setApp(context);
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
@@ -54,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
             TextField(
               textAlign: TextAlign.center,
               onChanged: (s) {
-                uri = s;
+                pushUri = s;
               },
             )
           ],

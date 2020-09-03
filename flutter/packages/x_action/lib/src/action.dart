@@ -20,11 +20,13 @@ abstract class XAction {
 
 @JsonSerializable()
 class XRouteAction extends XAction {
-  XRouteAction({String name, String group}) : super(name: name, group: group);
+  XRouteAction({
+    String name,
+    String group,
+    this.route,
+  }) : super(name: name, group: group);
 
-  String get route {
-    return data["route"] as String;
-  }
+  final String route;
 
   // region json serialization.
   /// toJson is not required
@@ -34,7 +36,10 @@ class XRouteAction extends XAction {
   // endregion
 
   factory XRouteAction.fromUri(String uri) {
-    return XActionUriParser.parse(uri);
+    final _uri = Uri.parse(uri);
+    print(_uri.scheme);
+    print(_uri.path);
+    return XRouteAction(route: _uri.path);
   }
 
   @override
