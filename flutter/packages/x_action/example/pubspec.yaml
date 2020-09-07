@@ -15,6 +15,10 @@ dependencies:
 
   flutter_modular: ^2.0.0+1
 
+  dynamic:
+    path: ../../../
+
+dependency_overrides:
   x_action:
     path: ../
 

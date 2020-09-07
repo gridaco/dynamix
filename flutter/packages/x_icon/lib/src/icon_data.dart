@@ -84,8 +84,15 @@ class XIconData extends IconData {
           fontPackage: _fetchIconDataForConstructor(uri).fontPackage,
         );
 
+  /// [XIconData.fromMaterialIconName] builds XIconData via material icon name such as "add" and "person"
   factory XIconData.fromMaterialIconName(String name) {
     return XIconData("material://Icons.$name", type: XIconType.MATERIAL_NATIVE);
+  }
+
+  factory XIconData.fromIcon(IconData icon) {
+    // TODO
+//    icon.
+//    return XIconData("material://Icons.$name", type: XIconType.MATERIAL_NATIVE);
   }
 
   factory XIconData.fromUri(String uri) {
@@ -104,6 +111,6 @@ class XIconData extends IconData {
     assert(isValidResourceUrl(resource));
     return XIconData(resource, type: XIconType.LOCAL_ASSET);
   }
-  
+
   factory XIconData.fromJson(json) => _$XIconDataFromJson(json);
 }

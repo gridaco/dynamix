@@ -1,3 +1,4 @@
+import 'package:example/screens/route_actions/action_routes_modals_and_dialogs_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:x_action/x_action.dart';
 
@@ -44,9 +45,10 @@ class _RouteActionsScreenState extends State<RouteActionsScreen> {
         Container(
           margin: EdgeInsets.all(24),
           child: TextField(
-            decoration:
-                InputDecoration(labelText: "mode (screen / fullscreen dialog /  modal / dialog)"),
-            onChanged: (s){
+            decoration: InputDecoration(
+                labelText:
+                    "mode (screen / fullscreen dialog /  modal / dialog)"),
+            onChanged: (s) {
               action.presenter = s;
             },
           ),
@@ -58,7 +60,25 @@ class _RouteActionsScreenState extends State<RouteActionsScreen> {
                 onPressed: () {
                   action.invoke();
                 })),
+        buildActionsDemoCategoryList(),
       ],
+    );
+  }
+
+  Widget buildActionsDemoCategoryList() {
+    return ListView.builder(
+      itemBuilder: (c, i) {
+        return ListTile(
+          title: Text("modals & dialogs"),
+          onTap: () {
+            Navigator.of(context)
+                .pushNamed(ActionRoutesModalsAndDialogsScreen.routeName);
+          },
+        );
+      },
+      shrinkWrap: true,
+      physics: NeverScrollableScrollPhysics(),
+      itemCount: 10,
     );
   }
 }
