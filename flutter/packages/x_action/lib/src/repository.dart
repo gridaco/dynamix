@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -163,6 +164,60 @@ abstract class IXNavigator {
   void popUntil(bool Function(Route<dynamic>) predicate);
 }
 
+
+extension on NavigatorState{
+  Route<T> routeNamed<T>(String name, { @required Object arguments, bool allowNull = false }) {
+    assert(name != null);
+    if (allowNull && widget.onGenerateRoute == null)
+      return null;
+    assert(() {
+      if (widget.onGenerateRoute == null) {
+        throw FlutterError(
+            'Navigator.onGenerateRoute was null, but the route named "$name" was referenced.\n'
+                'To use the Navigator API with named routes (pushNamed, pushReplacementNamed, or '
+                'pushNamedAndRemoveUntil), the Navigator must be provided with an '
+                'onGenerateRoute handler.\n'
+                'The Navigator was:\n'
+                '  $this'
+        );
+      }
+      return true;
+    }());
+    final RouteSettings settings = RouteSettings(
+      name: name,
+      arguments: arguments,
+    );
+    Route<T> route = widget.onGenerateRoute(settings) as Route<T>;
+    if (route == null && !allowNull) {
+      assert(() {
+        if (widget.onUnknownRoute == null) {
+          throw FlutterError.fromParts(<DiagnosticsNode>[
+            ErrorSummary('Navigator.onGenerateRoute returned null when requested to build route "$name".'),
+            ErrorDescription(
+                'The onGenerateRoute callback must never return null, unless an onUnknownRoute '
+                    'callback is provided as well.'
+            ),
+            DiagnosticsProperty<NavigatorState>('The Navigator was', this, style: DiagnosticsTreeStyle.errorProperty),
+          ]);
+        }
+        return true;
+      }());
+      route = widget.onUnknownRoute(settings) as Route<T>;
+      assert(() {
+        if (route == null) {
+          throw FlutterError.fromParts(<DiagnosticsNode>[
+            ErrorSummary('Navigator.onUnknownRoute returned null when requested to build route "$name".'),
+            ErrorDescription('The onUnknownRoute callback must never return null.'),
+            DiagnosticsProperty<NavigatorState>('The Navigator was', this, style: DiagnosticsTreeStyle.errorProperty),
+          ]);
+        }
+        return true;
+      }());
+    }
+    assert(route != null || allowNull);
+    return route;
+  }
+}
 
 
 
