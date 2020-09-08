@@ -7,6 +7,11 @@
 ![](./doc/remote-icon-demo.gif)
 
 
+why not to use other lib such as [flutter_icons](https://github.com/flutter-studio/flutter-icons)?
+1. they do not support custom icons
+2. you cannot remotely load icons.
+3. not compatitable with bridged's dynamic
+
 
 > Flutter remote icon enables you to load material icons (`Icons.~`) or your custom icon (`CustomIcons.~`) or remotely fetched content (svg) to your icon widget via `uri`, wich can be dynamically configured, remotely loaded.
 
