@@ -110,7 +110,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget buildBody() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: [dynamicIconsLoader(), dynamicDemo()],
+      children: [dynamicIconsLoader(), dynamicDemo(), urlRemoteIcon()],
     );
   }
 
@@ -127,6 +127,10 @@ class _MyHomePageState extends State<MyHomePage> {
       shrinkWrap: true,
       physics: NeverScrollableScrollPhysics(),
     );
+  }
+  
+  Widget urlRemoteIcon(){
+    return XIcon(XIconData.fromUri("https://"));
   }
 
   Widget customIcon(String uri) {

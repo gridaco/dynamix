@@ -366,13 +366,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.99"
-  source_gen:
-    dependency: transitive
-    description:
-      name: source_gen
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.9.6"
   source_span:
     dependency: transitive
     description:
@@ -464,13 +457,6 @@ packages:
       relative: true
     source: path
     version: "0.0.4"
-  x_icon_generator:
-    dependency: "direct dev"
-    description:
-      path: "../../x_icon_generator"
-      relative: true
-    source: path
-    version: "0.0.1+2"
   yaml:
     dependency: transitive
     description:
