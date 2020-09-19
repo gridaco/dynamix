@@ -128,9 +128,30 @@ class _MyHomePageState extends State<MyHomePage> {
       physics: NeverScrollableScrollPhysics(),
     );
   }
-  
-  Widget urlRemoteIcon(){
-    return XIcon(XIconData.fromUri("https://"));
+
+  Widget urlRemoteIcon() {
+    return Container(
+      margin: EdgeInsets.all(16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text("remote url icon"),
+          Text(
+            """XIcon(XIconData.fromUri(
+            "https://raw.githubusercontent.com/bridgedxyz/dynamic/master/flutter/packages/x_icon/doc/remote-icon-example/twotone_brightness_auto_black_18dp.png"))""",
+            style: Theme.of(context)
+                .textTheme
+                .caption
+                .copyWith(color: Theme.of(context).primaryColor),
+          ),
+          SizedBox(
+            height: 8,
+          ),
+          XIcon(XIconData.fromUri(
+              "https://raw.githubusercontent.com/bridgedxyz/dynamic/master/flutter/packages/x_icon/doc/remote-icon-example/twotone_brightness_auto_black_18dp.png"))
+        ],
+      ),
+    );
   }
 
   Widget customIcon(String uri) {
@@ -138,7 +159,7 @@ class _MyHomePageState extends State<MyHomePage> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          '''XIcon(
+          '''Icon(
         XIconData("$uri")
 )''',
           style: Theme.of(context)

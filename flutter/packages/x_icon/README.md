@@ -45,9 +45,17 @@ Widget buildRemoteIcon(){
   // var remoteIconData = new XIconData("https://example.com/svg.svg");  // -> loading remote svg
   // var remoteIconData = new XIconData("assets/icons/add.png"); // -> loading local assets
   // var remoteIconData = new XIconData("custom-namespace://CustomIcons.icon_name"); // -> (requires pre-usage definition)
-  var remoteIconData = new XIconData();
-  return XIcon(icon: remoteIconData, color: Colors.black);
+  return XIcon(icon: XIconData("material://Icons.add"), color: Colors.black);
+
+  // or...
+  return Icon(icon: XIconData("material://Icons.add"), color: Colors.black);
 }
+```
+
+**remote url icon**
+```dart
+XIcon(XIconData.fromUri(
+              "https://raw.githubusercontent.com/bridgedxyz/dynamic/master/flutter/packages/x_icon/doc/remote-icon-example/twotone_brightness_auto_black_18dp.png"));
 ```
 
 [Full example available here](./example)
