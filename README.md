@@ -224,6 +224,14 @@ we are using [figma file](https://www.figma.com/file/DpbDmtkGzz1g3aXPt5MmgS/remo
 [dynamic_widget](https://github.com/dengyin2000/dynamic_widget)
 
 
+### Use dynamic with figma plugin / bridged console
+
+**comming soon features**
+- sync assets directly (dont download, put it in asset. bridged provides bucket and usable resource uri. s3 GCP supported)
+- live update data
+
+
+
 ### Blogs
 [starting remote ui project](https://medium.com/launchers/starting-remote-ui-project-4b1d0841afc2)
 
