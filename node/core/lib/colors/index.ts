@@ -10,7 +10,9 @@ export class Color {
 
     }
 
-    static fromHex(hex: string) {
-        // todo implement hex to 0xff ~ converter
+    static fromHex(hex: string): Color {
+        // converts #ffffff to 0xffffff
+        const num = parseInt(hex, 16);
+        return new Color(num);
     }
 }

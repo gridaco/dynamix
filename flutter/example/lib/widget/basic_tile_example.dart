@@ -3,16 +3,16 @@ import 'package:flutter/material.dart';
 
 Widget sample() {
   return BasicTile(
-    title: "title",
-    description: "description",
+    title: Text("title"),
+    description: Text("description"),
     thumbnail: "temp-resources.bridged.xyz/project/assets/1.jpg",
   );
 }
 
 class BasicTile extends StatelessWidget {
   final String thumbnail;
-  final String title;
-  final String description;
+  final Widget title;
+  final Widget description;
 
   const BasicTile(
       {Key key,
@@ -51,11 +51,11 @@ class BasicTile extends StatelessWidget {
 
   Widget _buildTitle(BuildContext context) {
     return DefaultTextStyle(
-        style: Theme.of(context).textTheme.headline6, child: Text(title));
+        style: Theme.of(context).textTheme.headline6, child: title);
   }
 
   Widget _buildDescription(BuildContext context) {
     return DefaultTextStyle(
-        style: Theme.of(context).textTheme.headline6, child: Text(description));
+        style: Theme.of(context).textTheme.headline6, child: description);
   }
 }
