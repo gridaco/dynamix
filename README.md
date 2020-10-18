@@ -2,7 +2,7 @@
 
 
 
-> dynamic. a remotely configured user interface with super flexibility.
+> dynamic. a remotely configured user interface with super flexibility. read more at [bridged.xyz/dynamic](https://bridged.xyz/dynamic/)
 
 
 
