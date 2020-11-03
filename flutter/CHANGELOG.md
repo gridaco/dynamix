@@ -1,3 +1,7 @@
+## [0.0.4+8] 11/3 2020
+renamed as `dynamic`
+updated svg dependency to support latest version of flutter.
+
 ## [0.0.4] - 8/9 2020
 updated dependencies, updated import & usage patterns
 use as like so.

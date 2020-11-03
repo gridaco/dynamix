@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 class XActions {
   static Map<String, RouteBuilder> routes;
@@ -10,7 +11,7 @@ class XActions {
   static IXNavigator get to {
     if (navigatorDelegate == null) {
       assert(_navigators.containsKey('app') == true,
-      '''Add Modular.navigatorKey in your MaterialApp;
+          '''Add Modular.navigatorKey in your MaterialApp;
 
       return MaterialApp(
         navigatorKey: Modular.navigatorKey,
@@ -19,8 +20,7 @@ class XActions {
 
       ''');
     }
-    return navigatorDelegate ??
-        XNavigator(_navigators['app'].currentState);
+    return navigatorDelegate ?? XNavigator(_navigators['app'].currentState);
   }
 
   static Map<String, GlobalKey<NavigatorState>> _navigators =
@@ -38,10 +38,6 @@ class XActions {
     return _navigators['app'];
   }
 }
-
-
-
-
 
 abstract class IXNavigator {
   NavigatorState get navigator;
@@ -71,7 +67,7 @@ abstract class IXNavigator {
   Future<T> popAndPushNamed<T extends Object, TO extends Object>(
       String routeName,
       {TO result,
-        Object arguments});
+      Object arguments});
 
   /// Navigate to a route.
   ///
@@ -84,8 +80,8 @@ abstract class IXNavigator {
   /// ```
   Future<T> pushNamed<T extends Object>(String routeName, {Object arguments});
 
-
   Route<T> routeNamed<T>(String name, {args});
+
   /// Push the route with the given name onto the navigator that most tightly
   /// encloses the given context, and then remove all the previous routes until
   /// the predicate returns true.
@@ -115,7 +111,7 @@ abstract class IXNavigator {
   Future<T> pushReplacementNamed<T extends Object, TO extends Object>(
       String routeName,
       {TO result,
-        Object arguments});
+      Object arguments});
 
   ///Replace the current route of the navigator that most tightly encloses
   ///the given context by pushing the given route and then disposing
@@ -164,22 +160,20 @@ abstract class IXNavigator {
   void popUntil(bool Function(Route<dynamic>) predicate);
 }
 
-
-extension on NavigatorState{
-  Route<T> routeNamed<T>(String name, { @required Object arguments, bool allowNull = false }) {
+extension on NavigatorState {
+  Route<T> routeNamed<T>(String name,
+      {@required Object arguments, bool allowNull = false}) {
     assert(name != null);
-    if (allowNull && widget.onGenerateRoute == null)
-      return null;
+    if (allowNull && widget.onGenerateRoute == null) return null;
     assert(() {
       if (widget.onGenerateRoute == null) {
         throw FlutterError(
             'Navigator.onGenerateRoute was null, but the route named "$name" was referenced.\n'
-                'To use the Navigator API with named routes (pushNamed, pushReplacementNamed, or '
-                'pushNamedAndRemoveUntil), the Navigator must be provided with an '
-                'onGenerateRoute handler.\n'
-                'The Navigator was:\n'
-                '  $this'
-        );
+            'To use the Navigator API with named routes (pushNamed, pushReplacementNamed, or '
+            'pushNamedAndRemoveUntil), the Navigator must be provided with an '
+            'onGenerateRoute handler.\n'
+            'The Navigator was:\n'
+            '  $this');
       }
       return true;
     }());
@@ -192,12 +186,13 @@ extension on NavigatorState{
       assert(() {
         if (widget.onUnknownRoute == null) {
           throw FlutterError.fromParts(<DiagnosticsNode>[
-            ErrorSummary('Navigator.onGenerateRoute returned null when requested to build route "$name".'),
+            ErrorSummary(
+                'Navigator.onGenerateRoute returned null when requested to build route "$name".'),
             ErrorDescription(
                 'The onGenerateRoute callback must never return null, unless an onUnknownRoute '
-                    'callback is provided as well.'
-            ),
-            DiagnosticsProperty<NavigatorState>('The Navigator was', this, style: DiagnosticsTreeStyle.errorProperty),
+                'callback is provided as well.'),
+            DiagnosticsProperty<NavigatorState>('The Navigator was', this,
+                style: DiagnosticsTreeStyle.errorProperty),
           ]);
         }
         return true;
@@ -206,9 +201,12 @@ extension on NavigatorState{
       assert(() {
         if (route == null) {
           throw FlutterError.fromParts(<DiagnosticsNode>[
-            ErrorSummary('Navigator.onUnknownRoute returned null when requested to build route "$name".'),
-            ErrorDescription('The onUnknownRoute callback must never return null.'),
-            DiagnosticsProperty<NavigatorState>('The Navigator was', this, style: DiagnosticsTreeStyle.errorProperty),
+            ErrorSummary(
+                'Navigator.onUnknownRoute returned null when requested to build route "$name".'),
+            ErrorDescription(
+                'The onUnknownRoute callback must never return null.'),
+            DiagnosticsProperty<NavigatorState>('The Navigator was', this,
+                style: DiagnosticsTreeStyle.errorProperty),
           ]);
         }
         return true;
@@ -218,8 +216,6 @@ extension on NavigatorState{
     return route;
   }
 }
-
-
 
 class XNavigator implements IXNavigator {
   final NavigatorState navigator;
@@ -251,11 +247,11 @@ class XNavigator implements IXNavigator {
   }
 
   Widget _buildMaterialDialogTransitions(
-      BuildContext context,
-      Animation<double> animation,
-      Animation<double> secondaryAnimation,
-      Widget child,
-      ) {
+    BuildContext context,
+    Animation<double> animation,
+    Animation<double> secondaryAnimation,
+    Widget child,
+  ) {
     return FadeTransition(
       opacity: CurvedAnimation(
         parent: animation,
@@ -277,9 +273,9 @@ class XNavigator implements IXNavigator {
 
   @override
   Future<T> popAndPushNamed<T extends Object, TO extends Object>(
-      String routeName,
-      {TO result,
-        Object arguments}) =>
+          String routeName,
+          {TO result,
+          Object arguments}) =>
       navigator.popAndPushNamed(
         routeName,
         result: result,
@@ -297,31 +293,30 @@ class XNavigator implements IXNavigator {
   Future<T> pushNamed<T extends Object>(String routeName, {Object arguments}) =>
       navigator.pushNamed(routeName, arguments: arguments);
 
-  Route<T> routeNamed<T>(String name, {args}){
+  Route<T> routeNamed<T>(String name, {args}) {
     return navigator.routeNamed(name, arguments: args);
   }
 
   @override
   Future<T> pushNamedAndRemoveUntil<T extends Object>(
-      String newRouteName, bool Function(Route) predicate,
-      {Object arguments}) =>
+          String newRouteName, bool Function(Route) predicate,
+          {Object arguments}) =>
       navigator.pushNamedAndRemoveUntil(newRouteName, predicate,
           arguments: arguments);
 
   @override
   Future<T> pushReplacementNamed<T extends Object, TO extends Object>(
-      String routeName,
-      {TO result,
-        Object arguments}) =>
+          String routeName,
+          {TO result,
+          Object arguments}) =>
       navigator.pushReplacementNamed(routeName,
           result: result, arguments: arguments);
 
   @override
   Future<T> pushReplacement<T extends Object, TO extends Object>(
-      Route<T> newRoute,
-      {TO result}) =>
+          Route<T> newRoute,
+          {TO result}) =>
       navigator.pushReplacement(newRoute, result: result);
-
 }
 
 class DialogRoute<T> extends PopupRoute<T> {
