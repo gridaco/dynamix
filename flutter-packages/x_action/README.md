@@ -2,6 +2,10 @@
 
 a flutter uri based dynamic action handler
 
+## for central docs. go to https://bridged.xyz/docs/dynamic
+
+
+
 ## Getting Started
 
 This project is a starting point for a Dart

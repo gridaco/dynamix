@@ -1,3 +1,6 @@
+## [0.0.4+9] 11/5 2020
+updated x_action dependency and coresponding other dependencies.
+
 ## [0.0.4+8] 11/3 2020
 renamed as `dynamic`
 updated svg dependency to support latest version of flutter.

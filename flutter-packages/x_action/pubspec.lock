@@ -188,13 +188,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_modular:
-    dependency: "direct main"
-    description:
-      name: flutter_modular
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.0.0+1"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -255,14 +248,14 @@ packages:
       name: json_annotation
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.0.1"
+    version: "3.1.0"
   json_serializable:
     dependency: "direct dev"
     description:
       name: json_serializable
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.4.1"
+    version: "3.5.0"
   logging:
     dependency: transitive
     description:
@@ -467,10 +460,10 @@ packages:
   x_uri:
     dependency: "direct main"
     description:
-      path: "../x_uri"
-      relative: true
-    source: path
-    version: "0.0.1"
+      name: x_uri
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.1+1"
   yaml:
     dependency: transitive
     description:

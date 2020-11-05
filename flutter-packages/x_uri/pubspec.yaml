@@ -1,6 +1,6 @@
 name: x_uri
 description: A bridged's dynamic™ uri engine
-version: 0.0.1
+version: 0.0.1+1
 homepage: https://bridged.xyz/dynamic/uri
 
 environment:

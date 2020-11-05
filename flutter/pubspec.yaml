@@ -1,6 +1,6 @@
 name: dynamic
 description: bridged's dynamic remote-ui for flutter app. bump your flutter project to enterprise level
-version: 0.0.4+8
+version: 0.0.4+9
 homepage: https://github.com/softmarshmallow/remote-ui
 repository: https://github.com/softmarshmallow/remote-ui/tree/master/flutter
 
@@ -16,12 +16,12 @@ dependencies:
 
   x_icon: ^0.0.4
   x_color: ^0.0.1
-  x_action: ^0.0.1+3
+  x_action: ^0.0.1+4
 
   # https://github.com/grpc/grpc-dart
-  grpc: ^2.2.0
+  grpc: ^2.7.0
 
-  json_annotation: ^3.0.1
+  json_annotation: ^3.1.0
 
 
 dev_dependencies:

@@ -71,6 +71,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.2.0-nullsafety.1"
+  fixnum:
+    dependency: transitive
+    description:
+      name: fixnum
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.10.11"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -108,7 +115,7 @@ packages:
       name: grpc
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.2.0"
+    version: "2.7.0"
   http:
     dependency: transitive
     description:
@@ -136,7 +143,7 @@ packages:
       name: json_annotation
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.0.1"
+    version: "3.1.0"
   matcher:
     dependency: transitive
     description:
@@ -186,6 +193,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.1.0"
+  protobuf:
+    dependency: transitive
+    description:
+      name: protobuf
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.1.0"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -253,7 +267,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "0.0.1+3"
+    version: "0.0.1+4"
   x_color:
     dependency: transitive
     description:
@@ -271,10 +285,10 @@ packages:
   x_uri:
     dependency: transitive
     description:
-      path: "../../x_uri"
-      relative: true
-    source: path
-    version: "0.0.1"
+      name: x_uri
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.1+1"
   xml:
     dependency: transitive
     description:
