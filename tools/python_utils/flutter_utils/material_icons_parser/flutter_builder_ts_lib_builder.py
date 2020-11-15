@@ -1,10 +1,6 @@
+# builder for https://github.com/bridgedxyz/flutter-builder - material/icons
 from flutter_utils.material_icons_parser.material_icons_specs_utils import parse_as_icons_spec
 
-
-# e.g. -> static readonly person: RemoteIconData = RemoteIconData.fromMaterial("person");
-TS_REMOTE_ICON_DATA_LINE_TEMPLATE = """
-    static readonly {icon_name}: RemoteIconData = RemoteIconData.fromMaterial("{icon_name}");
-"""
 
 
 def generate_ts_material_icons_class_source():
@@ -14,7 +10,7 @@ def generate_ts_material_icons_class_source():
     spec = parse_as_icons_spec()
     for s in spec:
         icon_name = s["name"]
-        line = TS_REMOTE_ICON_DATA_LINE_TEMPLATE.format(icon_name=icon_name) + "\n"
+        line = f"""static get {icon_name}(): IconData {{ return new IconData().overrideSnippet("Icons.{icon_name}"); }}\n"""
         file_text += line
     print(file_text)
     return file_text
