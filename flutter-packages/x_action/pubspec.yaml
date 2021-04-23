@@ -1,6 +1,6 @@
 name: x_action
 description: a flutter uri based dynamic action handler
-version: 0.0.1+4
+version: 0.0.2
 homepage: https://github.com/softmarshmallow/dynamic/tree/master/flutter
 
 environment:
@@ -13,7 +13,7 @@ dependencies:
   json_annotation: ^4.0.1
 
   x_uri:
-    ^0.0.1+1
+    ^0.0.1+2
     # path: ../x_uri
 
   # FIXME remove this before release

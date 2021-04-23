@@ -3,7 +3,7 @@ import 'package:x_action/src/action.dart';
 import 'package:x_action/x_action.dart';
 
 class DialogHandler extends ActionHandler {
-  DialogHandler(BuildContext context, {XAction actionData})
+  DialogHandler(BuildContext context, {XAction? actionData})
       : super(context, action: actionData);
 
   factory DialogHandler.of(BuildContext context) {
