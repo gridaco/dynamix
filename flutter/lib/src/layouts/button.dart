@@ -6,11 +6,11 @@ import 'package:json_annotation/json_annotation.dart';
 
 @JsonSerializable()
 class XButton extends XView {
-  XButton(this.action);
+  XButton(this.action) : super(key: 'unknown', type: 'unknown');
 
   // TODO FIXME
   @JsonKey(ignore: true)
-  XAction action;
+  final XAction action;
 
   // region json serialization.
   /// toJson is not required

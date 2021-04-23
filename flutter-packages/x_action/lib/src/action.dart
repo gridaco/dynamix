@@ -1,15 +1,14 @@
-import 'dart:convert';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:x_action/src/handlers/handlers.dart';
 import 'package:x_action/src/parser.dart';
-import 'package:x_uri/x_uri.dart';
+import 'package:x_uri/x_uri.dart' show Schema;
 
 part 'action.g.dart';
 
 abstract class XAction {
-  String name;
-  String group;
-  Map<String, dynamic> data;
+  late String? name;
+  late String? group;
+  late Map<String, dynamic> data;
 
   XAction({this.name, this.group});
 
@@ -22,13 +21,13 @@ abstract class XAction {
 
 @JsonSerializable()
 class XRouteAction extends XAction {
-  XRouteAction({String name, String group, this.route, this.presenter})
+  XRouteAction({String? name, String? group, this.route, this.presenter})
       : super(name: name, group: group);
 
-  String route;
+  String? route;
 
   /// [presenter] mode of how to present the route. (screen / fullscreen dialog /  modal / dialog)
-  String presenter;
+  String? presenter;
 
   String get uri {
     return "${Schema.material}://$route";

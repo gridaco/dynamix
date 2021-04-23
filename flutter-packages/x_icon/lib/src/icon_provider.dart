@@ -23,7 +23,7 @@ class XIcons {
   /// fetches the icons mapping by namespace
   static Map<String, IconData> fetchMappingByNamespace(String namespace) {
     try {
-      return _registry[namespace];
+      return _registry[namespace]!;
     } catch (e) {
       throw FlutterError(
           "namespace not registered error: remote icon failed to find any icon mapping with the provided namespace '$namespace'");
@@ -35,17 +35,17 @@ class XIcons {
     return _registry.containsKey(namespace);
   }
 
-  static IconData fetchIcon(String uri, {XIconType type}) {
+  static IconData fetchIcon(String uri, {XIconType? type}) {
     if (type == null) {
       type = typeFromUri(uri);
     }
 
     if (type == XIconType.MATERIAL_NATIVE) {
       final name = nameFromUri(uri);
-      return MATERIAL_ICONS_MAPPING[name];
+      return MATERIAL_ICONS_MAPPING[name]!;
     } else if (type == XIconType.CUSTOM_FONT) {
       final namespace = namespaceFromUri(uri);
-      return _registry[namespace][uri];
+      return _registry[namespace]![uri]!;
     } else {
       throw FlutterError(
           "given uri : $uri cannot be fetched from XIcons registry with type $type");

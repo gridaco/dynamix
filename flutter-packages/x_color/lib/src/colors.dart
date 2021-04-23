@@ -10,6 +10,6 @@ class XColors {
   };
 
   static Color fetch(String uri) {
-    return MATERIAL_COLORS[uri];
+    return MATERIAL_COLORS[uri]!;
   }
 }

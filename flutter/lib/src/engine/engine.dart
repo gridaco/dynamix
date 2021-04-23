@@ -38,6 +38,6 @@ class XTranslator {
     if (fieldType == "avatar") {}
     // endregion avatar
 
-    return null;
+    return XView(key: "", type: "");
   }
 }

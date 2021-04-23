@@ -5,31 +5,30 @@ homepage: https://github.com/softmarshmallow/remote-ui
 repository: https://github.com/softmarshmallow/remote-ui/tree/master/flutter
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
 
   # https://github.com/dnfield/flutter_svg
-  flutter_svg: ^0.19.1
+  flutter_svg: ^0.22.0
 
-  x_icon: ^0.0.4
-  x_color: ^0.0.1
-  x_action: ^0.0.1+4
+  x_icon: ^0.0.5
+  x_color: ^0.0.2
+  x_action: ^0.0.2
 
   # https://github.com/grpc/grpc-dart
-  grpc: ^2.7.0
+  grpc: ^3.0.0
 
-  json_annotation: ^3.1.0
-
+  json_annotation: ^4.0.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  build_runner: ^1.10.2
-  json_serializable: ^3.4.0
+  build_runner: ^2.0.1
+  json_serializable: ^4.1.1
 # The following section is specific to Flutter.
 flutter:
 #  assets:

@@ -1,22 +1,22 @@
 name: x_icon
 description: part of flutter remote-ui project. dynamic and remote icon loader for flutter
-version: 0.0.4
+version: 0.0.5
 author: softmarshmallow <woojoo@softmarshmallow.com>
 homepage: https://github.com/softmarshmallow/remote-ui/tree/master/flutter/packages/x_icon
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
-  flutter: ">=1.17.0 <2.10.0"
+  sdk: ">=2.12.0 <3.0.0"
+  flutter: ">=2.0.0 <2.10.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  json_annotation: ^3.0.1
+  json_annotation: ^4.0.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  build_runner: ^1.10.2
-  json_serializable: ^3.4.0
+  build_runner: ^2.0.1
+  json_serializable: ^4.1.1
 
 flutter:

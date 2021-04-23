@@ -1,12 +1,11 @@
 name: x_uri
 description: A bridged's dynamic™ uri engine
-version: 0.0.1+1
+version: 0.0.1+2
 homepage: https://bridged.xyz/dynamic/uri
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
 
 dev_dependencies:
-

@@ -5,7 +5,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 @JsonSerializable()
 class XText extends XView {
-  XText(this.text);
+  XText(this.text) : super(key: 'unkonw', type: 'text');
 
   String text;
 

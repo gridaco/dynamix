@@ -1,21 +1,20 @@
 import 'package:flutter/material.dart';
 
 class RouteRow extends StatelessWidget {
-  final Widget avatar;
+  final Widget? avatar;
   final Widget title;
-  final Widget subtitle;
-  final Widget trailing;
+  final Widget? subtitle;
+  final Widget? trailing;
   final String route;
 
   const RouteRow(
-      {Key key,
+      {Key? key,
       this.avatar,
-      @required this.title,
+      required this.title,
       this.subtitle,
       this.trailing,
-      @required this.route})
-      : assert(title != null && route != null),
-        super(key: key);
+      required this.route})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {

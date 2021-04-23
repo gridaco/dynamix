@@ -1,10 +1,8 @@
-import 'package:flutter/foundation.dart';
-
 abstract class XLayout<Body> {
-  XLayout({@required this.body});
+  XLayout({required this.body});
 
-  String version;
-  String layout;
-  String variant;
+  late String version;
+  late String layout;
+  late String variant;
   Body body;
 }

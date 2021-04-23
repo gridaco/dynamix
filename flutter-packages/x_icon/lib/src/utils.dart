@@ -20,11 +20,10 @@ bool isValidResourceUrl(String resource) {
   return Uri.parse(resource).isAbsolute;
 }
 
-
-XIconType typeFromUri(String uri){
+XIconType? typeFromUri(String uri) {
   final namespace = namespaceFromUri(uri);
   // parse type from uri
-  XIconType type;
+  XIconType? type;
   if (namespace == "asset") {
     type = XIconType.LOCAL_ASSET;
   } else if (namespace == "http" || namespace == "https") {
@@ -37,9 +36,8 @@ XIconType typeFromUri(String uri){
   return type;
 }
 
-
 /// [nameFromUri] returns the parsed icon name from the uri. for example, if given uri is "ns://Icons.add", name will be "add"
-String nameFromUri(String uri){
+String nameFromUri(String uri) {
   final type = typeFromUri(uri);
   if (type == XIconType.MATERIAL_NATIVE) {
     final plain = uri.replaceAll(

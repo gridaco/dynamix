@@ -7,9 +7,9 @@ typedef RouteBuilder<T> = MaterialPageRoute<T> Function(
     WidgetBuilder, RouteSettings);
 
 class XActions {
-  static Map<String, RouteBuilder> routes;
+  static late Map<String, RouteBuilder> routes;
 
-  static IXNavigator navigatorDelegate;
+  static late IXNavigator navigatorDelegate;
 
   static IXNavigator get to {
     if (navigatorDelegate == null) {
@@ -23,7 +23,7 @@ class XActions {
 
       ''');
     }
-    return navigatorDelegate ?? XNavigator(_navigators['app'].currentState);
+    return navigatorDelegate ?? XNavigator(_navigators['app']!.currentState!);
   }
 
   static Map<String, GlobalKey<NavigatorState>> _navigators =
@@ -38,7 +38,7 @@ class XActions {
         currentModule.add("app");
       }
     }
-    return _navigators['app'];
+    return _navigators['app']!;
   }
 }
 
@@ -46,7 +46,6 @@ abstract class IXNavigator {
   NavigatorState get navigator;
 
   Future showDialog({
-    Widget child,
     WidgetBuilder builder,
     bool barrierDismissible = true,
   });
@@ -56,7 +55,7 @@ abstract class IXNavigator {
   /// ```
   /// Modular.to.push(MaterialPageRoute(builder: (context) => HomePage()),);
   /// ```
-  Future<T> push<T extends Object>(Route<T> route);
+  Future<T?> push<T extends Object>(Route<T> route);
 
   /// Pop the current route off the navigator and navigate to a route.
   ///
@@ -67,10 +66,10 @@ abstract class IXNavigator {
   /// ```
   /// Modular.to.popAndPushNamed('/home', arguments: 10);
   /// ```
-  Future<T> popAndPushNamed<T extends Object, TO extends Object>(
+  Future<T?> popAndPushNamed<T extends Object, TO extends Object>(
       String routeName,
-      {TO result,
-      Object arguments});
+      {TO? result,
+      Object? arguments});
 
   /// Navigate to a route.
   ///
@@ -81,9 +80,9 @@ abstract class IXNavigator {
   /// ```
   /// Modular.to.pushNamed('/home', arguments: 10);
   /// ```
-  Future<T> pushNamed<T extends Object>(String routeName, {Object arguments});
+  Future<T?> pushNamed<T extends Object>(String routeName, {Object? arguments});
 
-  Route<T> routeNamed<T>(String name, {args});
+  Route<T?> routeNamed<T>(String name, {args});
 
   /// Push the route with the given name onto the navigator that most tightly
   /// encloses the given context, and then remove all the previous routes until
@@ -96,9 +95,9 @@ abstract class IXNavigator {
   /// ```
   /// Modular.to.pushNamedAndRemoveUntil('/home', ModalRoute.withName('/'), arguments: 10);
   /// ```
-  Future<T> pushNamedAndRemoveUntil<T extends Object>(
+  Future<T?> pushNamedAndRemoveUntil<T extends Object>(
       String newRouteName, bool Function(Route<dynamic>) predicate,
-      {Object arguments});
+      {Object? arguments});
 
   ///Replace the current route of the navigator that most tightly encloses the
   ///given context by pushing the route named routeName and then disposing the
@@ -111,10 +110,10 @@ abstract class IXNavigator {
   /// ```
   /// Modular.to.pushReplacementNamed('/home', arguments: 10);
   /// ```
-  Future<T> pushReplacementNamed<T extends Object, TO extends Object>(
+  Future<T?> pushReplacementNamed<T extends Object, TO extends Object>(
       String routeName,
-      {TO result,
-      Object arguments});
+      {TO? result,
+      Object? arguments});
 
   ///Replace the current route of the navigator that most tightly encloses
   ///the given context by pushing the given route and then disposing
@@ -125,9 +124,9 @@ abstract class IXNavigator {
   ///   MaterialPageRoute(builder: (context) => HomePage())
   /// );
   /// ```
-  Future<T> pushReplacement<T extends Object, TO extends Object>(
+  Future<T?> pushReplacement<T extends Object, TO extends Object>(
       Route<T> newRoute,
-      {TO result});
+      {TO? result});
 
   /// Removes the current Route from the stack of routes.
   ///
@@ -164,8 +163,8 @@ abstract class IXNavigator {
 }
 
 extension on NavigatorState {
-  Route<T> routeNamed<T>(String name,
-      {@required Object arguments, bool allowNull = false}) {
+  Route<T>? routeNamed<T>(String name,
+      {required Object arguments, bool allowNull = false}) {
     assert(name != null);
     if (allowNull && widget.onGenerateRoute == null) return null;
     assert(() {
@@ -184,7 +183,7 @@ extension on NavigatorState {
       name: name,
       arguments: arguments,
     );
-    Route<T> route = widget.onGenerateRoute(settings) as Route<T>;
+    Route<T>? route = widget.onGenerateRoute!(settings) as Route<T>?;
     if (route == null && !allowNull) {
       assert(() {
         if (widget.onUnknownRoute == null) {
@@ -200,7 +199,7 @@ extension on NavigatorState {
         }
         return true;
       }());
-      route = widget.onUnknownRoute(settings) as Route<T>;
+      route = widget.onUnknownRoute!(settings) as Route<T>;
       assert(() {
         if (route == null) {
           throw FlutterError.fromParts(<DiagnosticsNode>[
@@ -227,13 +226,12 @@ class XNavigator implements IXNavigator {
 
   @override
   Future showDialog({
-    @deprecated Widget child,
-    @required WidgetBuilder builder,
+    WidgetBuilder? builder,
     bool barrierDismissible = true,
   }) {
     return navigator.push(DialogRoute(
       pageBuilder: (buildContext, animation, secondaryAnimation) {
-        final pageChild = child ?? Builder(builder: builder);
+        final pageChild = Builder(builder: builder!);
         return SafeArea(
           child: Builder(builder: (context) {
             return pageChild;
@@ -268,17 +266,17 @@ class XNavigator implements IXNavigator {
   bool canPop() => navigator.canPop();
 
   @override
-  Future<bool> maybePop<T extends Object>([T result]) =>
+  Future<bool> maybePop<T extends Object>([T? result]) =>
       navigator.maybePop(result);
 
   @override
-  void pop<T extends Object>([T result]) => navigator.pop(result);
+  void pop<T extends Object>([T? result]) => navigator.pop(result);
 
   @override
-  Future<T> popAndPushNamed<T extends Object, TO extends Object>(
+  Future<T?> popAndPushNamed<T extends Object, TO extends Object>(
           String routeName,
-          {TO result,
-          Object arguments}) =>
+          {TO? result,
+          Object? arguments}) =>
       navigator.popAndPushNamed(
         routeName,
         result: result,
@@ -290,47 +288,54 @@ class XNavigator implements IXNavigator {
       navigator.popUntil(predicate);
 
   @override
-  Future<T> push<T extends Object>(Route<T> route) => navigator.push(route);
+  Future<T?> push<T extends Object>(Route<T> route) => navigator.push(route);
 
   @override
-  Future<T> pushNamed<T extends Object>(String routeName, {Object arguments}) =>
+  Future<T?> pushNamed<T extends Object>(String routeName,
+          {Object? arguments}) =>
       navigator.pushNamed(routeName, arguments: arguments);
 
-  Route<T> routeNamed<T>(String name, {args}) {
-    return navigator.routeNamed(name, arguments: args);
-  }
+  // Route<T?> routeNamed<T>(String name, {args}) {
+  //   return navigator.routeNamed(name, arguments: args);
+  // }
 
   @override
-  Future<T> pushNamedAndRemoveUntil<T extends Object>(
+  Future<T?> pushNamedAndRemoveUntil<T extends Object>(
           String newRouteName, bool Function(Route) predicate,
-          {Object arguments}) =>
+          {Object? arguments}) =>
       navigator.pushNamedAndRemoveUntil(newRouteName, predicate,
           arguments: arguments);
 
   @override
-  Future<T> pushReplacementNamed<T extends Object, TO extends Object>(
+  Future<T?> pushReplacementNamed<T extends Object, TO extends Object>(
           String routeName,
-          {TO result,
-          Object arguments}) =>
+          {TO? result,
+          Object? arguments}) =>
       navigator.pushReplacementNamed(routeName,
           result: result, arguments: arguments);
 
   @override
-  Future<T> pushReplacement<T extends Object, TO extends Object>(
+  Future<T?> pushReplacement<T extends Object, TO extends Object>(
           Route<T> newRoute,
-          {TO result}) =>
+          {TO? result}) =>
       navigator.pushReplacement(newRoute, result: result);
+
+  @override
+  Route<T?> routeNamed<T>(String name, {args}) {
+    // TODO: implement routeNamed
+    throw UnimplementedError();
+  }
 }
 
 class DialogRoute<T> extends PopupRoute<T> {
   DialogRoute({
-    @required RoutePageBuilder pageBuilder,
+    required RoutePageBuilder pageBuilder,
     bool barrierDismissible = true,
-    String barrierLabel,
+    String? barrierLabel,
     Color barrierColor = const Color(0x80000000),
     Duration transitionDuration = const Duration(milliseconds: 200),
-    RouteTransitionsBuilder transitionBuilder,
-    RouteSettings settings,
+    RouteTransitionsBuilder? transitionBuilder,
+    RouteSettings? settings,
   })  : assert(barrierDismissible != null),
         _pageBuilder = pageBuilder,
         _barrierDismissible = barrierDismissible,
@@ -347,18 +352,18 @@ class DialogRoute<T> extends PopupRoute<T> {
   final bool _barrierDismissible;
 
   @override
-  String get barrierLabel => _barrierLabel;
-  final String _barrierLabel;
+  String? get barrierLabel => _barrierLabel;
+  final String? _barrierLabel;
 
   @override
-  Color get barrierColor => _barrierColor;
-  final Color _barrierColor;
+  Color? get barrierColor => _barrierColor;
+  final Color? _barrierColor;
 
   @override
   Duration get transitionDuration => _transitionDuration;
   final Duration _transitionDuration;
 
-  final RouteTransitionsBuilder _transitionBuilder;
+  final RouteTransitionsBuilder? _transitionBuilder;
 
   @override
   Widget buildPage(BuildContext context, Animation<double> animation,
@@ -381,6 +386,6 @@ class DialogRoute<T> extends PopupRoute<T> {
           ),
           child: child);
     } // Some default transition
-    return _transitionBuilder(context, animation, secondaryAnimation, child);
+    return _transitionBuilder!(context, animation, secondaryAnimation, child);
   }
 }
