@@ -38,15 +38,15 @@ class XIconData extends IconData {
 
   /// [_explicitType] is used for explicitly providing the type of the uri.
   @JsonKey(name: "explicitType")
-  final XIconType _explicitType;
+  late XIconType? _explicitType;
 
   /// if [_explicitType] is provided, use it instead of parsing from uri.
   /// describes what it stands for.
   XIconType get type {
     if (_explicitType != null) {
-      return _explicitType;
+      return _explicitType!;
     }
-    return typeFromUri(uri);
+    return typeFromUri(uri)!;
   }
 
   /// get [IconData] via mapped string set.
@@ -76,7 +76,7 @@ class XIconData extends IconData {
     return m.Icons.error;
   }
 
-  XIconData(this.uri, {XIconType type})
+  XIconData(this.uri, {XIconType? type})
       : this._explicitType = type,
         super(
           _fetchIconDataForConstructor(uri).codePoint,
@@ -90,6 +90,7 @@ class XIconData extends IconData {
   }
 
   factory XIconData.fromIcon(IconData icon) {
+    throw new UnimplementedError();
     // TODO
 //    icon.
 //    return XIconData("material://Icons.$name", type: XIconType.MATERIAL_NATIVE);

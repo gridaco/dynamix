@@ -3,24 +3,28 @@
 ## [0.1.0] - (in development)
 
 RemoteIconData as factory or as `IconData`
+
 ```dart
-// from 
+// from
 Icon(RemoteIconData.fromUri("~").icon);
-// to 
+// to
 Icon(RemoteIconData.fromUri("~"));
 
 
 // from
 RemoteIcon(icon: RemoteIconData.fromUri("~").icon);
 
-// to 
+// to
 RemoteIcon.fromUri("~");
 ```
 
 ## [0.0.4] - major updates
+
 RemoteIconData -> XIconData
 RemoteIcon -> XIcon
 
 both supports fromJson
 
 XIconData now extends from IconData, so you can use it like so. Icon(XIconData("uri"))
+
+## [0.0.5] - flutter 2.0 support (null safety)

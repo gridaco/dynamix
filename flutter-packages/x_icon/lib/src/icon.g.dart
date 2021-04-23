@@ -8,8 +8,8 @@ part of 'icon.dart';
 
 XIcon _$XIconFromJson(Map<String, dynamic> json) {
   return XIcon(
-    json['icon'] == null ? null : XIconData.fromJson(json['icon']),
-    size: (json['size'] as num)?.toDouble(),
+    XIconData.fromJson(json['icon']),
+    size: (json['size'] as num?)?.toDouble(),
   );
 }
 

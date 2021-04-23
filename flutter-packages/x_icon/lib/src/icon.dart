@@ -9,11 +9,11 @@ class XIcon extends StatelessWidget {
   @JsonKey(name: "icon")
   final XIconData icon;
   @JsonKey(ignore: true)
-  final Key key;
+  final Key? key;
   @JsonKey(name: "size")
-  final double size;
+  final double? size;
   @JsonKey(ignore: true, name: "color") // todo : use custom XColor object.
-  final Color color;
+  final Color? color;
 
   XIcon(this.icon, {this.size, this.color, this.key}) : super(key: key);
 
@@ -45,13 +45,13 @@ class XIcon extends StatelessWidget {
         );
       case XIconType.CUPERTINO_NATIVE:
         throw FlutterError("cupertino icons are not yet supported");
-        break;
     }
+
     return Text(
       "ERROR: no valid remote icon data has passed",
-      style: Theme.of(context)
-          .textTheme
-          .caption
+      style: Theme.of(context)!
+          .textTheme!
+          .caption!
           .copyWith(color: Theme.of(context).errorColor),
     );
   }

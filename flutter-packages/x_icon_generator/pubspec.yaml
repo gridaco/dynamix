@@ -8,9 +8,9 @@ environment:
   flutter: ">=2.0.0 <2.10.0"
 
 dependencies:
-  build: ^1.3.0
-  source_gen: ^0.9.6
-  analyzer: ^0.39.17
+  build: ^2.0.1
+  source_gen: ^1.0.0
+  analyzer: ^1.5.0
 
   # region enable this on production
   # x_icon: ^0.0.4
