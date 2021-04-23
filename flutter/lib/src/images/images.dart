@@ -7,12 +7,12 @@ enum XImageMode { REMOTE, ASSET, FILE }
 
 class XImage extends StatelessWidget {
   final bool remote;
-  final String uri;
+  final String? uri;
 
   /// if override is provided, it overrides every thing and draws the icon instead of image.
   final Widget? overrideWidget;
 
-  String get format {
+  String? get format {
     try {
       return this?.uri?.split(".")?.last?.toLowerCase();
     } catch (e) {
@@ -30,7 +30,7 @@ class XImage extends StatelessWidget {
   final WidgetBuilder? placeholderBuilder;
 
   XImage(
-      {required this.uri,
+      {this.uri,
       required this.remote,
       this.width,
       this.height,
@@ -39,10 +39,10 @@ class XImage extends StatelessWidget {
       this.overrideWidget});
 
   factory XImage.asset(String asset,
-      {double width,
-      double height,
+      {double? width,
+      double? height,
       BoxFit fit = BoxFit.contain,
-      WidgetBuilder placeholderBuilder}) {
+      WidgetBuilder? placeholderBuilder}) {
     return XImage(
       uri: asset,
       remote: false,
@@ -54,10 +54,10 @@ class XImage extends StatelessWidget {
   }
 
   factory XImage.network(String url,
-      {double width,
-      double height,
+      {double? width,
+      double? height,
       BoxFit fit = BoxFit.contain,
-      WidgetBuilder placeholderBuilder}) {
+      WidgetBuilder? placeholderBuilder}) {
     return XImage(
         uri: url,
         remote: true,
@@ -69,8 +69,8 @@ class XImage extends StatelessWidget {
 
   factory XImage.icon(
     String icon, {
-    double width,
-    double height,
+    double? width,
+    double? height,
   }) {
     return XImage(
       uri: null,
@@ -84,19 +84,19 @@ class XImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (hasOverride) {
-      return overrideWidget;
+      return overrideWidget!;
     }
     if (format == "svg") {
       if (remote) {
         return SvgPicture.network(
-          uri,
+          uri!,
           width: width,
           height: height,
           fit: fit,
           placeholderBuilder: placeholderBuilder,
         );
       } else {
-        return SvgPicture.asset(uri,
+        return SvgPicture.asset(uri!,
             width: width,
             height: height,
             fit: fit,
@@ -106,14 +106,14 @@ class XImage extends StatelessWidget {
 
     if (remote) {
       return Image.network(
-        uri,
+        uri!,
         width: width,
         height: height,
         fit: fit,
       );
     } else {
       return Image.asset(
-        uri,
+        uri!,
         width: width,
         height: height,
         fit: fit,

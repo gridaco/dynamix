@@ -1,17 +1,11 @@
-class XProvider{
-  factory XProvider.of(){
-    return null;
+class XProvider {
+  factory XProvider.of() {
+    throw UnimplementedError();
   }
 
-  registerAsset(asset){
+  registerAsset(asset) {}
 
-  }
+  registerLayout(layout) {}
 
-  registerLayout(layout){
-
-  }
-
-  registerScreen(screen){
-
-  }
+  registerScreen(screen) {}
 }
