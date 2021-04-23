@@ -6,12 +6,11 @@
 
 ![](./doc/remote-icon-demo.gif)
 
-
 why not to use other lib such as [flutter_icons](https://github.com/flutter-studio/flutter-icons)?
+
 1. they do not support custom icons
 2. you cannot remotely load icons.
 3. not compatitable with bridged's dynamic
-
 
 > Flutter remote icon enables you to load material icons (`Icons.~`) or your custom icon (`CustomIcons.~`) or remotely fetched content (svg) to your icon widget via `uri`, wich can be dynamically configured, remotely loaded.
 
@@ -25,19 +24,20 @@ dev_dependencies:
   x_icon_generator: latest
   build_runner: latest
 ```
-> for more information about  [x_icon_generator](../x_icon_generator), please refer [here](../x_icon_generator)
 
-
+> for more information about [x_icon_generator](../x_icon_generator), please refer [here](../x_icon_generator)
 
 ## Usage
 
 **supported usage**
-* loading native icons (IconData)
-* loading remote icon (svg, png) into `Icon()`
-* loading packaged (local) asset as Icon
-* loading packaged (local) font as Icon
+
+- loading native icons (IconData)
+- loading remote icon (svg, png) into `Icon()`
+- loading packaged (local) asset as Icon
+- loading packaged (local) font as Icon
 
 **example**
+
 ```dart
 Widget buildRemoteIcon(){
   // var remoteIconData = new XIconData(Icons.add); // -> flutter native material icons
@@ -53,6 +53,7 @@ Widget buildRemoteIcon(){
 ```
 
 **remote url icon**
+
 ```dart
 XIcon(XIconData.fromUri(
               "https://raw.githubusercontent.com/bridgedxyz/dynamic/master/flutter/packages/x_icon/doc/remote-icon-example/twotone_brightness_auto_black_18dp.png"));
@@ -69,9 +70,8 @@ XIcon(XIconData.fromUri(
 4.  "material://icons.name"
 5.  "custom-namespace://CustomIcons.icon_name"
 
-
-
 ## register custom font icon schema
+
 ```dart
 void main() {
   XIcons.register("namespace", {
@@ -84,6 +84,7 @@ void main() {
 ## generate icons mapping for your own custom font IconData
 
 in your `custom_icons.dart`
+
 ```dart
 // your font based IconData class
 part 'custom_icons.g.dart';
@@ -106,6 +107,7 @@ class CustomIcons{
 and run `flutter pub build_runner build`
 
 will generate `custom_icons.g.dart`
+
 ```dart
 part of 'custom_icons.dart';
 
@@ -120,6 +122,7 @@ IconData _$CustomIconsFromUri(String uri){
 ```
 
 next, you can register the namespace and mappings easily
+
 ```dart
 void main() {
   // register mapping
@@ -134,8 +137,6 @@ Widget buildDynamicIcon(){
 ```
 
 > for using font as a icon please read [this blog](https://medium.com/flutterpub/how-to-use-custom-icons-in-flutter-834a079d977)
-
-
 
 ## What problem does it solve?
 

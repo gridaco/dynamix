@@ -3,18 +3,14 @@ import 'package:x_icon/x_icon.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 /// [XImageMode] indicates the mode of the [XImage].
-enum XImageMode{
-  REMOTE,
-  ASSET,
-  FILE
-}
+enum XImageMode { REMOTE, ASSET, FILE }
 
 class XImage extends StatelessWidget {
   final bool remote;
   final String uri;
 
   /// if override is provided, it overrides every thing and draws the icon instead of image.
-  final Widget overrideWidget;
+  final Widget? overrideWidget;
 
   String get format {
     try {
@@ -28,14 +24,14 @@ class XImage extends StatelessWidget {
     return overrideWidget != null;
   }
 
-  final double width;
-  final double height;
+  final double? width;
+  final double? height;
   final BoxFit fit;
-  final WidgetBuilder placeholderBuilder;
+  final WidgetBuilder? placeholderBuilder;
 
   XImage(
-      {@required this.uri,
-      @required this.remote,
+      {required this.uri,
+      required this.remote,
       this.width,
       this.height,
       this.fit = BoxFit.contain,
@@ -81,8 +77,7 @@ class XImage extends StatelessWidget {
       remote: true,
       width: width,
       height: height,
-      overrideWidget:
-          XIcon(XIconData(icon)),
+      overrideWidget: XIcon(XIconData(icon)),
     );
   }
 
