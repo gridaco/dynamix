@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:json_annotation/json_annotation.dart';
+
 import 'icon_data.dart';
 
 part 'icon.g.dart';
@@ -45,14 +46,22 @@ class XIcon extends StatelessWidget {
         );
       case XIconType.CUPERTINO_NATIVE:
         throw FlutterError("cupertino icons are not yet supported");
+      default:
+        break;
     }
 
+    TextStyle? errorStyle;
+    if (Theme.of(context) != null) {
+      var themeData = Theme.of(context);
+      if (themeData.textTheme != null) {
+        var textTheme = themeData.textTheme;
+        errorStyle =
+            textTheme.caption!.copyWith(color: Theme.of(context).errorColor);
+      }
+    }
     return Text(
       "ERROR: no valid remote icon data has passed",
-      style: Theme.of(context)!
-          .textTheme!
-          .caption!
-          .copyWith(color: Theme.of(context).errorColor),
+      style: errorStyle,
     );
   }
 
