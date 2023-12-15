@@ -6,21 +6,22 @@ server - dynamically change client specs from server
 
 client - dynamically load content from server & with dynamic layout / component / action specs
 
-| Platform            | Package                                                                                                                                                                                     |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| NodeJS (for server) | [@bridged.xyz/remote-ui-core](./core) [![](npm)](npm-remote-ui-core)<br />[@bridged.xyz/remote-ui-server](./server) [![](npm)](https://www.npmjs.com/package/@bridged.xyz/remote-ui-server) |
-| NodeJS (for web)    | (comming soon)<br />(@bridged.xyz/remote-ui)                                                                                                                                                |
-| Flutter             | [dynamic](./flutter) [![](pub)](pub-flutter_remote_ui)<br />                                                                                                                                |
+| Platform                                                                                                              | Package                                                            |
+| --------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
+| NodeJS (for server)                                                                                                   | [@bridged.xyz/remote-ui-core](./core) [![npm]](npm-remote-ui-core) |
+| <br />[@bridged.xyz/remote-ui-server](./server) [![npm]](https://www.npmjs.com/package/@bridged.xyz/remote-ui-server) |
+| NodeJS (for web)                                                                                                      | (comming soon)<br />(@bridged.xyz/remote-ui)                       |
+| Flutter                                                                                                               | [dynamic](./flutter) [![pub]](pub-flutter_remote_ui)<br />         |
 
 **sub packages**
 
-- [x_icon](./flutter/packages/x_icon) [![](pub)](https://pub.dev/packages/flutter_remote_icon)
+- [x_icon](./flutter/packages/x_icon) [![pub]](https://pub.dev/packages/flutter_remote_icon)
 
-- [x_icon_generator](./flutter/packages/x_icon_generator) [![](pub)](https://pub.dev/packages/x_icon_generator)
+- [x_icon_generator](./flutter/packages/x_icon_generator) [![pub]](https://pub.dev/packages/x_icon_generator)
 
-- [x_color](./flutter/packages/x_color) [![](pub)](https://pub.dev/packages/x_color)
+- [x_color](./flutter/packages/x_color) [![pub]](https://pub.dev/packages/x_color)
 
-* [x_action](./flutter/packages/x_action) [![](pub)](https://pub.dev/packages/x_action)
+* [x_action](./flutter/packages/x_action) [![pub]](https://pub.dev/packages/x_action)
 
 ## dyanmic actions
 
