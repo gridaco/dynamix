@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://grida.co/dynamix">
-  <image src="./.readme/cover.png" />
+    <image src="./.readme/cover.png" />
     <h3 align="center">Dynamix by Grida</h3>
   </a>
 </p>
@@ -10,6 +10,24 @@
 </p>
 
 > Dynamix. a remotely configured user interface with super flexibility. Make web / app / webview / server to work as one.
+
+## With Dynamix, You can...
+
+- Mix multiple frameworks in one app with ease.
+  - Use NextJS for Web & Webview, Flutter for App.
+- Manage User authentication in one place.
+  - Login on App, use the same session on Web.
+- Configure UI Remotely.
+  - Provide UI Specs on Server, Great for A/B Testing & User Customization.
+
+## Why Dynamix?
+
+Web is the best platform we have. Depending Soley on Mobile App framework, such as Flutter can slow down your development speed. With Dynamix, you can mix App UI & Web UI in one app, with shared state management and access to native features. Plus, with remote-ui, you can configure your app's pages remotely, having business logic on server side.
+
+<h3 align="center">How it works</h3>
+<p align="center">
+  <image src="./.readme/architecture.png" alt="Dynamix Architecture" />
+</p>
 
 server - dynamically change client specs from server
 
