@@ -1,4 +1,4 @@
-name: flutter_remote_ui_example
+name: flutter_dynamix_example
 description: example app for flutter_remote_ui
 version: 1.0.0+1
 
@@ -12,7 +12,7 @@ dependencies:
   http: ^0.13.1
 
   dynamic:
-    path: ../
+    path: ../../platforms/flutter/dynamic
 
   after_layout: ^1.1.0
 
