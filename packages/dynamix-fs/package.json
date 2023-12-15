@@ -1,0 +1,29 @@
+{
+  "name": "@dynamix/fs",
+  "description": "File System for Dynamix",
+  "homepage": "https://grida.co/dynamix",
+  "repository": "https://github.com/gridaco/dynamix/tree/main/packages/dynamix-fs",
+  "version": "0.0.0",
+  "keywords": [
+    "dynamix",
+    "dynamic",
+    "native",
+    "ios",
+    "android",
+    "react-native",
+    "flutter",
+    "fs",
+    "file-transfer",
+    "file-picker",
+    "webview",
+    "bridge"
+  ],
+  "files": [
+    "README.md",
+    "LICENSE",
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}
