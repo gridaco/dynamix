@@ -2,7 +2,7 @@
 
 
 
-> dynamic. a remotely configured user interface with super flexibility. read more at [bridged.xyz/dynamic](https://bridged.xyz/dynamic/)
+> Dynamix. a remotely configured user interface with super flexibility. Make web / app / webview / server to work as one.
 
 
 
