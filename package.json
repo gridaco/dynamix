@@ -1,0 +1,9 @@
+{
+  "name": "dynamix",
+  "private": true,
+  "workspaces": [
+    "www",
+    "examples/*",
+    "packages/*"
+  ]
+}
