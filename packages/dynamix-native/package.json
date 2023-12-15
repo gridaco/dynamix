@@ -1,14 +1,15 @@
 {
-  "name": "@dynamix/react-native",
-  "description": "Dynamix for React Native",
+  "name": "@dynamix/native",
+  "description": "Dynamix web client for iOS/Android Native Apps",
   "homepage": "https://grida.co/dynamix",
-  "repository": "https://github.com/gridaco/dynamix/tree/main/packages/dynamix-react-native",
+  "repository": "https://github.com/gridaco/dynamix/tree/main/packages/dynamix-native",
   "version": "0.0.0",
   "keywords": [
     "dynamix",
     "dynamic",
-    "react-native",
-    "react",
+    "native",
+    "ios",
+    "android",
     "webview",
     "bridge"
   ],

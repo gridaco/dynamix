@@ -1,4 +1,23 @@
 {
   "name": "@dynamix/react",
-  "version": "0.0.0"
+  "description": "Dynamix React Components for Building Dynamically mixed apps with webvieww",
+  "homepage": "https://grida.co/dynamix",
+  "repository": "https://github.com/gridaco/dynamix/tree/main/packages/dynamix-react",
+  "version": "0.0.0",
+  "keywords": [
+    "dynamix",
+    "dynamic",
+    "react",
+    "nextjs",
+    "webview",
+    "bridge"
+  ],
+  "files": [
+    "README.md",
+    "LICENSE",
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
 }

@@ -1,14 +1,11 @@
 {
-  "name": "@dynamix/react-native",
-  "description": "Dynamix for React Native",
+  "name": "@dynamix/starter-kit",
   "homepage": "https://grida.co/dynamix",
-  "repository": "https://github.com/gridaco/dynamix/tree/main/packages/dynamix-react-native",
+  "repository": "https://github.com/gridaco/dynamix/tree/main/packages/dynamix-starter-kit",
   "version": "0.0.0",
   "keywords": [
     "dynamix",
     "dynamic",
-    "react-native",
-    "react",
     "webview",
     "bridge"
   ],
