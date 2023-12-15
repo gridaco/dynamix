@@ -4,7 +4,7 @@
   "private": false,
   "repository": "https://github.com/softmarshmallow/remote-ui",
   "dependencies": {
-    "@bridged.xyz/remote-ui-core": "file:../core/lib",
+    "@bridged.xyz/remote-ui-core": "*",
     "@grpc/grpc-js": "^1.8.8",
     "@grpc/proto-loader": "^0.5.3"
   },
