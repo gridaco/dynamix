@@ -1,4 +1,13 @@
-![logo](docs/logo-3d.png)
+<p align="center">
+  <a href="https://grida.co/dynamix">
+  <image src="./.readme/cover.png" />
+    <h3 align="center">Dynamix by Grida</h3>
+  </a>
+</p>
+
+<p align="center">
+  Dynamix. Supercharged Webviews.
+</p>
 
 > Dynamix. a remotely configured user interface with super flexibility. Make web / app / webview / server to work as one.
 
