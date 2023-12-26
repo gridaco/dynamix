@@ -18,7 +18,8 @@
 - Manage User authentication in one place.
   - Login on App, use the same session on Web.
 - Configure UI Remotely.
-  - Provide UI Specs on Server, Great for A/B Testing & User Customization.
+  - Provide UI Specs on server, Great for A/B Testing & User Customization.
+  - Form validation on server, display errors on client with ui response
 
 ## Why Dynamix?
 
