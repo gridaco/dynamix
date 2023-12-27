@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  Dynamix. Supercharged Webviews.
+  Dynamix. Build Hybrid Apps.
 </p>
 
 > Dynamix. a remotely configured user interface with super flexibility. Make web / app / webview / server to work as one.
