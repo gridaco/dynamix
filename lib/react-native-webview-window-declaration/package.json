@@ -1,0 +1,35 @@
+{
+  "name": "react-native-webview-window-declaration",
+  "version": "1.0.0",
+  "description": "TypeScript declaration for an extended window object in a React Native WebView context.",
+  "main": "index.d.ts",
+  "types": "index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gridaco/dynamix.git"
+  },
+  "keywords": [
+    "react-native",
+    "webview",
+    "typescript",
+    "declaration",
+    "window"
+  ],
+  "files": [
+    "index.d.ts",
+    "LICENSE",
+    "README.md"
+  ],
+  "author": "Your Name <your.email@example.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gridaco/dynamix/issues"
+  },
+  "homepage": "https://github.com/gridaco/dynamix/tree/main/lib/react-native-webview-window-declaration",
+  "publishConfig": {
+    "access": "public"
+  }
+}
