@@ -34,12 +34,14 @@ server - dynamically change client specs from server
 
 client - dynamically load content from server & with dynamic layout / component / action specs
 
-| Platform                                                                                                              | Package                                                            |
-| --------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
-| NodeJS (for server)                                                                                                   | [@bridged.xyz/remote-ui-core](./core) [![npm]](npm-remote-ui-core) |
-| <br />[@bridged.xyz/remote-ui-server](./server) [![npm]](https://www.npmjs.com/package/@bridged.xyz/remote-ui-server) |
-| NodeJS (for web)                                                                                                      | (comming soon)<br />(@bridged.xyz/remote-ui)                       |
-| Flutter                                                                                                               | [dynamic](./flutter) [![pub]](pub-flutter_remote_ui)<br />         |
+| Packages                                  | install                                                                 | platform         | description                                                   |
+| ----------------------------------------- | ----------------------------------------------------------------------- | ---------------- | ------------------------------------------------------------- |
+| `@dynamix/react`                          | [![npm]](https://www.npmjs.com/@dynamix/react)                          | react            | dynamix on react                                              |
+| `@dynamix/react-native`                   | [![npm]](https://www.npmjs.com/@dynamix/react-native)                   | react-native     | dynamix on react-native                                       |
+| `react-native-webview-window-declaration` | [![npm]](https://www.npmjs.com/react-native-webview-window-declaration) | web (typescript) | dts type utility for webprojects used on react-native-webview |
+
+<!-- | [@bridged.xyz/remote-ui-core](./core) [![npm]](npm-remote-ui-core)                                              | NodeJS (for server) | -->
+<!-- | [@bridged.xyz/remote-ui-server](./server) [![npm]](https://www.npmjs.com/package/@bridged.xyz/remote-ui-server) |                     | -->
 
 **sub packages**
 
