@@ -13,10 +13,13 @@
   },
   "keywords": [
     "react-native",
+    "react-native-webview",
     "webview",
+    "dynamix",
     "typescript",
     "declaration",
-    "window"
+    "window",
+    "dts"
   ],
   "files": [
     "index.d.ts",
