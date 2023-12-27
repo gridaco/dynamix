@@ -40,15 +40,15 @@ Dynamix comes with multiple packages for different platforms.
 
 > for instance, if you are using react-native for app and nextjs for webview web, you can use `@dynamix/react-native` for react-native and `@dynamix/react` for nextjs.
 
-| Packages                                                  | install                                                                 | platform         | description                                                   |
-| --------------------------------------------------------- | ----------------------------------------------------------------------- | ---------------- | ------------------------------------------------------------- |
-| `@dynamix/react`                                          | [![npm]](https://www.npmjs.com/@dynamix/react)                          | react            | dynamix on react                                              |
-| `@dynamix/react-native`                                   | [![npm]](https://www.npmjs.com/@dynamix/react-native)                   | react-native     | dynamix on react-native                                       |
-| `react-native-webview-window-declaration`                 | [![npm]](https://www.npmjs.com/react-native-webview-window-declaration) | web (typescript) | dts type utility for webprojects used on react-native-webview |
-| [`x_icon`](./flutter/packages/x_icon)                     | [![pub]](https://pub.dev/packages/flutter_remote_icon)                  | flutter          | dynamically load flutter icons with name string               |
-| [`x_icon_generator`](./flutter/packages/x_icon_generator) | [![pub]](https://pub.dev/packages/x_icon_generator)                     | flutter          | x_icon codegen for custom icons                               |
-| [`x_color`](./flutter/packages/x_color)                   | [![pub]](https://pub.dev/packages/x_color)                              | flutter          | dynamically load flutter color with name string               |
-| [`x_action`](./flutter/packages/x_action)                 | [![pub]](https://pub.dev/packages/x_action)                             | flutter          | dynamix flutter actions                                       |
+| Packages                                                            | install                                                                 | platform         | description                                                   |
+| ------------------------------------------------------------------- | ----------------------------------------------------------------------- | ---------------- | ------------------------------------------------------------- |
+| `@dynamix/react`                                                    | [![npm]](https://www.npmjs.com/@dynamix/react)                          | react            | dynamix on react                                              |
+| `@dynamix/react-native`                                             | [![npm]](https://www.npmjs.com/@dynamix/react-native)                   | react-native     | dynamix on react-native                                       |
+| `react-native-webview-window-declaration`                           | [![npm]](https://www.npmjs.com/react-native-webview-window-declaration) | web (typescript) | dts type utility for webprojects used on react-native-webview |
+| [`x_icon`](./platforms/flutter/packages/x_icon)                     | [![pub]](https://pub.dev/packages/flutter_remote_icon)                  | flutter          | dynamically load flutter icons with name string               |
+| [`x_icon_generator`](./platforms/flutter/packages/x_icon_generator) | [![pub]](https://pub.dev/packages/x_icon_generator)                     | flutter          | x_icon codegen for custom icons                               |
+| [`x_color`](./platforms/flutter/packages/x_color)                   | [![pub]](https://pub.dev/packages/x_color)                              | flutter          | dynamically load flutter color with name string               |
+| [`x_action`](./platforms/flutter/packages/x_action)                 | [![pub]](https://pub.dev/packages/x_action)                             | flutter          | dynamix flutter actions                                       |
 
   <!-- | [@bridged.xyz/remote-ui-core](./core) [![npm]](npm-remote-ui-core)                                              | NodeJS (for server) | -->
   <!-- | [@bridged.xyz/remote-ui-server](./server) [![npm]](https://www.npmjs.com/package/@bridged.xyz/remote-ui-server) |                     | -->
