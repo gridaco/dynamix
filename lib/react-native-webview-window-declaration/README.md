@@ -17,6 +17,8 @@ Once installed, the TypeScript compiler will recognize the ReactNativeWebView pr
 Here's how you might use it in your project:
 
 ```ts
+import "react-native-webview-window-declaration"
+
 if (window.ReactNativeWebView) {
   window.ReactNativeWebView.postMessage("Hello from the web!");
 }
