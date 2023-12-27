@@ -34,24 +34,24 @@ server - dynamically change client specs from server
 
 client - dynamically load content from server & with dynamic layout / component / action specs
 
-| Packages                                  | install                                                                 | platform         | description                                                   |
-| ----------------------------------------- | ----------------------------------------------------------------------- | ---------------- | ------------------------------------------------------------- |
-| `@dynamix/react`                          | [![npm]](https://www.npmjs.com/@dynamix/react)                          | react            | dynamix on react                                              |
-| `@dynamix/react-native`                   | [![npm]](https://www.npmjs.com/@dynamix/react-native)                   | react-native     | dynamix on react-native                                       |
-| `react-native-webview-window-declaration` | [![npm]](https://www.npmjs.com/react-native-webview-window-declaration) | web (typescript) | dts type utility for webprojects used on react-native-webview |
+## Packages
 
-<!-- | [@bridged.xyz/remote-ui-core](./core) [![npm]](npm-remote-ui-core)                                              | NodeJS (for server) | -->
-<!-- | [@bridged.xyz/remote-ui-server](./server) [![npm]](https://www.npmjs.com/package/@bridged.xyz/remote-ui-server) |                     | -->
+Dynamix comes with multiple packages for different platforms.
 
-**sub packages**
+> for instance, if you are using react-native for app and nextjs for webview web, you can use `@dynamix/react-native` for react-native and `@dynamix/react` for nextjs.
 
-- [x_icon](./flutter/packages/x_icon) [![pub]](https://pub.dev/packages/flutter_remote_icon)
+| Packages                                                  | install                                                                 | platform         | description                                                   |
+| --------------------------------------------------------- | ----------------------------------------------------------------------- | ---------------- | ------------------------------------------------------------- |
+| `@dynamix/react`                                          | [![npm]](https://www.npmjs.com/@dynamix/react)                          | react            | dynamix on react                                              |
+| `@dynamix/react-native`                                   | [![npm]](https://www.npmjs.com/@dynamix/react-native)                   | react-native     | dynamix on react-native                                       |
+| `react-native-webview-window-declaration`                 | [![npm]](https://www.npmjs.com/react-native-webview-window-declaration) | web (typescript) | dts type utility for webprojects used on react-native-webview |
+| [`x_icon`](./flutter/packages/x_icon)                     | [![pub]](https://pub.dev/packages/flutter_remote_icon)                  | flutter          | dynamically load flutter icons with name string               |
+| [`x_icon_generator`](./flutter/packages/x_icon_generator) | [![pub]](https://pub.dev/packages/x_icon_generator)                     | flutter          | x_icon codegen for custom icons                               |
+| [`x_color`](./flutter/packages/x_color)                   | [![pub]](https://pub.dev/packages/x_color)                              | flutter          | dynamically load flutter color with name string               |
+| [`x_action`](./flutter/packages/x_action)                 | [![pub]](https://pub.dev/packages/x_action)                             | flutter          | dynamix flutter actions                                       |
 
-- [x_icon_generator](./flutter/packages/x_icon_generator) [![pub]](https://pub.dev/packages/x_icon_generator)
-
-- [x_color](./flutter/packages/x_color) [![pub]](https://pub.dev/packages/x_color)
-
-* [x_action](./flutter/packages/x_action) [![pub]](https://pub.dev/packages/x_action)
+  <!-- | [@bridged.xyz/remote-ui-core](./core) [![npm]](npm-remote-ui-core)                                              | NodeJS (for server) | -->
+  <!-- | [@bridged.xyz/remote-ui-server](./server) [![npm]](https://www.npmjs.com/package/@bridged.xyz/remote-ui-server) |                     | -->
 
 ## dyanmic actions
 
