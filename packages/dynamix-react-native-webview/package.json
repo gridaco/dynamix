@@ -1,4 +1,31 @@
 {
   "name": "@dynamix/react-native-webview",
-  "version": "0.0.0"
+  "version": "0.0.0",
+  "author": "Universe <universe@grida.co>",
+  "homepage": "https://grida.co/dynamix",
+  "repository": "https://github.com/gridaco/dynamix/tree/main/packages/dynamix-react-native-webview",
+  "license": "MIT",
+  "keywords": [
+    "dynamix",
+    "dynamic",
+    "react-native",
+    "react-native-webview",
+    "react",
+    "webview",
+    "bridge"
+  ],
+  "files": [
+    "README.md",
+    "LICENSE",
+    "dist"
+  ],
+  "devDependencies": {
+    "react-native-webview": "^13.6.3"
+  },
+  "peerDependencies": {
+    "react-native-webview": "^13.6.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
 }
