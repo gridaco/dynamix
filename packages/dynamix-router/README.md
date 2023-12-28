@@ -6,5 +6,5 @@
 </p>
 
 <p align="center">
-  <code>@dynamix/router</code>
+  <code>@dynamix/navigation</code>
 </p>
