@@ -22,5 +22,11 @@
   ],
   "publishConfig": {
     "access": "public"
+  },
+  "peerDependencies": {
+    "@dynamix/react-native-webview": "*"
+  },
+  "devDependencies": {
+    "@dynamix/react-native-webview": "*"
   }
 }

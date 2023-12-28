@@ -8,3 +8,23 @@
 <p align="center">
   <code>@dynamix/react-native</code>
 </p>
+
+## Installation
+
+```sh
+npm install @dynamix/react-native
+```
+
+## Usage
+
+```tsx
+import dynamix, { DynamixProvider, Webview } from "@dynamix/react-native";
+
+function App() {
+  return (
+    <DynamixProvider>
+      <Webview />
+    </DynamixProvider>
+  );
+}
+```
