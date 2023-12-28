@@ -1,9 +1,12 @@
 {
   "name": "@dynamix/native",
   "description": "Dynamix web client for iOS/Android Native Apps",
+  "version": "0.0.0",
+  "private": false,
+  "author": "Universe <universe@grida.co>",
   "homepage": "https://grida.co/dynamix",
   "repository": "https://github.com/gridaco/dynamix/tree/main/packages/dynamix-native",
-  "version": "0.0.0",
+  "license": "MIT",
   "keywords": [
     "dynamix",
     "dynamic",

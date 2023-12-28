@@ -1,4 +1,28 @@
 {
   "name": "@dynamix/window",
-  "version": "0.0.0"
+  "description": "Dynamix window",
+  "version": "0.0.0",
+  "private": false,
+  "author": "Universe <universe@grida.co>",
+  "homepage": "https://grida.co/dynamix",
+  "repository": "https://github.com/gridaco/dynamix/tree/main/packages/dynamix-window",
+  "license": "MIT",
+  "keywords": [
+    "dynamix",
+    "dynamic",
+    "window",
+    "webview",
+    "bridge"
+  ],
+  "scripts": {
+    "build": "tsup"
+  },
+  "files": [
+    "README.md",
+    "LICENSE",
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
 }

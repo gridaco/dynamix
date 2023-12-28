@@ -1,4 +1,30 @@
 {
   "name": "@dynamix/actions",
-  "version": "0.0.0"
+  "description": "Dynamix core Actions",
+  "version": "0.0.0",
+  "private": false,
+  "author": "Universe <universe@grida.co>",
+  "homepage": "https://grida.co/dynamix",
+  "repository": "https://github.com/gridaco/dynamix/tree/main/packages/dynamix-actions",
+  "license": "MIT",
+  "keywords": [
+    "dynamix",
+    "dynamic",
+    "react-native",
+    "react-native-webview",
+    "react",
+    "webview",
+    "bridge"
+  ],
+  "scripts": {
+    "build": "tsup"
+  },
+  "files": [
+    "README.md",
+    "LICENSE",
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
 }

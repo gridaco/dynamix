@@ -1,14 +1,22 @@
 {
   "name": "@dynamix/starter-kit",
+  "description": "Dynamix Starter Kit",
+  "version": "0.0.0",
+  "private": false,
+  "author": "Universe <universe@grida.co>",
   "homepage": "https://grida.co/dynamix",
   "repository": "https://github.com/gridaco/dynamix/tree/main/packages/dynamix-starter-kit",
-  "version": "0.0.0",
+  "license": "MIT",
   "keywords": [
     "dynamix",
     "dynamic",
+    "starter-kit",
     "webview",
     "bridge"
   ],
+  "scripts": {
+    "build": "tsup"
+  },
   "files": [
     "README.md",
     "LICENSE",

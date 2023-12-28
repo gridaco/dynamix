@@ -1,6 +1,8 @@
 {
   "name": "@dynamix/react-native-webview",
+  "description": "Dynamix for react-native-webview",
   "version": "0.0.0",
+  "private": false,
   "author": "Universe <universe@grida.co>",
   "homepage": "https://grida.co/dynamix",
   "repository": "https://github.com/gridaco/dynamix/tree/main/packages/dynamix-react-native-webview",
@@ -14,6 +16,9 @@
     "webview",
     "bridge"
   ],
+  "scripts": {
+    "build": "tsup"
+  },
   "files": [
     "README.md",
     "LICENSE",

@@ -1,9 +1,11 @@
 {
   "name": "@dynamix/flutter",
   "description": "Dynamix web client for Flutter Apps",
+  "version": "0.0.0",
+  "private": false,
+  "author": "Universe <universe@grida.co>",
   "homepage": "https://grida.co/dynamix",
   "repository": "https://github.com/gridaco/dynamix/tree/main/packages/dynamix-flutter",
-  "version": "0.0.0",
   "keywords": [
     "dynamix",
     "dynamic",

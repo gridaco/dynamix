@@ -1,9 +1,11 @@
 {
   "name": "@dynamix/fs",
   "description": "File System for Dynamix",
+  "version": "0.0.0",
+  "private": false,
+  "author": "Universe <universe@grida.co>",
   "homepage": "https://grida.co/dynamix",
   "repository": "https://github.com/gridaco/dynamix/tree/main/packages/dynamix-fs",
-  "version": "0.0.0",
   "keywords": [
     "dynamix",
     "dynamic",

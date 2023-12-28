@@ -1,9 +1,12 @@
 {
   "name": "@dynamix/react",
   "description": "Dynamix React Components for Building Dynamically mixed apps with webvieww",
+  "version": "0.0.0",
+  "private": false,
+  "author": "Universe <universe@grida.co>",
   "homepage": "https://grida.co/dynamix",
   "repository": "https://github.com/gridaco/dynamix/tree/main/packages/dynamix-react",
-  "version": "0.0.0",
+  "license": "MIT",
   "keywords": [
     "dynamix",
     "dynamic",
