@@ -56,7 +56,7 @@ Dynamix comes with multiple packages for different platforms.
 
 ## dyanmic actions
 
-![](./docs/demo-dynamic-actions.gif)
+![](./.readme/demo-dynamic-actions.gif)
 
 ## Installation
 
