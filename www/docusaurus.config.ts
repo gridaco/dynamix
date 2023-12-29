@@ -42,13 +42,17 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // Replace with your project's social card
-    image: "img/docusaurus-social-card.jpg",
+    image: "img/social-card.png",
+    colorMode: {
+      defaultMode: "light",
+      disableSwitch: true,
+      respectPrefersColorScheme: false,
+    },
     navbar: {
-      title: "Dynamix by Grida",
       logo: {
         alt: "Dynamix Logo",
         src: "img/logo.svg",
+        width: 80,
       },
       items: [
         {
@@ -65,7 +69,7 @@ const config: Config = {
       ],
     },
     footer: {
-      style: "dark",
+      style: "light",
       links: [
         {
           title: "Docs",
