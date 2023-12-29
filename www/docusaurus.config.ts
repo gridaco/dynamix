@@ -32,7 +32,7 @@ const config: Config = {
         docs: {
           sidebarPath: "./sidebars.ts",
           routeBasePath: "",
-          editUrl: "https://github.com/gridaco/dynamix/tree/main/www/docs/",
+          editUrl: "https://github.com/gridaco/dynamix/tree/main/www/",
         },
         theme: {
           customCss: "./src/css/custom.css",
