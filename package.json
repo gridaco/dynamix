@@ -3,6 +3,7 @@
   "private": true,
   "workspaces": [
     "www",
+    "apps/*",
     "examples/*",
     "packages/*"
   ],

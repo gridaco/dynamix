@@ -1,4 +1,5 @@
 packages:
   - "www"
+  - "apps/*"
   - "examples/*"
   - "packages/*"
